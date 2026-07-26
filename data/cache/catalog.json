@@ -1,0 +1,299 @@
+{
+  "updatedAt": "2026-07-26T04:37:17.237Z",
+  "sections": {
+    "domesticBestsellers": [
+      {
+        "id": "seed-ko-1",
+        "title": "작별하지 않는다",
+        "author": "한강",
+        "coverUrl": "https://image.aladin.co.kr/product/27692/87/cover500/8936434128_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=276928761",
+        "source": "seed",
+        "language": "ko",
+        "rank": 1,
+        "publisher": "문학동네"
+      },
+      {
+        "id": "seed-ko-2",
+        "title": "채식주의자",
+        "author": "한강",
+        "coverUrl": "https://image.aladin.co.kr/product/541/21/cover500/8936433598_2.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=541215",
+        "source": "seed",
+        "language": "ko",
+        "rank": 2,
+        "publisher": "창비"
+      },
+      {
+        "id": "seed-ko-3",
+        "title": "달러구트 꿈 백화점",
+        "author": "이미예",
+        "coverUrl": "https://image.aladin.co.kr/product/24512/70/cover500/k392630952_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=245127091",
+        "source": "seed",
+        "language": "ko",
+        "rank": 3,
+        "publisher": "팩토리나인"
+      },
+      {
+        "id": "seed-ko-4",
+        "title": "아몬드",
+        "author": "손원평",
+        "coverUrl": "https://image.aladin.co.kr/product/13796/13/cover500/8936434268_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=137961340",
+        "source": "seed",
+        "language": "ko",
+        "rank": 4,
+        "publisher": "창비"
+      },
+      {
+        "id": "seed-ko-5",
+        "title": "미드나잇 라이브러리",
+        "author": "매트 헤이그",
+        "coverUrl": "https://image.aladin.co.kr/product/24507/69/cover500/k582630839_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=245076942",
+        "source": "seed",
+        "language": "ko",
+        "rank": 5,
+        "publisher": "인플루엔셜"
+      },
+      {
+        "id": "seed-ko-6",
+        "title": "불편한 편의점",
+        "author": "김호연",
+        "coverUrl": "https://image.aladin.co.kr/product/27614/28/cover500/k392834515_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=276142801",
+        "source": "seed",
+        "language": "ko",
+        "rank": 6,
+        "publisher": "나무옆의자"
+      }
+    ],
+    "newReleases": [
+      {
+        "id": "seed-new-1",
+        "title": "작별하지 않는다",
+        "author": "한강",
+        "coverUrl": "https://image.aladin.co.kr/product/27692/87/cover500/8936434128_1.jpg",
+        "link": "https://www.aladin.co.kr/",
+        "source": "seed",
+        "language": "ko",
+        "rank": 1,
+        "publisher": "문학동네"
+      },
+      {
+        "id": "seed-new-2",
+        "title": "채식주의자",
+        "author": "한강",
+        "coverUrl": "https://image.aladin.co.kr/product/541/21/cover500/8936433598_2.jpg",
+        "link": "https://www.aladin.co.kr/",
+        "source": "seed",
+        "language": "ko",
+        "rank": 2,
+        "publisher": "창비"
+      },
+      {
+        "id": "seed-new-3",
+        "title": "아몬드",
+        "author": "손원평",
+        "coverUrl": "https://image.aladin.co.kr/product/13796/13/cover500/8936434268_1.jpg",
+        "link": "https://www.aladin.co.kr/",
+        "source": "seed",
+        "language": "ko",
+        "rank": 3,
+        "publisher": "창비"
+      },
+      {
+        "id": "seed-new-4",
+        "title": "달러구트 꿈 백화점",
+        "author": "이미예",
+        "coverUrl": "https://image.aladin.co.kr/product/24512/70/cover500/k392630952_1.jpg",
+        "link": "https://www.aladin.co.kr/",
+        "source": "seed",
+        "language": "ko",
+        "rank": 4,
+        "publisher": "팩토리나인"
+      }
+    ],
+    "foreignBestsellers": [
+      {
+        "id": "seed-foreign-1",
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
+        "link": "https://www.aladin.co.kr/",
+        "source": "seed",
+        "language": "en",
+        "rank": 1,
+        "publisher": "Avery"
+      },
+      {
+        "id": "seed-foreign-2",
+        "title": "The Midnight Library",
+        "author": "Matt Haig",
+        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg",
+        "link": "https://www.aladin.co.kr/",
+        "source": "seed",
+        "language": "en",
+        "rank": 2,
+        "publisher": "Viking"
+      },
+      {
+        "id": "seed-foreign-3",
+        "title": "Project Hail Mary",
+        "author": "Andy Weir",
+        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg",
+        "link": "https://www.aladin.co.kr/",
+        "source": "seed",
+        "language": "en",
+        "rank": 3,
+        "publisher": "Ballantine"
+      },
+      {
+        "id": "seed-foreign-4",
+        "title": "Educated",
+        "author": "Tara Westover",
+        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg",
+        "link": "https://www.aladin.co.kr/",
+        "source": "seed",
+        "language": "en",
+        "rank": 4,
+        "publisher": "Random House"
+      }
+    ],
+    "yes24Bestsellers": [
+      {
+        "id": "yes24-0-06�� 08�� YES���Ͼ� ���ɵ�",
+        "title": "06�� 08�� YES���Ͼ� ���ɵ���-������ ��Ȱ",
+        "author": "YES24 Co., Ltd.",
+        "coverUrl": "http://image.yes24.com/momo/TopCate1768/MidCate006/176750891.jpg",
+        "link": "http://www.yes24.com/Main/Default.aspx",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 1
+      }
+    ],
+    "englishBestsellers": [
+      {
+        "id": "ol-OL66554W",
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "coverUrl": "https://covers.openlibrary.org/b/id/14348537-L.jpg",
+        "link": "https://openlibrary.org/works/OL66554W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 1
+      },
+      {
+        "id": "ol-OL138052W",
+        "title": "Alice's Adventures in Wonderland",
+        "author": "Lewis Carroll",
+        "coverUrl": "https://covers.openlibrary.org/b/id/10527843-L.jpg",
+        "link": "https://openlibrary.org/works/OL138052W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 2
+      },
+      {
+        "id": "ol-OL32466W",
+        "title": "A Christmas Carol",
+        "author": "Charles Dickens",
+        "coverUrl": "https://covers.openlibrary.org/b/id/12875748-L.jpg",
+        "link": "https://openlibrary.org/works/OL32466W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 3
+      },
+      {
+        "id": "ol-OL8193416W",
+        "title": "The Picture of Dorian Gray",
+        "author": "Oscar Wilde",
+        "coverUrl": "https://covers.openlibrary.org/b/id/14314858-L.jpg",
+        "link": "https://openlibrary.org/works/OL8193416W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 4
+      },
+      {
+        "id": "ol-OL21177W",
+        "title": "Wuthering Heights",
+        "author": "Emily Brontë",
+        "coverUrl": "https://covers.openlibrary.org/b/id/12818862-L.jpg",
+        "link": "https://openlibrary.org/works/OL21177W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 5
+      },
+      {
+        "id": "ol-OL53908W",
+        "title": "Adventures of Huckleberry Finn",
+        "author": "Mark Twain",
+        "coverUrl": "https://covers.openlibrary.org/b/id/8157718-L.jpg",
+        "link": "https://openlibrary.org/works/OL53908W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 6
+      },
+      {
+        "id": "ol-OL455305W",
+        "title": "The Scarlet Letter",
+        "author": "Nathaniel Hawthorne",
+        "coverUrl": "https://covers.openlibrary.org/b/id/5654516-L.jpg",
+        "link": "https://openlibrary.org/works/OL455305W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 7
+      },
+      {
+        "id": "ol-OL45089W",
+        "title": "Robinson Crusoe",
+        "author": "Daniel Defoe",
+        "coverUrl": "https://covers.openlibrary.org/b/id/368541-L.jpg",
+        "link": "https://openlibrary.org/works/OL45089W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 8
+      },
+      {
+        "id": "ol-OL9170454W",
+        "title": "Hamlet",
+        "author": "William Shakespeare",
+        "coverUrl": "https://covers.openlibrary.org/b/id/8281954-L.jpg",
+        "link": "https://openlibrary.org/works/OL9170454W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 9
+      },
+      {
+        "id": "ol-OL66513W",
+        "title": "Emma",
+        "author": "Jane Austen",
+        "coverUrl": "https://covers.openlibrary.org/b/id/9278312-L.jpg",
+        "link": "https://openlibrary.org/works/OL66513W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 10
+      },
+      {
+        "id": "ol-OL8193478W",
+        "title": "Oliver Twist",
+        "author": "Charles Dickens",
+        "coverUrl": "https://covers.openlibrary.org/b/id/13300802-L.jpg",
+        "link": "https://openlibrary.org/works/OL8193478W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 11
+      },
+      {
+        "id": "ol-OL450063W",
+        "title": "Frankenstein; or, The Modern Prometheus",
+        "author": "Mary Shelley",
+        "coverUrl": "https://covers.openlibrary.org/b/id/12356249-L.jpg",
+        "link": "https://openlibrary.org/works/OL450063W",
+        "source": "nyt",
+        "language": "en",
+        "rank": 12
+      }
+    ]
+  }
+}
