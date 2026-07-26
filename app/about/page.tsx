@@ -17,17 +17,15 @@ export default function AboutPage() {
 
       <div className="about-block">
         <p>
-          메인 페이지의 베스트/추천 목록은 알라딘 Open API, Yes24 공식 RSS,
-          NYT Books API(또는 Open Library)를 주기적으로 동기화해 보여줍니다.
-          요청마다 HTML을 크롤링하지 않습니다.
+          메인 목록은 API 키 없이 공개 웹페이지를 매일 아침{" "}
+          <strong>한국시간 오전 9시</strong>에 크롤링해 갱신합니다. 알라딘·Yes24
+          베스트/신간, Yes24 외국도서, Open Library 트렌딩, 한겨레·조선일보 책
+          섹션과 Google 뉴스(서평·신간)를 수집합니다.
         </p>
         <p>
           서평 섹션은 연간 약 30권 분량의 개인 추천을 목표로 합니다. 현재는
           샘플 서평으로 UI를 구성해 두었고, 운영 중인 블로그 주소를 주시면
           그 글을 바탕으로 본문을 채울 예정입니다.
-        </p>
-        <p>
-          문의·연동 준비는 배포 후 README의 환경 변수 설정을 참고해 주세요.
         </p>
         <p>
           <Link href="/reviews">서평 보러 가기 →</Link>

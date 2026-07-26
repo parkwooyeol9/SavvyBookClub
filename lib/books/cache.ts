@@ -1,14 +1,15 @@
 import { promises as fs } from "fs";
 import path from "path";
-import {
-  fetchAladinDomesticBestsellers,
-  fetchAladinForeignBestsellers,
-  fetchAladinNewReleases,
-} from "@/lib/books/aladin";
-import { fetchEnglishBestsellers } from "@/lib/books/nyt";
 import { seedCatalog } from "@/lib/books/seed";
-import type { Book, BookCatalog, CatalogSection } from "@/lib/books/types";
-import { fetchYes24Bestsellers } from "@/lib/books/yes24-rss";
+import { scrapeAladinBestsellers, scrapeAladinNewReleases } from "@/lib/books/scrape-aladin";
+import { scrapeBookNews } from "@/lib/books/scrape-news";
+import { scrapeOpenLibraryTrending } from "@/lib/books/scrape-openlibrary";
+import {
+  scrapeYes24Bestsellers,
+  scrapeYes24ForeignBestsellers,
+  scrapeYes24NewReleases,
+} from "@/lib/books/scrape-yes24";
+import type { Book, BookCatalog, BookNewsItem, CatalogSection } from "@/lib/books/types";
 
 const CACHE_FILENAME = "catalog.json";
 
@@ -18,10 +19,22 @@ function cachePaths(): string[] {
   return [tmpPath, repoPath];
 }
 
+function formatKst(date: Date): string {
+  return new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul",
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(date);
+}
+
 async function readJsonFile(filePath: string): Promise<BookCatalog | null> {
   try {
     const raw = await fs.readFile(filePath, "utf8");
-    return JSON.parse(raw) as BookCatalog;
+    const parsed = JSON.parse(raw) as BookCatalog;
+    if (!parsed.sections) return null;
+    if (!parsed.bookNews) parsed.bookNews = seedCatalog.bookNews;
+    if (!parsed.updatedAtKst) parsed.updatedAtKst = formatKst(new Date(parsed.updatedAt));
+    return parsed;
   } catch {
     return null;
   }
@@ -30,7 +43,7 @@ async function readJsonFile(filePath: string): Promise<BookCatalog | null> {
 export async function readCatalogCache(): Promise<BookCatalog | null> {
   for (const filePath of cachePaths()) {
     const catalog = await readJsonFile(filePath);
-    if (catalog?.sections) return catalog;
+    if (catalog) return catalog;
   }
   return null;
 }
@@ -38,8 +51,6 @@ export async function readCatalogCache(): Promise<BookCatalog | null> {
 export async function writeCatalogCache(catalog: BookCatalog): Promise<string> {
   const [tmpPath, repoPath] = cachePaths();
   const payload = JSON.stringify(catalog, null, 2);
-
-  // Prefer /tmp on serverless; also try repo path for local/dev.
   const targets = process.env.VERCEL ? [tmpPath] : [repoPath, tmpPath];
 
   let written = "";
@@ -57,59 +68,72 @@ export async function writeCatalogCache(catalog: BookCatalog): Promise<string> {
   return written;
 }
 
-function withFallback(live: Book[], fallback: Book[]): Book[] {
+function withFallback<T>(live: T[], fallback: T[]): T[] {
   return live.length > 0 ? live : fallback;
 }
 
 export async function syncBookCatalog(): Promise<BookCatalog> {
   const [
-    domesticBestsellers,
-    newReleases,
-    foreignBestsellers,
-    yes24Bestsellers,
-    englishBestsellers,
+    aladinBest,
+    yes24Best,
+    aladinNew,
+    yes24New,
+    yes24Foreign,
+    openLibrary,
+    bookNews,
   ] = await Promise.all([
-    fetchAladinDomesticBestsellers(),
-    fetchAladinNewReleases(),
-    fetchAladinForeignBestsellers(),
-    fetchYes24Bestsellers(),
-    fetchEnglishBestsellers(),
+    scrapeAladinBestsellers(),
+    scrapeYes24Bestsellers(),
+    scrapeAladinNewReleases(),
+    scrapeYes24NewReleases(),
+    scrapeYes24ForeignBestsellers(),
+    scrapeOpenLibraryTrending(),
+    scrapeBookNews(),
   ]);
 
+  const now = new Date();
   const catalog: BookCatalog = {
-    updatedAt: new Date().toISOString(),
+    updatedAt: now.toISOString(),
+    updatedAtKst: formatKst(now),
     sections: {
       domesticBestsellers: withFallback(
-        domesticBestsellers,
+        aladinBest,
         seedCatalog.sections.domesticBestsellers,
       ),
-      newReleases: withFallback(newReleases, seedCatalog.sections.newReleases),
-      foreignBestsellers: withFallback(
-        foreignBestsellers,
-        seedCatalog.sections.foreignBestsellers,
-      ),
       yes24Bestsellers: withFallback(
-        yes24Bestsellers,
+        yes24Best,
         seedCatalog.sections.yes24Bestsellers,
       ),
+      newReleases: withFallback(
+        aladinNew.length > 0 ? aladinNew : yes24New,
+        seedCatalog.sections.newReleases,
+      ),
+      foreignBestsellers: withFallback(
+        yes24Foreign,
+        seedCatalog.sections.foreignBestsellers,
+      ),
       englishBestsellers: withFallback(
-        englishBestsellers,
+        openLibrary,
         seedCatalog.sections.englishBestsellers,
       ),
     },
+    bookNews: withFallback(bookNews, seedCatalog.bookNews) as BookNewsItem[],
   };
 
   await writeCatalogCache(catalog);
   return catalog;
 }
 
+/** Prefer cached crawl results so page views do not re-scrape every time. */
 export async function getBookCatalog(): Promise<BookCatalog> {
-  // Prefer live sources (Next.js fetch cache + tags). File cache / seed are fallbacks.
+  const cached = await readCatalogCache();
+  if (cached) return cached;
+
   try {
     return await syncBookCatalog();
   } catch (error) {
-    console.error("Catalog sync failed, using cache/seed", error);
-    return (await readCatalogCache()) ?? seedCatalog;
+    console.error("Catalog sync failed, using seed", error);
+    return seedCatalog;
   }
 }
 

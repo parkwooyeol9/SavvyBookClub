@@ -4,7 +4,8 @@ import type { Book } from "@/lib/books/types";
 const sourceLabel: Record<Book["source"], string> = {
   aladin: "알라딘",
   yes24: "Yes24",
-  nyt: "NYT / Open Library",
+  openlibrary: "Open Library",
+  news: "뉴스",
   seed: "미리보기",
 };
 

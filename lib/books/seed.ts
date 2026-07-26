@@ -1,8 +1,28 @@
 import type { BookCatalog } from "@/lib/books/types";
 
-/** Fallback catalog when API keys are missing or sync has not run. */
+/** Fallback catalog when crawl has not run yet. */
 export const seedCatalog: BookCatalog = {
   updatedAt: "2026-07-26T00:00:00.000Z",
+  updatedAtKst: "2026. 7. 26. 오전 9:00",
+  bookNews: [
+    {
+      id: "seed-news-1",
+      title: "신간·서평 뉴스는 매일 오전 9시(한국시간)에 갱신됩니다",
+      excerpt:
+        "한겨레 책 섹션, 조선일보 책, Google 뉴스(서평·신간)에서 공개 페이지를 수집합니다.",
+      link: "https://www.hani.co.kr/arti/culture/book/",
+      source: "SavvyBookClub",
+      sourceKey: "seed",
+    },
+    {
+      id: "seed-news-2",
+      title: "한겨레 ‘책과 생각’에서 최근 도서 논평을 확인하세요",
+      excerpt: "크롤 동기화 전이라면 이 미리보기 링크를 눌러 원문을 볼 수 있습니다.",
+      link: "https://www.hani.co.kr/arti/culture/book/",
+      source: "한겨레",
+      sourceKey: "seed",
+    },
+  ],
   sections: {
     domesticBestsellers: [
       {
@@ -212,7 +232,7 @@ export const seedCatalog: BookCatalog = {
         title: "The Women",
         author: "Kristin Hannah",
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781250178633-L.jpg",
-        link: "https://www.nytimes.com/books/best-sellers/",
+        link: "https://openlibrary.org/trending/daily",
         source: "seed",
         language: "en",
         rank: 1,
@@ -223,7 +243,7 @@ export const seedCatalog: BookCatalog = {
         title: "Iron Flame",
         author: "Rebecca Yarros",
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781649374172-L.jpg",
-        link: "https://www.nytimes.com/books/best-sellers/",
+        link: "https://openlibrary.org/trending/daily",
         source: "seed",
         language: "en",
         rank: 2,
@@ -234,7 +254,7 @@ export const seedCatalog: BookCatalog = {
         title: "Funny Story",
         author: "Emily Henry",
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780593441282-L.jpg",
-        link: "https://www.nytimes.com/books/best-sellers/",
+        link: "https://openlibrary.org/trending/daily",
         source: "seed",
         language: "en",
         rank: 3,
@@ -245,7 +265,7 @@ export const seedCatalog: BookCatalog = {
         title: "James",
         author: "Percival Everett",
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780385550369-L.jpg",
-        link: "https://www.nytimes.com/books/best-sellers/",
+        link: "https://openlibrary.org/trending/daily",
         source: "seed",
         language: "en",
         rank: 4,
@@ -256,7 +276,7 @@ export const seedCatalog: BookCatalog = {
         title: "The Heaven & Earth Grocery Store",
         author: "James McBride",
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780593422946-L.jpg",
-        link: "https://www.nytimes.com/books/best-sellers/",
+        link: "https://openlibrary.org/trending/daily",
         source: "seed",
         language: "en",
         rank: 5,
@@ -267,7 +287,7 @@ export const seedCatalog: BookCatalog = {
         title: "Fourth Wing",
         author: "Rebecca Yarros",
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781649374042-L.jpg",
-        link: "https://www.nytimes.com/books/best-sellers/",
+        link: "https://openlibrary.org/trending/daily",
         source: "seed",
         language: "en",
         rank: 6,

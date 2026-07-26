@@ -1,4 +1,9 @@
-export type BookSource = "aladin" | "yes24" | "nyt" | "seed";
+export type BookSource =
+  | "aladin"
+  | "yes24"
+  | "openlibrary"
+  | "news"
+  | "seed";
 
 export type BookLanguage = "ko" | "en";
 
@@ -16,16 +21,31 @@ export interface Book {
   isbn?: string;
 }
 
+export type NewsSourceKey = "hani" | "chosun" | "google-news" | "seed";
+
+export interface BookNewsItem {
+  id: string;
+  title: string;
+  excerpt: string;
+  link: string;
+  source: string;
+  sourceKey: NewsSourceKey;
+  imageUrl?: string;
+  publishedAt?: string;
+}
+
 export type CatalogSection =
   | "domesticBestsellers"
   | "newReleases"
-  | "foreignBestsellers"
   | "yes24Bestsellers"
+  | "foreignBestsellers"
   | "englishBestsellers";
 
 export interface BookCatalog {
   updatedAt: string;
+  updatedAtKst: string;
   sections: Record<CatalogSection, Book[]>;
+  bookNews: BookNewsItem[];
 }
 
 export type ReviewLanguage = "ko" | "en";

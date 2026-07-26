@@ -1,14 +1,17 @@
 # SavvyBookClub
 
-한국어 중심 도서 추천 사이트. 국내·해외 베스트를 모아 보여주고, 개인 서평(국내서 + 영문 원서)을 제공합니다.
+한국어 중심 도서 추천 사이트. 국내·해외 베스트와 신간·서평 뉴스를 모아 보여주고, 개인 서평(국내서 + 영문 원서)을 제공합니다.
 
-배포 주소 목표: [savvybookclub.vercel.app](https://savvybookclub.vercel.app)
+## 데이터 (API 키 없음)
 
-## 기능
+매일 **한국시간 오전 9시** (`vercel.json` Cron: `0 0 * * *` UTC)에 공개 페이지를 크롤링합니다.
 
-- **메인**: 알라딘 Open API · Yes24 RSS · NYT Books API(또는 Open Library) 기반 베스트/신간/외서 목록
-- **서평**: `content/reviews/*.md` 기반 개인 추천·서평 (샘플 포함, 이후 블로그 연동 예정)
-- **Cron**: 6시간마다 `/api/cron/sync-books`로 목록 캐시 갱신
+| 소스 | 내용 |
+|------|------|
+| 알라딘 HTML | 국내 베스트, 주목 신간 |
+| Yes24 HTML | 국내 베스트, 신상품, 외국도서 베스트 |
+| Open Library | 영문 일간 트렌딩 |
+| 한겨레 / 조선일보 / Google 뉴스 RSS | 신간·서평·도서 논평 |
 
 ## 시작하기
 
@@ -18,53 +21,24 @@ cp .env.example .env.local
 npm run dev
 ```
 
-API 키가 없어도 시드 데이터로 UI를 확인할 수 있습니다.
+수동 동기화:
+
+```bash
+curl -X POST "http://localhost:3000/api/cron/sync-books"
+```
 
 ## 환경 변수
 
 | 변수 | 설명 |
 |------|------|
-| `ALADIN_TTB_KEY` | [알라딘 Open API](https://www.aladin.co.kr/ttb/api/) TTB 키 |
-| `NYT_BOOKS_API_KEY` | [NYT Books API](https://developer.nytimes.com/) 키 (없으면 Open Library 폴백) |
-| `CRON_SECRET` | Cron/수동 동기화 인증 시크릿 (프로덕션 필수) |
+| `CRON_SECRET` | Cron/수동 동기화 인증 (프로덕션 필수). Vercel는 `Authorization: Bearer <CRON_SECRET>`로 호출합니다. |
 
-## 수동 동기화
+## Vercel
 
-```bash
-curl -X POST "http://localhost:3000/api/cron/sync-books" \
-  -H "Authorization: Bearer $CRON_SECRET"
-```
+1. GitHub 저장소 연결, 프로젝트명 `savvybookclub`
+2. `CRON_SECRET` 설정
+3. Cron이 매일 09:00 KST에 `/api/cron/sync-books` 실행
 
-로컬(`NODE_ENV !== production`)에서는 `CRON_SECRET` 없이도 동작합니다.
+## 서평
 
-## Vercel 배포
-
-1. GitHub 저장소를 Vercel에 연결
-2. 프로젝트 이름을 `savvybookclub`로 두면 `savvybookclub.vercel.app` 사용
-3. Environment Variables에 위 키 등록
-4. 배포 후 Cron이 6시간마다 목록을 갱신합니다
-
-## 서평 추가
-
-`content/reviews/your-slug.md` 파일을 추가하세요.
-
-```md
----
-title: "책 제목"
-author: "저자"
-year: 2026
-language: "ko" # 또는 "en"
-isOriginalEnglish: false
-coverUrl: "https://..."
-excerpt: "한 줄 요약"
-whyRead: "추천 이유"
-purchaseUrl: "https://..."
-tags: ["소설"]
----
-
-본문 서평...
-```
-
-## 스택
-
-Next.js (App Router) · TypeScript · Tailwind CSS · Vercel Cron
+`content/reviews/*.md` 에 frontmatter + 본문을 추가하세요. 블로그 연동은 추후 지원 예정입니다.

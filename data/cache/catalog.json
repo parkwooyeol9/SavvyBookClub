@@ -1,299 +1,768 @@
 {
-  "updatedAt": "2026-07-26T04:37:17.237Z",
+  "updatedAt": "2026-07-26T04:44:04.916Z",
+  "updatedAtKst": "2026. 7. 26. 오후 1:44",
   "sections": {
     "domesticBestsellers": [
       {
-        "id": "seed-ko-1",
-        "title": "작별하지 않는다",
-        "author": "한강",
-        "coverUrl": "https://image.aladin.co.kr/product/27692/87/cover500/8936434128_1.jpg",
-        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=276928761",
-        "source": "seed",
+        "id": "aladin-best-1",
+        "title": "유럽 도시 기행 3",
+        "author": "유시민",
+        "coverUrl": "https://image.aladin.co.kr/product/39715/59/cover200/8965138310_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=397155927",
+        "source": "aladin",
         "language": "ko",
-        "rank": 1,
-        "publisher": "문학동네"
+        "rank": 1
       },
       {
-        "id": "seed-ko-2",
-        "title": "채식주의자",
-        "author": "한강",
-        "coverUrl": "https://image.aladin.co.kr/product/541/21/cover500/8936433598_2.jpg",
-        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=541215",
-        "source": "seed",
+        "id": "aladin-best-2",
+        "title": "싯다르타",
+        "author": "헤르만 헤세",
+        "coverUrl": "https://image.aladin.co.kr/product/32/95/cover200/s062934786_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=329596",
+        "source": "aladin",
         "language": "ko",
-        "rank": 2,
-        "publisher": "창비"
+        "rank": 2
       },
       {
-        "id": "seed-ko-3",
-        "title": "달러구트 꿈 백화점",
-        "author": "이미예",
-        "coverUrl": "https://image.aladin.co.kr/product/24512/70/cover500/k392630952_1.jpg",
-        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=245127091",
-        "source": "seed",
+        "id": "aladin-best-3",
+        "title": "주술회전 모듈로 1",
+        "author": "Yuji Iwasaki",
+        "coverUrl": "https://image.aladin.co.kr/product/39896/29/cover200/k922130827_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=398962987",
+        "source": "aladin",
         "language": "ko",
-        "rank": 3,
-        "publisher": "팩토리나인"
+        "rank": 3
       },
       {
-        "id": "seed-ko-4",
-        "title": "아몬드",
-        "author": "손원평",
-        "coverUrl": "https://image.aladin.co.kr/product/13796/13/cover500/8936434268_1.jpg",
-        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=137961340",
-        "source": "seed",
+        "id": "aladin-best-4",
+        "title": "너와 장밋빛 매일 3 (트리플 특전판)",
+        "author": "히로 치히로",
+        "coverUrl": "https://image.aladin.co.kr/product/39873/60/cover200/k332130317_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=398736065",
+        "source": "aladin",
         "language": "ko",
-        "rank": 4,
-        "publisher": "창비"
+        "rank": 4
       },
       {
-        "id": "seed-ko-5",
-        "title": "미드나잇 라이브러리",
-        "author": "매트 헤이그",
-        "coverUrl": "https://image.aladin.co.kr/product/24507/69/cover500/k582630839_1.jpg",
-        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=245076942",
-        "source": "seed",
+        "id": "aladin-best-5",
+        "title": "태양 아래 올리브",
+        "author": "김초엽",
+        "coverUrl": "https://image.aladin.co.kr/product/39890/8/cover200/k512130727_2.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=398900892",
+        "source": "aladin",
         "language": "ko",
-        "rank": 5,
-        "publisher": "인플루엔셜"
+        "rank": 5
       },
       {
-        "id": "seed-ko-6",
-        "title": "불편한 편의점",
-        "author": "김호연",
-        "coverUrl": "https://image.aladin.co.kr/product/27614/28/cover500/k392834515_1.jpg",
-        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=276142801",
-        "source": "seed",
+        "id": "aladin-best-6",
+        "title": "수족관",
+        "author": "유래혁",
+        "coverUrl": "https://image.aladin.co.kr/product/33081/18/cover200/k582937507_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=330811810",
+        "source": "aladin",
         "language": "ko",
-        "rank": 6,
-        "publisher": "나무옆의자"
-      }
-    ],
-    "newReleases": [
+        "rank": 6
+      },
       {
-        "id": "seed-new-1",
-        "title": "작별하지 않는다",
-        "author": "한강",
-        "coverUrl": "https://image.aladin.co.kr/product/27692/87/cover500/8936434128_1.jpg",
-        "link": "https://www.aladin.co.kr/",
-        "source": "seed",
+        "id": "aladin-best-7",
+        "title": "투명한 나선",
+        "author": "히가시노 게이고",
+        "coverUrl": "https://image.aladin.co.kr/product/39802/11/cover200/k082130602_3.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=398021172",
+        "source": "aladin",
         "language": "ko",
-        "rank": 1,
-        "publisher": "문학동네"
+        "rank": 7
       },
       {
-        "id": "seed-new-2",
-        "title": "채식주의자",
-        "author": "한강",
-        "coverUrl": "https://image.aladin.co.kr/product/541/21/cover500/8936433598_2.jpg",
-        "link": "https://www.aladin.co.kr/",
-        "source": "seed",
+        "id": "aladin-best-8",
+        "title": "프로젝트 헤일메리 (알라딘 리커버 특별판)",
+        "author": "앤디 위어",
+        "coverUrl": "https://image.aladin.co.kr/product/39679/83/cover200/8925568640_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=396798366",
+        "source": "aladin",
         "language": "ko",
-        "rank": 2,
-        "publisher": "창비"
+        "rank": 8
       },
       {
-        "id": "seed-new-3",
-        "title": "아몬드",
-        "author": "손원평",
-        "coverUrl": "https://image.aladin.co.kr/product/13796/13/cover500/8936434268_1.jpg",
-        "link": "https://www.aladin.co.kr/",
-        "source": "seed",
+        "id": "aladin-best-9",
+        "title": "독하게 돈 공부",
+        "author": "박소연",
+        "coverUrl": "https://image.aladin.co.kr/product/39727/2/cover200/k042130706_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=397270202",
+        "source": "aladin",
         "language": "ko",
-        "rank": 3,
-        "publisher": "창비"
+        "rank": 9
       },
       {
-        "id": "seed-new-4",
-        "title": "달러구트 꿈 백화점",
-        "author": "이미예",
-        "coverUrl": "https://image.aladin.co.kr/product/24512/70/cover500/k392630952_1.jpg",
-        "link": "https://www.aladin.co.kr/",
-        "source": "seed",
+        "id": "aladin-best-10",
+        "title": "어떻게 살아낼 것인가",
+        "author": "짐 콜린스",
+        "coverUrl": "https://image.aladin.co.kr/product/39782/23/cover200/k192130202_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=397822311",
+        "source": "aladin",
         "language": "ko",
-        "rank": 4,
-        "publisher": "팩토리나인"
-      }
-    ],
-    "foreignBestsellers": [
-      {
-        "id": "seed-foreign-1",
-        "title": "Atomic Habits",
-        "author": "James Clear",
-        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
-        "link": "https://www.aladin.co.kr/",
-        "source": "seed",
-        "language": "en",
-        "rank": 1,
-        "publisher": "Avery"
+        "rank": 10
       },
       {
-        "id": "seed-foreign-2",
-        "title": "The Midnight Library",
-        "author": "Matt Haig",
-        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg",
-        "link": "https://www.aladin.co.kr/",
-        "source": "seed",
-        "language": "en",
-        "rank": 2,
-        "publisher": "Viking"
+        "id": "aladin-best-11",
+        "title": "지푸라기 왕관을 쓴 여자",
+        "author": "박상영",
+        "coverUrl": "https://image.aladin.co.kr/product/39834/40/cover200/k032130812_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=398344057",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 11
       },
       {
-        "id": "seed-foreign-3",
-        "title": "Project Hail Mary",
-        "author": "Andy Weir",
-        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg",
-        "link": "https://www.aladin.co.kr/",
-        "source": "seed",
-        "language": "en",
-        "rank": 3,
-        "publisher": "Ballantine"
-      },
-      {
-        "id": "seed-foreign-4",
-        "title": "Educated",
-        "author": "Tara Westover",
-        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg",
-        "link": "https://www.aladin.co.kr/",
-        "source": "seed",
-        "language": "en",
-        "rank": 4,
-        "publisher": "Random House"
+        "id": "aladin-best-12",
+        "title": "코스모스 (100만 부 기념판)",
+        "author": "칼 세이건",
+        "coverUrl": "https://image.aladin.co.kr/product/39676/50/cover200/k382130398_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=396765073",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 12
       }
     ],
     "yes24Bestsellers": [
       {
-        "id": "yes24-0-06�� 08�� YES���Ͼ� ���ɵ�",
-        "title": "06�� 08�� YES���Ͼ� ���ɵ���-������ ��Ȱ",
-        "author": "YES24 Co., Ltd.",
-        "coverUrl": "http://image.yes24.com/momo/TopCate1768/MidCate006/176750891.jpg",
-        "link": "http://www.yes24.com/Main/Default.aspx",
+        "id": "yes24-best-1",
+        "title": "유럽 도시 기행 3",
+        "author": "유시민",
+        "coverUrl": "https://image.yes24.com/goods/193040623/L",
+        "link": "https://www.yes24.com/product/goods/193040623",
         "source": "yes24",
         "language": "ko",
+        "rank": 1,
+        "publisher": "생각의길"
+      },
+      {
+        "id": "yes24-best-2",
+        "title": "2027 유휘운 행정법총론 요약노트+기출문제 (요.플.)",
+        "author": "유휘운",
+        "coverUrl": "https://image.yes24.com/goods/193701241/L",
+        "link": "https://www.yes24.com/product/goods/193701241",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 2,
+        "publisher": "모두공북스"
+      },
+      {
+        "id": "yes24-best-3",
+        "title": "공부가 결국 너를 지켜줄 거야",
+        "author": "임민찬",
+        "coverUrl": "https://image.yes24.com/goods/192978800/L",
+        "link": "https://www.yes24.com/product/goods/192978800",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 3,
+        "publisher": "퍼스트펭귄"
+      },
+      {
+        "id": "yes24-best-4",
+        "title": "2027 공단기 소방단기 써니 행정법총론 기본서",
+        "author": "박준철",
+        "coverUrl": "https://image.yes24.com/goods/193686487/L",
+        "link": "https://www.yes24.com/product/goods/193686487",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 4,
+        "publisher": "공단기(에스티유니타스)"
+      },
+      {
+        "id": "yes24-best-5",
+        "title": "100세까지 월 500만 원 받는 ETF 연금 수업",
+        "author": "제도권주식분석(최기원)",
+        "coverUrl": "https://image.yes24.com/goods/193866216/L",
+        "link": "https://www.yes24.com/product/goods/193866216",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 5,
+        "publisher": "와이즈베리"
+      },
+      {
+        "id": "yes24-best-6",
+        "title": "니체의 초월자",
+        "author": "프리드리히 니체",
+        "coverUrl": "https://image.yes24.com/goods/161401496/L",
+        "link": "https://www.yes24.com/product/goods/161401496",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 6,
+        "publisher": "히읏"
+      },
+      {
+        "id": "yes24-best-7",
+        "title": "수족관",
+        "author": "유래혁",
+        "coverUrl": "https://image.yes24.com/goods/124235834/L",
+        "link": "https://www.yes24.com/product/goods/124235834",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 7,
+        "publisher": "포스터샵"
+      },
+      {
+        "id": "yes24-best-8",
+        "title": "부의 갈림길",
+        "author": "오건영",
+        "coverUrl": "https://image.yes24.com/goods/190811719/L",
+        "link": "https://www.yes24.com/product/goods/190811719",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 8,
+        "publisher": "포레스트북스"
+      },
+      {
+        "id": "yes24-best-9",
+        "title": "싯다르타",
+        "author": "헤르만 헤세",
+        "coverUrl": "https://image.yes24.com/goods/257435/L",
+        "link": "https://www.yes24.com/product/goods/257435",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 9,
+        "publisher": "민음사"
+      },
+      {
+        "id": "yes24-best-10",
+        "title": "2026 큰별쌤 최태성의 별별한국사 한국사능력검정시험 심화(1,2,3급) 하",
+        "author": "최태성",
+        "coverUrl": "https://image.yes24.com/goods/167466432/L",
+        "link": "https://www.yes24.com/product/goods/167466432",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 10,
+        "publisher": "이투스북"
+      },
+      {
+        "id": "yes24-best-11",
+        "title": "2026 큰별쌤 최태성의 별별한국사 기출 500제 한국사능력검정시험 심화(1,2,3급)",
+        "author": "최태성",
+        "coverUrl": "https://image.yes24.com/goods/168393009/L",
+        "link": "https://www.yes24.com/product/goods/168393009",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 11,
+        "publisher": "이투스북"
+      },
+      {
+        "id": "yes24-best-12",
+        "title": "2026 큰별쌤 최태성의 별별한국사 한국사능력검정시험 심화(1,2,3급) 상",
+        "author": "최태성",
+        "coverUrl": "https://image.yes24.com/goods/167466420/L",
+        "link": "https://www.yes24.com/product/goods/167466420",
+        "source": "yes24",
+        "language": "ko",
+        "rank": 12,
+        "publisher": "이투스북"
+      }
+    ],
+    "newReleases": [
+      {
+        "id": "aladin-new-1",
+        "title": "대한민국 입시 죽음의 삼각형",
+        "author": "서보현",
+        "coverUrl": "https://image.aladin.co.kr/product/39908/37/cover200/k552130025_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399083702",
+        "source": "aladin",
+        "language": "ko",
         "rank": 1
+      },
+      {
+        "id": "aladin-new-2",
+        "title": "파두의 여왕 아말리아 호드리게스",
+        "author": "김수남",
+        "coverUrl": "https://image.aladin.co.kr/product/39907/48/cover200/k582130023_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399074839",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 2
+      },
+      {
+        "id": "aladin-new-3",
+        "title": "한글로고 Vol. 1",
+        "author": "최종원",
+        "coverUrl": "https://image.aladin.co.kr/product/39907/33/cover200/k052130023_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399073389",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 3
+      },
+      {
+        "id": "aladin-new-4",
+        "title": "비 마중 온 날",
+        "author": "이은아",
+        "coverUrl": "https://image.aladin.co.kr/product/39907/28/cover200/k802130022_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399072808",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 4
+      },
+      {
+        "id": "aladin-new-5",
+        "title": "나의 첫 부동산 경매 실전 수업",
+        "author": "양진노",
+        "coverUrl": "https://image.aladin.co.kr/product/39907/24/cover200/k712130022_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399072421",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 5
+      },
+      {
+        "id": "aladin-new-6",
+        "title": "고객제표로 경영하라",
+        "author": "김형수",
+        "coverUrl": "https://image.aladin.co.kr/product/39905/93/cover200/k622130020_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399059360",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 6
+      },
+      {
+        "id": "aladin-new-7",
+        "title": "[세트] No. 1만 살아남는 최강 동물 빅매치 라운드 1~2 세트 - 전2권",
+        "author": "에밀리 크리거",
+        "coverUrl": "https://image.aladin.co.kr/product/39905/89/cover200/k432130020_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399058973",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 7
+      },
+      {
+        "id": "aladin-new-8",
+        "title": "미지의 걸작",
+        "author": "오노레 드 발자크",
+        "coverUrl": "https://image.aladin.co.kr/product/39905/86/cover200/k342130020_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399058685",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 8
+      },
+      {
+        "id": "aladin-new-9",
+        "title": "No. 1만 살아남는 최강 동물 빅매치 라운드 2",
+        "author": "에밀리 크리거",
+        "coverUrl": "https://image.aladin.co.kr/product/39905/79/cover200/8949132672_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399057998",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 9
+      },
+      {
+        "id": "aladin-new-10",
+        "title": "No. 1만 살아남는 최강 동물 빅매치 라운드 1",
+        "author": "에밀리 크리거",
+        "coverUrl": "https://image.aladin.co.kr/product/39905/79/cover200/8949132664_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399057941",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 10
+      },
+      {
+        "id": "aladin-new-11",
+        "title": "고등학교 선택의 기준",
+        "author": "김창식",
+        "coverUrl": "https://image.aladin.co.kr/product/39905/73/cover200/k972130020_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399057374",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 11
+      },
+      {
+        "id": "aladin-new-12",
+        "title": "만두의 더운 날 (찜통더위 에디션)",
+        "author": "윤식이",
+        "coverUrl": "https://image.aladin.co.kr/product/39905/43/cover200/k522130028_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399054314",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 12
+      }
+    ],
+    "foreignBestsellers": [
+      {
+        "id": "yes24-foreign-1",
+        "title": "(예약도서) Vジャンプ 2026年10月號 (원피스카드없음)",
+        "author": "편집부",
+        "coverUrl": "https://image.yes24.com/goods/194191367/L",
+        "link": "https://www.yes24.com/product/goods/194191367",
+        "source": "yes24",
+        "language": "en",
+        "rank": 1,
+        "publisher": "集英社"
+      },
+      {
+        "id": "yes24-foreign-2",
+        "title": "sweet(スウィ-ト) 2026年8月號",
+        "author": "편집부",
+        "coverUrl": "https://image.yes24.com/goods/191533845/L",
+        "link": "https://www.yes24.com/product/goods/191533845",
+        "source": "yes24",
+        "language": "en",
+        "rank": 2,
+        "publisher": "寶島社"
+      },
+      {
+        "id": "yes24-foreign-3",
+        "title": "Wonder (미국판) : 줄리아 로버츠 주연 영화 '원더' 원작 소설",
+        "author": "R. J. 팔라시오",
+        "coverUrl": "https://image.yes24.com/goods/14121630/L",
+        "link": "https://www.yes24.com/product/goods/14121630",
+        "source": "yes24",
+        "language": "en",
+        "rank": 3,
+        "publisher": "Random House"
+      },
+      {
+        "id": "yes24-foreign-4",
+        "title": "The Giver 기억 전달자",
+        "author": "로이스 라우리",
+        "coverUrl": "https://image.yes24.com/goods/13901514/L",
+        "link": "https://www.yes24.com/product/goods/13901514",
+        "source": "yes24",
+        "language": "en",
+        "rank": 4,
+        "publisher": "Houghton Mifflin Harcourt"
+      },
+      {
+        "id": "yes24-foreign-5",
+        "title": "リンネル 2026年8月號",
+        "author": "편집부",
+        "coverUrl": "https://image.yes24.com/goods/189695129/L",
+        "link": "https://www.yes24.com/product/goods/189695129",
+        "source": "yes24",
+        "language": "en",
+        "rank": 5,
+        "publisher": "寶島社"
+      },
+      {
+        "id": "yes24-foreign-6",
+        "title": "The Wild Robot #1 : The Wild Robot (미국판)",
+        "author": "피터 브라운",
+        "coverUrl": "https://image.yes24.com/goods/43630157/L",
+        "link": "https://www.yes24.com/product/goods/43630157",
+        "source": "yes24",
+        "language": "en",
+        "rank": 6,
+        "publisher": "Little, Brown Books for Young Readers"
+      },
+      {
+        "id": "yes24-foreign-7",
+        "title": "(예약도서) ドラゴンボ-ルス-パ-カ-ドゲ-ム フュ-ジョンワ-ルド 1st COMPLETE CARD COLLECTION",
+        "author": "Vジャンプ編集部",
+        "coverUrl": "https://image.yes24.com/goods/141230409/L",
+        "link": "https://www.yes24.com/product/goods/141230409",
+        "source": "yes24",
+        "language": "en",
+        "rank": 7,
+        "publisher": "集英社"
+      },
+      {
+        "id": "yes24-foreign-8",
+        "title": "The Magician's Elephant",
+        "author": "DiCamillo, Kate / Tanaka, Yoko",
+        "coverUrl": "https://image.yes24.com/goods/17307012/L",
+        "link": "https://www.yes24.com/product/goods/17307012",
+        "source": "yes24",
+        "language": "en",
+        "rank": 8,
+        "publisher": "Candlewick Press (MA)"
+      },
+      {
+        "id": "yes24-foreign-9",
+        "title": "Project Hail Mary",
+        "author": "앤디 위어",
+        "coverUrl": "https://image.yes24.com/goods/110969306/L",
+        "link": "https://www.yes24.com/product/goods/110969306",
+        "source": "yes24",
+        "language": "en",
+        "rank": 9,
+        "publisher": "Ballantine Books"
+      },
+      {
+        "id": "yes24-foreign-10",
+        "title": "Disney/Pixar Toy Story 5 My Busy Books",
+        "author": "Phidal Publishing Inc.",
+        "coverUrl": "https://image.yes24.com/goods/189792825/L",
+        "link": "https://www.yes24.com/product/goods/189792825",
+        "source": "yes24",
+        "language": "en",
+        "rank": 10,
+        "publisher": "Phidal"
+      },
+      {
+        "id": "yes24-foreign-11",
+        "title": "Poppy",
+        "author": "Avi",
+        "coverUrl": "https://image.yes24.com/goods/564912/L",
+        "link": "https://www.yes24.com/product/goods/564912",
+        "source": "yes24",
+        "language": "en",
+        "rank": 11,
+        "publisher": "HarperCollins"
+      },
+      {
+        "id": "yes24-foreign-12",
+        "title": "Coraline",
+        "author": "닐 게이먼",
+        "coverUrl": "https://image.yes24.com/goods/565734/L",
+        "link": "https://www.yes24.com/product/goods/565734",
+        "source": "yes24",
+        "language": "en",
+        "rank": 12,
+        "publisher": "HarperCollins"
       }
     ],
     "englishBestsellers": [
       {
-        "id": "ol-OL66554W",
-        "title": "Pride and Prejudice",
-        "author": "Jane Austen",
-        "coverUrl": "https://covers.openlibrary.org/b/id/14348537-L.jpg",
-        "link": "https://openlibrary.org/works/OL66554W",
-        "source": "nyt",
+        "id": "seed-nyt-1",
+        "title": "The Women",
+        "author": "Kristin Hannah",
+        "coverUrl": "https://covers.openlibrary.org/b/isbn/9781250178633-L.jpg",
+        "link": "https://openlibrary.org/trending/daily",
+        "source": "seed",
         "language": "en",
-        "rank": 1
+        "rank": 1,
+        "publisher": "St. Martin's Press"
       },
       {
-        "id": "ol-OL138052W",
-        "title": "Alice's Adventures in Wonderland",
-        "author": "Lewis Carroll",
-        "coverUrl": "https://covers.openlibrary.org/b/id/10527843-L.jpg",
-        "link": "https://openlibrary.org/works/OL138052W",
-        "source": "nyt",
+        "id": "seed-nyt-2",
+        "title": "Iron Flame",
+        "author": "Rebecca Yarros",
+        "coverUrl": "https://covers.openlibrary.org/b/isbn/9781649374172-L.jpg",
+        "link": "https://openlibrary.org/trending/daily",
+        "source": "seed",
         "language": "en",
-        "rank": 2
+        "rank": 2,
+        "publisher": "Red Tower Books"
       },
       {
-        "id": "ol-OL32466W",
-        "title": "A Christmas Carol",
-        "author": "Charles Dickens",
-        "coverUrl": "https://covers.openlibrary.org/b/id/12875748-L.jpg",
-        "link": "https://openlibrary.org/works/OL32466W",
-        "source": "nyt",
+        "id": "seed-nyt-3",
+        "title": "Funny Story",
+        "author": "Emily Henry",
+        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593441282-L.jpg",
+        "link": "https://openlibrary.org/trending/daily",
+        "source": "seed",
         "language": "en",
-        "rank": 3
+        "rank": 3,
+        "publisher": "Berkley"
       },
       {
-        "id": "ol-OL8193416W",
-        "title": "The Picture of Dorian Gray",
-        "author": "Oscar Wilde",
-        "coverUrl": "https://covers.openlibrary.org/b/id/14314858-L.jpg",
-        "link": "https://openlibrary.org/works/OL8193416W",
-        "source": "nyt",
+        "id": "seed-nyt-4",
+        "title": "James",
+        "author": "Percival Everett",
+        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780385550369-L.jpg",
+        "link": "https://openlibrary.org/trending/daily",
+        "source": "seed",
         "language": "en",
-        "rank": 4
+        "rank": 4,
+        "publisher": "Doubleday"
       },
       {
-        "id": "ol-OL21177W",
-        "title": "Wuthering Heights",
-        "author": "Emily Brontë",
-        "coverUrl": "https://covers.openlibrary.org/b/id/12818862-L.jpg",
-        "link": "https://openlibrary.org/works/OL21177W",
-        "source": "nyt",
+        "id": "seed-nyt-5",
+        "title": "The Heaven & Earth Grocery Store",
+        "author": "James McBride",
+        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593422946-L.jpg",
+        "link": "https://openlibrary.org/trending/daily",
+        "source": "seed",
         "language": "en",
-        "rank": 5
+        "rank": 5,
+        "publisher": "Riverhead"
       },
       {
-        "id": "ol-OL53908W",
-        "title": "Adventures of Huckleberry Finn",
-        "author": "Mark Twain",
-        "coverUrl": "https://covers.openlibrary.org/b/id/8157718-L.jpg",
-        "link": "https://openlibrary.org/works/OL53908W",
-        "source": "nyt",
+        "id": "seed-nyt-6",
+        "title": "Fourth Wing",
+        "author": "Rebecca Yarros",
+        "coverUrl": "https://covers.openlibrary.org/b/isbn/9781649374042-L.jpg",
+        "link": "https://openlibrary.org/trending/daily",
+        "source": "seed",
         "language": "en",
-        "rank": 6
-      },
-      {
-        "id": "ol-OL455305W",
-        "title": "The Scarlet Letter",
-        "author": "Nathaniel Hawthorne",
-        "coverUrl": "https://covers.openlibrary.org/b/id/5654516-L.jpg",
-        "link": "https://openlibrary.org/works/OL455305W",
-        "source": "nyt",
-        "language": "en",
-        "rank": 7
-      },
-      {
-        "id": "ol-OL45089W",
-        "title": "Robinson Crusoe",
-        "author": "Daniel Defoe",
-        "coverUrl": "https://covers.openlibrary.org/b/id/368541-L.jpg",
-        "link": "https://openlibrary.org/works/OL45089W",
-        "source": "nyt",
-        "language": "en",
-        "rank": 8
-      },
-      {
-        "id": "ol-OL9170454W",
-        "title": "Hamlet",
-        "author": "William Shakespeare",
-        "coverUrl": "https://covers.openlibrary.org/b/id/8281954-L.jpg",
-        "link": "https://openlibrary.org/works/OL9170454W",
-        "source": "nyt",
-        "language": "en",
-        "rank": 9
-      },
-      {
-        "id": "ol-OL66513W",
-        "title": "Emma",
-        "author": "Jane Austen",
-        "coverUrl": "https://covers.openlibrary.org/b/id/9278312-L.jpg",
-        "link": "https://openlibrary.org/works/OL66513W",
-        "source": "nyt",
-        "language": "en",
-        "rank": 10
-      },
-      {
-        "id": "ol-OL8193478W",
-        "title": "Oliver Twist",
-        "author": "Charles Dickens",
-        "coverUrl": "https://covers.openlibrary.org/b/id/13300802-L.jpg",
-        "link": "https://openlibrary.org/works/OL8193478W",
-        "source": "nyt",
-        "language": "en",
-        "rank": 11
-      },
-      {
-        "id": "ol-OL450063W",
-        "title": "Frankenstein; or, The Modern Prometheus",
-        "author": "Mary Shelley",
-        "coverUrl": "https://covers.openlibrary.org/b/id/12356249-L.jpg",
-        "link": "https://openlibrary.org/works/OL450063W",
-        "source": "nyt",
-        "language": "en",
-        "rank": 12
+        "rank": 6,
+        "publisher": "Red Tower Books"
       }
     ]
-  }
+  },
+  "bookNews": [
+    {
+      "id": "hani-1269941",
+      "title": "더는 인권의 이름으로 인권을 파괴하지 않도록 [.txt]",
+      "excerpt": "인권이 휘청인다. 아니, ‘인권위’가 휘청인다. 사회에서 발생한 인권침해 사건 때문이 아니다. 우리나라에서 정부와 독립적으로 인권 문제를 다루는 최상위 기구인 국가인권위원회가 조직 내부의 문제로 이리저리 휘청거리고 있다. 갈등의 중심에는 안창호 국가인권위원장이 있다. ...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269941.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0726/53_17850175065643_20260723504120.webp"
+    },
+    {
+      "id": "hani-1269938",
+      "title": "아이도 혐오하는 사회, 어떤 마음으로 키울까요? [.txt]",
+      "excerpt": "요조님께,하고 싶은 말은 많은데 그 마음을 글로 옮기는 재주가 부족한 점 미리 양해를 구합니다. 요즘은 흔히 ‘혐오의 시대’라고들 합니다. 남성과 여성을, 정치적 성향을, 특정 지역을, 심지어 나이 듦까지도 서로 구분 짓고 미워하는 시대를 살아가는...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269938.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0726/53_17850153172267_20260723504115.webp"
+    },
+    {
+      "id": "hani-1269905",
+      "title": "정일영 교수가 들려준 ‘남탓의 미학’ [.txt]",
+      "excerpt": "고3 수험생을 둔 학부모입니다. 3학년 1학기가 끝나고 성적표를 받아 든 딸은 서럽게 눈물을 쏟아냈습니다. 학교를 마치고 학원에 갔다가 스터디 카페에서 자정까지 공부하는 생활을 2년 반 이어왔습니다. 결과는 기대와 달랐습니다. 노력한 만큼 결과가 따라오지 않을 때, 우...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269905.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0725/53_17849423536962_20260723504112.webp"
+    },
+    {
+      "id": "hani-1269904",
+      "title": "오늘도 냠냠냠: 포항 환여횟집 [.txt]",
+      "excerpt": "...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269904.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0725/53_17849414810054_20260723504103.webp"
+    },
+    {
+      "id": "hani-1269901",
+      "title": "세상을 정말로 사랑했을 것 같애, 당신은 [.txt]",
+      "excerpt": "어쩌면 나는 사랑에 관하여, 연애에 관하여 말할 수 있는 마음이 준비되지 않았는지도 모르겠다. 단지 연애시라는 주제를 들으니 생각난 시가 있어, 이 시를 전하면서 뭐라도 말하면 될 거라고 섣불리 생각했는지도.연애에 관해 떠올리면, 나는 후회되는 일들이 먼저 생각나고 만...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269901.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0725/53_17849427394352_20260723504094.webp"
+    },
+    {
+      "id": "hani-1269762",
+      "title": "당신의 집은 어디인가…디아스포라가 말하는 ‘집’ [.txt]",
+      "excerpt": "‘너는 누구냐’는 질문은 대체로 난감하다. ‘집이 어디냐’는 질문도 마찬가지다. 일본에서 태어났는데 국적은 독일이고 서울에서 사는 사람의 집은 어디인가? 북한 청진이나 중국 옌볜에서 나고 자란 사람이라면?‘낯선 집’을 쓴 조경희 성공회대 교수는 재일조선인 3세로 200...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269762.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0724/53_17848529752137_20260724500473.webp"
+    },
+    {
+      "id": "hani-1269761",
+      "title": "‘시성비’ 따지는 2030 독자들…앤솔러지·아포리즘 인기 [.txt]",
+      "excerpt": "지난 6월 서울국제도서전 전시장 한편에 위치한 출판사 부스에는 감각적인 표지의 책을 구매하기 위한 긴 줄이 섰다. 이들의 얼굴에는 매대 위에 놓인 책을 손에 쥘 흥분과 기대감이 가득했다. 서울국제도서전에 맞춰 출간한 ‘헤르만 헤세의 게으름의 기술’(뜨인돌)은...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269761.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0724/53_17848529657424_20260724500470.webp"
+    },
+    {
+      "id": "hani-1269748",
+      "title": "민중가요, 그늘진 땅에 햇볕 한 줌 될 이야기 [.txt]",
+      "excerpt": "2024년 탄핵 촉구 집회에선 민중가요 대신 ‘다시 만난 세계’와 ‘아파트’ 같은 노래가 불렸다. 이 책은 이렇게 달라진 시대와 풍경에서 민중가요를 부르고 만들던 이들과 현재를 살고 있는 다채로운 사람들의 삶을 보여준다. 노회찬재단 구술생애사팀이 지난해 펴낸 ‘우리들의...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269748.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0724/53_17848469683129_20260723504027.webp"
+    },
+    {
+      "id": "hani-1269744",
+      "title": "오케스트라의 보이지 않는 손, 악보위원이 말하는 것들[.txt]",
+      "excerpt": "관현악단(오케스트라)의 연주는 지휘대에 선 지휘자가 지휘봉을 들어 올리는 순간 시작된다. 그러나 그에 앞서, 관객들의 눈에 잘 들어오지 않는 준비 단계가 있다. 지휘자가 입장하기 전, 단원들이 기묘한 불협화음을 내며 음을 맞추기 전에 연주자들과 지휘자의 자리에 하나씩 ...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269744.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0724/53_17848472317284_20260723504029.webp"
+    },
+    {
+      "id": "hani-1269742",
+      "title": "벼의 시간을 믿고 기다리는 농부처럼 [.txt]",
+      "excerpt": "우리 그림책 명장면 50+ (83) 모모모모모조금은 여유로운 도서관 어린이 자료실의 오전. 특수학교와 특수학급 아이들을 만나는 시간이다. 오늘은 ‘모모모모모’를 함께 읽었다. “선생님, 저 글씨 읽을 줄 알아요.” 아이는 반복되는 글자를 또박또박 읽어 내려갔...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269742.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0724/17848474269694_20260723504037.webp"
+    },
+    {
+      "id": "hani-1269741",
+      "title": "우주의 낮밤을 담은 발아래 ‘조수 웅덩이’로부터 [.txt]",
+      "excerpt": "행복하게도 제주를 더 신비롭게 여행하는 방법 몇가지를 배웠다. 그중 하나는 ‘아래로’ 여행하기. 성산 일출봉을 예로 들겠다. 성산 일출봉에 오른 다음 그냥 가버리지 말고 일출봉 ‘아래로’ 해안가로 내려가서 발아래를 보면 뭐가 보일까? 바닷물이 고인 작은 물웅덩이들이 보...",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269741.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/300/180/imgdb/child/2026/0724/53_17848485922672_20260723504021.webp"
+    },
+    {
+      "id": "hani-1269740",
+      "title": "인간도 ‘나침반 감각’ 있다고? [.txt]",
+      "excerpt": "“시각을 넓혀보자면, 인간에게 자기장 감각이 없을 가능성이 오히려 믿기 어려운 이야기가 됩니다.”(395쪽)놀라운 얘기다. 인간에게 있다는 시각·청각·후각·미각·촉각의 다섯가지 감각이 지금으로부터 2000년도 더 된 기원전 350년께 아리스토텔레스가 정립한 개념이라니....",
+      "link": "https://www.hani.co.kr/arti/culture/book/1269740.html",
+      "source": "한겨레",
+      "sourceKey": "hani",
+      "imageUrl": "https://flexible.img.hani.co.kr/flexible/normal/182/109/imgdb/child/2026/0724/53_17848487449475_20260723504041.webp"
+    },
+    {
+      "id": "gnews-0",
+      "title": "주례사 비평 대신 ‘뾰족한 서평’… 책과 사람 잇는 공론장 한발 더 [.txt] - 한겨레",
+      "excerpt": "주례사 비평 대신 ‘뾰족한 서평’… 책과 사람 잇는 공론장 한발 더 [.txt]&nbsp;&nbsp;한겨레",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9CTUFhQ3lwVmxYM0xmYlRqQUVJSHBvYl9GdWRWS3Z5NnYySmxseThtQ0xYQm9kakNNWFRaWEhPRTJVZ3N1eGl1WGtaR3dTUEtfVVlwd0pDemR5dHBsUnpNRUIwMA?oc=5",
+      "source": "한겨레",
+      "sourceKey": "google-news",
+      "publishedAt": "Sat, 21 Feb 2026 08:00:00 GMT"
+    },
+    {
+      "id": "gnews-1",
+      "title": "책 안 읽는 한국서 고급 서평지가 살아남는 법… 서리북 5년 분투기 - 한국일보",
+      "excerpt": "책 안 읽는 한국서 고급 서평지가 살아남는 법… 서리북 5년 분투기&nbsp;&nbsp;한국일보",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBWb0tqMWVFXzg3RS1WM1pnbExFXzBzdm9HZG80OWEtNThlVkJXR3hLS09YQWpaS2xrTnlna3I0QnRzc3lrREx6MFVsSUV5di11R3Q3ay1JeGZSel81TXhnZUhZZ3pLOWVkeGtyc3pn0gFzQVVfeXFMTV9KQi1hWEs1eXZlcXBwVDhHSjF3VTYtZVRFdUt0OVRFZU9ma2hvNTRtLWNpVGRwUlRUT0JIdXlpNDVianNaSmp4NkVqaGNfNTBFUHQwTjV2VUx1aldLM0w2dUFfbHN5Z1g4dklwcExMdmV4dw?oc=5",
+      "source": "한국일보",
+      "sourceKey": "google-news",
+      "publishedAt": "Sun, 18 Jan 2026 08:00:00 GMT"
+    },
+    {
+      "id": "gnews-2",
+      "title": "2025년 최고 '서평' 읽기-책을 '읽는 일'에서, 책을 '읽는 사람'으로 - d-art.co.kr",
+      "excerpt": "2025년 최고 '서평' 읽기-책을 '읽는 일'에서, 책을 '읽는 사람'으로&nbsp;&nbsp;d-art.co.kr",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBNcVpNUUlBYV9vSHZRbkJmbEw1RFcwNnZiZnZiRFI2dUhzanh0cm5HRnJTQjYxX3BKOHItOTRTNVB4RlBpd2ZPempvQVdaYnctVG1VUk53VjRiYmxlNW55MS1DRmlJaEU?oc=5",
+      "source": "d-art.co.kr",
+      "sourceKey": "google-news",
+      "publishedAt": "Sat, 27 Dec 2025 08:00:00 GMT"
+    },
+    {
+      "id": "gnews-3",
+      "title": "리뷰, 서평, 독서 감상문의 차이 - 브런치",
+      "excerpt": "리뷰, 서평, 독서 감상문의 차이&nbsp;&nbsp;브런치",
+      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5RZ09oZkMzSVJENk9iVWh2dTU5VHNEeV93SGdzVS1kQTIzWjRqQkdEdlg2MWh2ck9rbi1wRU43Y3RmejREZ0lhZw?oc=5",
+      "source": "브런치",
+      "sourceKey": "google-news",
+      "publishedAt": "Fri, 26 Dec 2025 08:00:00 GMT"
+    },
+    {
+      "id": "gnews-4",
+      "title": "[Opinion] 서평하는 사람들. [도서] - 아트인사이트",
+      "excerpt": "[Opinion] 서평하는 사람들. [도서]&nbsp;&nbsp;아트인사이트",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBFVVVxNVJRS3U1UHZFSmFjMVhjY0ZNdS0zRzF2SFNzWW9GT1FPdzgxa0ZmdjBYZnNyVWZpYkJzUnZkdDMxamNVVUhmb2s5emNqZ19FVVM5MVBtb09HaU9xZA?oc=5",
+      "source": "아트인사이트",
+      "sourceKey": "google-news",
+      "publishedAt": "Tue, 13 Apr 2021 07:00:00 GMT"
+    },
+    {
+      "id": "gnews-5",
+      "title": "[신간 리뷰] 박미정 수필가, 네 번째 수필집 ‘길 위의 여자’ 출간… 조용한 위로와 사유의 미학 - OMATE 시니어",
+      "excerpt": "[신간 리뷰] 박미정 수필가, 네 번째 수필집 ‘길 위의 여자’ 출간… 조용한 위로와 사유의 미학&nbsp;&nbsp;OMATE 시니어",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9VSFotZDBmRU12ZTRpZ0JnU08zMEYtVFEtMGpSMWN0bnJGVTFmN2otMUpfQURUX0lqN2N4OWRoa3dmcEZ3UC1JMl95NmRZWEhkZzdyNFRKM2hkeWNNZXp4Nmt5VGc?oc=5",
+      "source": "OMATE 시니어",
+      "sourceKey": "google-news",
+      "publishedAt": "Mon, 19 Jan 2026 08:00:00 GMT"
+    },
+    {
+      "id": "gnews-6",
+      "title": "“3년간 156편 서평… ‘책은 죽지 않았다’ 증명” - 문화일보",
+      "excerpt": "“3년간 156편 서평… ‘책은 죽지 않았다’ 증명”&nbsp;&nbsp;문화일보",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE81YWZiR2I1NEFQX1lEV0lIZXktWVRfUWhlcFFsRlBtcU5WTUk0X01CYUZMd2tjRXFpV09NUHZvYXo0SVZHN05FN04wWVNodENl?oc=5",
+      "source": "문화일보",
+      "sourceKey": "google-news",
+      "publishedAt": "Tue, 19 Mar 2024 07:00:00 GMT"
+    },
+    {
+      "id": "gnews-7",
+      "title": "볼만한 책 8권…\"질곡의 현대사를 사진으로 기록한 이들\" - 한국경제",
+      "excerpt": "볼만한 책 8권…\"질곡의 현대사를 사진으로 기록한 이들\"&nbsp;&nbsp;한국경제",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5ZU2lUdmNRZEdnakRaVk0wemlmZWxtUHVPXzdqZEIzV0JaZ0NqcjFzV0k3UTBCY1VwTU5NbmVPdDcwcnM4Ml85RHZrYkI5ZmVmcVQzcTdKa182UQ?oc=5",
+      "source": "한국경제",
+      "sourceKey": "google-news",
+      "publishedAt": "Tue, 03 Dec 2024 08:00:00 GMT"
+    }
+  ]
 }

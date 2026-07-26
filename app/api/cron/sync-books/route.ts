@@ -4,11 +4,12 @@ import { syncBookCatalog } from "@/lib/books/cache";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+/** Allow enough time for multi-site HTML crawls. */
+export const maxDuration = 60;
 
 function authorize(request: Request): boolean {
   const secret = process.env.CRON_SECRET;
   if (!secret) {
-    // Allow local sync without secret; require secret in production.
     return process.env.NODE_ENV !== "production";
   }
 
@@ -33,12 +34,17 @@ async function handleSync(request: Request) {
     return NextResponse.json({
       ok: true,
       updatedAt: catalog.updatedAt,
-      counts: Object.fromEntries(
-        Object.entries(catalog.sections).map(([key, books]) => [
-          key,
-          books.length,
-        ]),
-      ),
+      updatedAtKst: catalog.updatedAtKst,
+      schedule: "매일 09:00 Asia/Seoul (Cron UTC 00:00)",
+      counts: {
+        ...Object.fromEntries(
+          Object.entries(catalog.sections).map(([key, books]) => [
+            key,
+            books.length,
+          ]),
+        ),
+        bookNews: catalog.bookNews.length,
+      },
     });
   } catch (error) {
     console.error("sync-books failed", error);
