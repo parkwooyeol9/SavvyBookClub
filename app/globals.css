@@ -96,6 +96,17 @@ img {
   color: var(--olive);
 }
 
+.home-kmap__eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--olive);
+}
+
+.home-kmap .kmap {
+  margin-top: 1.15rem;
+}
+
 .site-footer {
   margin-top: auto;
   border-top: 1px solid var(--line);

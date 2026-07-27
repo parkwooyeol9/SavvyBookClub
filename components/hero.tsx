@@ -10,11 +10,11 @@ export function Hero() {
           데이터에 기반한 경제, 경영 추천 도서 분석
         </h1>
         <div className="hero__actions">
-          <Link href="#my-reviews" className="btn btn--primary">
-            내 서평 보기
+          <Link href="#knowledge-map" className="btn btn--primary">
+            지식 지도
           </Link>
-          <Link href="#bestsellers" className="btn btn--ghost">
-            오늘의 베스트
+          <Link href="#my-reviews" className="btn btn--ghost">
+            내 서평 보기
           </Link>
         </div>
       </div>
