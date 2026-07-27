@@ -38,7 +38,7 @@ export default async function HomePage() {
         <Reveal>
           <NewsRail
             title="오늘의 신간·서평 뉴스"
-            subtitle="한겨레·조선일보 책 섹션과 Google 뉴스에서 공개된 서평·신간 논평을 모았습니다."
+            subtitle="네이버·구글 뉴스 등 여러 언론사의 신간·서평을 모았습니다. 같은 출처는 최대 3건까지."
             items={catalog.bookNews}
           />
         </Reveal>
@@ -46,7 +46,6 @@ export default async function HomePage() {
         <Reveal>
           <BookRail
             title="알라딘 국내 베스트"
-            subtitle="알라딘 베스트셀러 페이지를 매일 아침 크롤링합니다."
             books={catalog.sections.domesticBestsellers}
           />
         </Reveal>
@@ -54,7 +53,6 @@ export default async function HomePage() {
         <Reveal>
           <BookRail
             title="Yes24 국내 베스트"
-            subtitle="Yes24 종합 베스트셀러 HTML을 수집합니다."
             books={catalog.sections.yes24Bestsellers}
           />
         </Reveal>
@@ -62,7 +60,6 @@ export default async function HomePage() {
         <Reveal>
           <BookRail
             title="주목할 신간"
-            subtitle="알라딘 주목 신간(실패 시 Yes24 신상품) 목록입니다."
             books={catalog.sections.newReleases}
           />
         </Reveal>
@@ -70,7 +67,6 @@ export default async function HomePage() {
         <Reveal>
           <BookRail
             title="외국도서 베스트"
-            subtitle="Yes24 외국도서 베스트셀러입니다."
             books={catalog.sections.foreignBestsellers}
           />
         </Reveal>
@@ -78,7 +74,6 @@ export default async function HomePage() {
         <Reveal>
           <BookRail
             title="영문 트렌딩"
-            subtitle="Open Library 일간 트렌딩 페이지를 크롤링합니다."
             books={catalog.sections.englishBestsellers}
           />
         </Reveal>

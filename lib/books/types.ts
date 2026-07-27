@@ -21,7 +21,12 @@ export interface Book {
   isbn?: string;
 }
 
-export type NewsSourceKey = "hani" | "chosun" | "google-news" | "seed";
+export type NewsSourceKey =
+  | "hani"
+  | "chosun"
+  | "google-news"
+  | "naver"
+  | "seed";
 
 export interface BookNewsItem {
   id: string;

@@ -51,14 +51,14 @@ export function BookRail({
   books,
 }: {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   books: Book[];
 }) {
   return (
     <section className="book-rail">
       <div className="book-rail__heading">
         <h2>{title}</h2>
-        <p>{subtitle}</p>
+        {subtitle ? <p>{subtitle}</p> : null}
       </div>
       <div className="book-rail__track">
         {books.map((book) => (
