@@ -39,6 +39,7 @@ curl -X POST "http://localhost:3000/api/cron/sync-books"
 2. `CRON_SECRET` 설정
 3. Cron이 매일 09:00 KST에 `/api/cron/sync-books` 실행
 
-## 서평
+## 서평 데이터
 
-`content/reviews/*.md` 에 frontmatter + 본문을 추가하세요. 블로그 연동은 추후 지원 예정입니다.
+개인 서평은 [brunch.co.kr/@econbook](https://brunch.co.kr/@econbook) API/RSS를 매일 동기화합니다.
+표지 이미지·별점·한줄평·요약을 가져와 `/reviews`와 홈 피처 섹션에 표시합니다.

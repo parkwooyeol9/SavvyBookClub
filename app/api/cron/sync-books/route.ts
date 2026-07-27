@@ -1,6 +1,7 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import { syncBookCatalog } from "@/lib/books/cache";
+import { syncBrunchReviews } from "@/lib/reviews";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -28,9 +29,14 @@ async function handleSync(request: Request) {
   }
 
   try {
-    const catalog = await syncBookCatalog();
+    const [catalog, brunchReviews] = await Promise.all([
+      syncBookCatalog(),
+      syncBrunchReviews(),
+    ]);
     revalidateTag("books", "max");
+    revalidateTag("brunch", "max");
     revalidatePath("/");
+    revalidatePath("/reviews");
     return NextResponse.json({
       ok: true,
       updatedAt: catalog.updatedAt,
@@ -44,6 +50,7 @@ async function handleSync(request: Request) {
           ]),
         ),
         bookNews: catalog.bookNews.length,
+        brunchReviews: brunchReviews.length,
       },
     });
   } catch (error) {

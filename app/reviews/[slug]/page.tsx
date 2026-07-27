@@ -8,9 +8,16 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const revalidate = 86400;
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
-  const slugs = await getReviewSlugs();
-  return slugs.map((slug) => ({ slug }));
+  try {
+    const slugs = await getReviewSlugs();
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -27,6 +34,8 @@ export default async function ReviewDetailPage({ params }: Props) {
   const { slug } = await params;
   const review = await getReviewBySlug(slug);
   if (!review) notFound();
+
+  const externalUrl = review.brunchUrl || review.purchaseUrl;
 
   return (
     <div className="page-shell">
@@ -49,23 +58,27 @@ export default async function ReviewDetailPage({ params }: Props) {
           <p className="catalog-meta">
             {review.year} · {review.language === "en" ? "English" : "한국어"}
             {review.isOriginalEnglish ? " · 원서" : ""}
+            {review.source === "brunch" ? " · 브런치" : ""}
+            {typeof review.rating === "number"
+              ? ` · ★ ${review.rating.toFixed(1)}`
+              : ""}
           </p>
           <h1 className="page-title">{review.title}</h1>
           <p className="page-lede">{review.author}</p>
           <p className="review-detail__why">
-            <strong>왜 읽나요. </strong>
+            <strong>한줄평. </strong>
             {review.whyRead}
           </p>
           <div className="review-detail__body">{review.body}</div>
-          {review.purchaseUrl ? (
+          {externalUrl ? (
             <p style={{ marginTop: "1.75rem" }}>
               <a
-                href={review.purchaseUrl}
+                href={externalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn--primary"
               >
-                책 보러 가기
+                {review.source === "brunch" ? "브런치 원문 읽기" : "책 보러 가기"}
               </a>
             </p>
           ) : null}

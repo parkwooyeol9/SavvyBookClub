@@ -1,14 +1,19 @@
 import { BookRail } from "@/components/book-rail";
+import { FeaturedReviews } from "@/components/featured-reviews";
 import { Hero } from "@/components/hero";
 import { NewsRail } from "@/components/news-rail";
 import { Reveal } from "@/components/reveal";
 import { getBookCatalog } from "@/lib/books/cache";
+import { getFeaturedReviews } from "@/lib/reviews";
 
 /** Daily ISR; Cron at 09:00 KST also revalidates. */
 export const revalidate = 86400;
 
 export default async function HomePage() {
-  const catalog = await getBookCatalog();
+  const [catalog, featured] = await Promise.all([
+    getBookCatalog(),
+    getFeaturedReviews(8),
+  ]);
 
   return (
     <>
@@ -16,8 +21,19 @@ export default async function HomePage() {
       <div id="bestsellers" className="page-shell section-stack">
         <p className="catalog-meta">
           목록 갱신 (한국시간): {catalog.updatedAtKst} · 매일 오전 9시 자동
-          업데이트
+          업데이트 · 서평 원문{" "}
+          <a
+            href="https://brunch.co.kr/@econbook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            brunch.co.kr/@econbook
+          </a>
         </p>
+
+        <Reveal>
+          <FeaturedReviews reviews={featured} />
+        </Reveal>
 
         <Reveal>
           <NewsRail

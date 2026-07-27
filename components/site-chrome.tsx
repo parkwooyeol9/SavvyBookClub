@@ -31,7 +31,14 @@ export function SiteFooter() {
       <div className="site-footer__inner">
         <p className="site-footer__brand">SavvyBookClub</p>
         <p className="site-footer__note">
-          국내서와 영문 원서를 함께 읽고, 고르는 북클럽.
+          경제·경영 서평 원문:{" "}
+          <a
+            href="https://brunch.co.kr/@econbook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            brunch.co.kr/@econbook
+          </a>
         </p>
       </div>
     </footer>

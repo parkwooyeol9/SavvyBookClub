@@ -50,6 +50,8 @@ export interface BookCatalog {
 
 export type ReviewLanguage = "ko" | "en";
 
+export type ReviewSource = "local" | "brunch";
+
 export interface Review {
   slug: string;
   title: string;
@@ -62,5 +64,8 @@ export interface Review {
   whyRead: string;
   body: string;
   purchaseUrl?: string;
+  brunchUrl?: string;
+  rating?: number;
   tags: string[];
+  source?: ReviewSource;
 }

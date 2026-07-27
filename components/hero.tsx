@@ -6,16 +6,17 @@ export function Hero() {
       <div className="hero__backdrop" aria-hidden />
       <div className="hero__content">
         <p className="hero__brand">SavvyBookClub</p>
-        <h1 className="hero__headline">다음에 읽을 책을, 더 분명하게.</h1>
+        <h1 className="hero__headline">경제·경영 책을, 데이터로 고르다.</h1>
         <p className="hero__lede">
-          국내 베스트와 영문 원서 추천을 한곳에서. 읽는 사람을 위한 큐레이션.
+          브런치 @econbook 서평과 국내·해외 베스트를 한곳에서. 다음에 읽을 책을 더
+          분명하게.
         </p>
         <div className="hero__actions">
-          <Link href="#bestsellers" className="btn btn--primary">
-            이번 주 베스트 보기
+          <Link href="#my-reviews" className="btn btn--primary">
+            내 서평 보기
           </Link>
-          <Link href="/reviews" className="btn btn--ghost">
-            개인 서평 읽기
+          <Link href="#bestsellers" className="btn btn--ghost">
+            오늘의 베스트
           </Link>
         </div>
       </div>
