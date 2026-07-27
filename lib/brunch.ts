@@ -49,14 +49,12 @@ function pickCover(images: BrunchImage[] | undefined): string {
   return toHttps(best.url);
 }
 
-function slugify(no: number, title: string): string {
-  const base = title
-    .toLowerCase()
-    .replace(/[^a-z0-9가-힣]+/gi, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 48);
-  return `brunch-${no}${base ? `-${base}` : ""}`;
+function slugify(no: number): string {
+  return `brunch-${no}`;
+}
+
+function brunchArticleUrl(no: number): string {
+  return `https://brunch.co.kr/@${PROFILE}/${no}`;
 }
 
 function detectLanguage(title: string, summary: string): Review["language"] {
@@ -119,7 +117,7 @@ export function mapBrunchArticle(article: BrunchArticle): Review {
   const displayTitle = subTitle ? `${title} — ${subTitle}` : title;
 
   return {
-    slug: slugify(article.no, title),
+    slug: slugify(article.no),
     title: displayTitle,
     author: extractAuthor(article.title ?? "", subTitle, summary),
     year,
@@ -133,8 +131,8 @@ export function mapBrunchArticle(article: BrunchArticle): Review {
       "",
       "원문 서평은 브런치에서 이어 읽을 수 있습니다.",
     ].join("\n"),
-    purchaseUrl: `https://brunch.co.kr/@@guQj/${article.no}`,
-    brunchUrl: `https://brunch.co.kr/@@guQj/${article.no}`,
+    purchaseUrl: brunchArticleUrl(article.no),
+    brunchUrl: brunchArticleUrl(article.no),
     rating: extractRating(summary),
     tags: ["brunch", "econbook", article.magazineTitle ?? "경제서 비평"].filter(
       Boolean,

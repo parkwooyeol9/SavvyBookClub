@@ -140,7 +140,16 @@ export async function getAllReviews(): Promise<Review[]> {
 
 export async function getReviewBySlug(slug: string): Promise<Review | null> {
   const all = await getAllReviews();
-  return all.find((review) => review.slug === slug) ?? null;
+  const exact = all.find((review) => review.slug === slug);
+  if (exact) return exact;
+
+  // Backward-compatible: brunch-36-... → brunch-36
+  const brunchNo = slug.match(/^brunch-(\d+)/);
+  if (brunchNo) {
+    return all.find((review) => review.slug === `brunch-${brunchNo[1]}`) ?? null;
+  }
+
+  return null;
 }
 
 export async function getReviewSlugs(): Promise<string[]> {

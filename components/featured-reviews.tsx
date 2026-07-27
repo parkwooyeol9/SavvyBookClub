@@ -1,6 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Review } from "@/lib/books/types";
+import { getReviewHref, isExternalReviewHref } from "@/lib/review-links";
+
+function ReviewLink({
+  review,
+  className,
+  children,
+}: {
+  review: Review;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const href = getReviewHref(review);
+  const external = isExternalReviewHref(review);
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        className={className}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
 
 export function FeaturedReviews({ reviews }: { reviews: Review[] }) {
   return (
@@ -8,15 +41,15 @@ export function FeaturedReviews({ reviews }: { reviews: Review[] }) {
       <div className="book-rail__heading">
         <h2>브런치 서평 · 경제·경영·과학</h2>
         <p>
-          brunch.co.kr/@econbook 에 올린 도서 이미지와 서평을 바탕으로 골랐습니다.
-          별점과 한줄평은 원문을 따릅니다.
+          brunch.co.kr/@econbook 원문으로 바로 연결됩니다. 표지·별점·한줄평은 브런치
+          글을 따릅니다.
         </p>
       </div>
       <div className="featured-grid">
         {reviews.map((review) => (
-          <Link
+          <ReviewLink
             key={review.slug}
-            href={`/reviews/${review.slug}`}
+            review={review}
             className="featured-card"
           >
             <div className="featured-card__cover">
@@ -30,7 +63,9 @@ export function FeaturedReviews({ reviews }: { reviews: Review[] }) {
                   unoptimized
                 />
               ) : (
-                <div className="book-cover__placeholder">{review.title.slice(0, 1)}</div>
+                <div className="book-cover__placeholder">
+                  {review.title.slice(0, 1)}
+                </div>
               )}
             </div>
             <div className="featured-card__body">
@@ -39,12 +74,12 @@ export function FeaturedReviews({ reviews }: { reviews: Review[] }) {
                 {typeof review.rating === "number" ? (
                   <span>★ {review.rating.toFixed(1)}</span>
                 ) : null}
-                {review.source === "brunch" ? <span>브런치</span> : null}
+                {review.source === "brunch" ? <span>브런치 ↗</span> : null}
               </div>
               <h3 className="featured-card__title">{review.title}</h3>
               <p className="featured-card__why">{review.whyRead}</p>
             </div>
-          </Link>
+          </ReviewLink>
         ))}
       </div>
       <p className="featured-more">
