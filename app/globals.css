@@ -693,31 +693,37 @@ img {
 
 .kmap__orbit {
   position: relative;
-  min-height: 420px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  min-height: 280px;
+  max-height: 520px;
   border: 1px solid var(--line);
   background:
     radial-gradient(circle at 50% 48%, rgba(122, 143, 99, 0.22), transparent 28%),
     radial-gradient(circle at 20% 20%, rgba(138, 106, 75, 0.12), transparent 40%),
     linear-gradient(165deg, #1a2a3f 0%, #0f1c2e 55%, #162536 100%);
   overflow: hidden;
-  animation: kmap-fade 700ms ease both;
+  /* Avoid opacity animations here — nested under .reveal they stay blank on iOS. */
+  opacity: 1;
+  isolation: isolate;
 }
 
 .kmap__orbit::before {
   content: "";
   position: absolute;
-  inset: 12%;
+  inset: 14%;
   border: 1px dashed rgba(243, 238, 228, 0.18);
   border-radius: 50%;
-  animation: kmap-spin 48s linear infinite;
+  pointer-events: none;
 }
 
 .kmap__orbit::after {
   content: "";
   position: absolute;
-  inset: 24%;
+  inset: 26%;
   border: 1px solid rgba(243, 238, 228, 0.1);
   border-radius: 50%;
+  pointer-events: none;
 }
 
 .kmap__lines {
@@ -726,11 +732,12 @@ img {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 1;
 }
 
 .kmap__line {
-  stroke: rgba(232, 226, 214, 0.28);
-  stroke-width: 0.35;
+  stroke: rgba(232, 226, 214, 0.35);
+  stroke-width: 0.4;
 }
 
 .kmap__core {
@@ -738,8 +745,8 @@ img {
   left: 50%;
   top: 50%;
   z-index: 2;
-  width: 8.5rem;
-  height: 8.5rem;
+  width: clamp(5.5rem, 28%, 8.5rem);
+  height: clamp(5.5rem, 28%, 8.5rem);
   transform: translate(-50%, -50%);
   display: grid;
   place-content: center;
@@ -749,21 +756,21 @@ img {
     radial-gradient(circle at 30% 25%, rgba(243, 238, 228, 0.2), transparent 55%),
     linear-gradient(160deg, #5c6b4a, #3f4b34);
   color: #f3eee4;
-  box-shadow: 0 0 0 10px rgba(92, 107, 74, 0.18);
-  animation: kmap-pulse 3.6s ease-in-out infinite;
+  box-shadow: 0 0 0 8px rgba(92, 107, 74, 0.18);
+  opacity: 1;
 }
 
 .kmap__core p {
   margin: 0;
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   letter-spacing: 0.14em;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .kmap__core strong {
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
   font-family: var(--font-literata), Georgia, serif;
-  font-size: 1.05rem;
+  font-size: clamp(0.85rem, 3.4vw, 1.05rem);
   font-weight: 600;
 }
 
@@ -771,15 +778,17 @@ img {
   position: absolute;
   z-index: 3;
   transform: translate(-50%, -50%);
-  padding: 0.45rem 0.7rem;
-  border: 1px solid rgba(243, 238, 228, 0.28);
-  background: rgba(15, 28, 46, 0.72);
+  padding: 0.4rem 0.65rem;
+  border: 1px solid rgba(243, 238, 228, 0.35);
+  background: rgba(15, 28, 46, 0.88);
   color: #f3eee4;
   font-size: 0.78rem;
   letter-spacing: -0.01em;
-  backdrop-filter: blur(6px);
   white-space: nowrap;
-  animation: kmap-node 700ms ease both;
+  opacity: 1;
+  max-width: 42%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .kmap__panel {
@@ -787,7 +796,7 @@ img {
   background:
     linear-gradient(165deg, rgba(255, 252, 246, 0.95), rgba(232, 226, 214, 0.82));
   padding: 1.5rem 1.4rem 1.35rem;
-  animation: kmap-fade 700ms ease both;
+  opacity: 1;
 }
 
 .kmap__eyebrow {
@@ -888,44 +897,6 @@ img {
   overflow: hidden;
 }
 
-@keyframes kmap-fade {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes kmap-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 10px rgba(92, 107, 74, 0.18);
-  }
-  50% {
-    box-shadow: 0 0 0 16px rgba(122, 143, 99, 0.12);
-  }
-}
-
-@keyframes kmap-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes kmap-node {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -42%);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-}
-
 @media (max-width: 900px) {
   .kmap__tabs {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -936,7 +907,11 @@ img {
   }
 
   .kmap__orbit {
-    min-height: 360px;
+    max-height: none;
+    min-height: 0;
+    /* Keep square graph readable on phones without collapsing. */
+    width: min(100%, 420px);
+    margin-inline: auto;
   }
 }
 
@@ -959,8 +934,39 @@ img {
   }
 
   .kmap__node {
-    font-size: 0.7rem;
-    padding: 0.35rem 0.5rem;
+    font-size: 0.68rem;
+    padding: 0.32rem 0.48rem;
+    max-width: 46%;
+  }
+
+  .kmap__panel {
+    padding: 1.15rem 1rem 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 901px) {
+  .kmap__orbit::before {
+    animation: kmap-spin 48s linear infinite;
+  }
+
+  .kmap__core {
+    animation: kmap-pulse 3.6s ease-in-out infinite;
+  }
+}
+
+@keyframes kmap-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 8px rgba(92, 107, 74, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(122, 143, 99, 0.12);
+  }
+}
+
+@keyframes kmap-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 

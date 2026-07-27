@@ -21,7 +21,8 @@ export function KnowledgeMapExplorer({
     () =>
       domain.concepts.map((concept, index) => {
         const angle = (Math.PI * 2 * index) / domain.concepts.length - Math.PI / 2;
-        const radius = 38;
+        // Keep nodes inside the square so mobile overflow:hidden does not clip them.
+        const radius = 32;
         return {
           ...concept,
           x: 50 + Math.cos(angle) * radius,

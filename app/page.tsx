@@ -39,19 +39,17 @@ export default async function HomePage() {
           <FeaturedReviews reviews={featured} />
         </Reveal>
 
-        <Reveal>
-          <section id="knowledge-map" className="home-kmap">
-            <div className="book-rail__heading">
-              <p className="home-kmap__eyebrow">KNOWLEDGE MAP</p>
-              <h2>지식 지도</h2>
-              <p>
-                지식은 목록이 아니라 구조입니다. 분야를 고르면 핵심 개념과 연결된
-                서평이 함께 펼쳐집니다.
-              </p>
-            </div>
-            <KnowledgeMapExplorer grouped={knowledgeGrouped} />
-          </section>
-        </Reveal>
+        <section id="knowledge-map" className="home-kmap">
+          <div className="book-rail__heading">
+            <p className="home-kmap__eyebrow">KNOWLEDGE MAP</p>
+            <h2>지식 지도</h2>
+            <p>
+              지식은 목록이 아니라 구조입니다. 분야를 고르면 핵심 개념과 연결된
+              서평이 함께 펼쳐집니다.
+            </p>
+          </div>
+          <KnowledgeMapExplorer grouped={knowledgeGrouped} />
+        </section>
 
         <Reveal>
           <NewsRail
