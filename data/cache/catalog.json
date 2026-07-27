@@ -380,206 +380,127 @@
         "rank": 12
       }
     ],
-    "foreignBestsellers": [
-      {
-        "id": "yes24-foreign-1",
-        "title": "(예약도서) Vジャンプ 2026年10月號 (원피스카드없음)",
-        "author": "편집부",
-        "coverUrl": "https://image.yes24.com/goods/194191367/L",
-        "link": "https://www.yes24.com/product/goods/194191367",
-        "source": "yes24",
-        "language": "en",
-        "rank": 1,
-        "publisher": "集英社"
-      },
-      {
-        "id": "yes24-foreign-2",
-        "title": "sweet(スウィ-ト) 2026年8月號",
-        "author": "편집부",
-        "coverUrl": "https://image.yes24.com/goods/191533845/L",
-        "link": "https://www.yes24.com/product/goods/191533845",
-        "source": "yes24",
-        "language": "en",
-        "rank": 2,
-        "publisher": "寶島社"
-      },
-      {
-        "id": "yes24-foreign-3",
-        "title": "Wonder (미국판) : 줄리아 로버츠 주연 영화 '원더' 원작 소설",
-        "author": "R. J. 팔라시오",
-        "coverUrl": "https://image.yes24.com/goods/14121630/L",
-        "link": "https://www.yes24.com/product/goods/14121630",
-        "source": "yes24",
-        "language": "en",
-        "rank": 3,
-        "publisher": "Random House"
-      },
-      {
-        "id": "yes24-foreign-4",
-        "title": "The Wild Robot #1 : The Wild Robot (미국판)",
-        "author": "피터 브라운",
-        "coverUrl": "https://image.yes24.com/goods/43630157/L",
-        "link": "https://www.yes24.com/product/goods/43630157",
-        "source": "yes24",
-        "language": "en",
-        "rank": 4,
-        "publisher": "Little, Brown Books for Young Readers"
-      },
-      {
-        "id": "yes24-foreign-5",
-        "title": "(예약도서) ドラゴンボ-ルス-パ-カ-ドゲ-ム フュ-ジョンワ-ルド 1st COMPLETE CARD COLLECTION",
-        "author": "Vジャンプ編集部",
-        "coverUrl": "https://image.yes24.com/goods/141230409/L",
-        "link": "https://www.yes24.com/product/goods/141230409",
-        "source": "yes24",
-        "language": "en",
-        "rank": 5,
-        "publisher": "集英社"
-      },
-      {
-        "id": "yes24-foreign-6",
-        "title": "Project Hail Mary",
-        "author": "앤디 위어",
-        "coverUrl": "https://image.yes24.com/goods/110969306/L",
-        "link": "https://www.yes24.com/product/goods/110969306",
-        "source": "yes24",
-        "language": "en",
-        "rank": 6,
-        "publisher": "Ballantine Books"
-      },
-      {
-        "id": "yes24-foreign-7",
-        "title": "The Magician's Elephant",
-        "author": "DiCamillo, Kate / Tanaka, Yoko",
-        "coverUrl": "https://image.yes24.com/goods/17307012/L",
-        "link": "https://www.yes24.com/product/goods/17307012",
-        "source": "yes24",
-        "language": "en",
-        "rank": 7,
-        "publisher": "Candlewick Press (MA)"
-      },
-      {
-        "id": "yes24-foreign-8",
-        "title": "The Giver 기억 전달자",
-        "author": "로이스 라우리",
-        "coverUrl": "https://image.yes24.com/goods/13901514/L",
-        "link": "https://www.yes24.com/product/goods/13901514",
-        "source": "yes24",
-        "language": "en",
-        "rank": 8,
-        "publisher": "Houghton Mifflin Harcourt"
-      },
-      {
-        "id": "yes24-foreign-9",
-        "title": "リンネル 2026年8月號",
-        "author": "편집부",
-        "coverUrl": "https://image.yes24.com/goods/189695129/L",
-        "link": "https://www.yes24.com/product/goods/189695129",
-        "source": "yes24",
-        "language": "en",
-        "rank": 9,
-        "publisher": "寶島社"
-      },
-      {
-        "id": "yes24-foreign-10",
-        "title": "Coraline",
-        "author": "닐 게이먼",
-        "coverUrl": "https://image.yes24.com/goods/565734/L",
-        "link": "https://www.yes24.com/product/goods/565734",
-        "source": "yes24",
-        "language": "en",
-        "rank": 10,
-        "publisher": "HarperCollins"
-      },
-      {
-        "id": "yes24-foreign-11",
-        "title": "Poppy",
-        "author": "Avi",
-        "coverUrl": "https://image.yes24.com/goods/564912/L",
-        "link": "https://www.yes24.com/product/goods/564912",
-        "source": "yes24",
-        "language": "en",
-        "rank": 11,
-        "publisher": "HarperCollins"
-      },
-      {
-        "id": "yes24-foreign-12",
-        "title": "Frindle",
-        "author": "앤드루 클레먼츠",
-        "coverUrl": "https://image.yes24.com/goods/436585/L",
-        "link": "https://www.yes24.com/product/goods/436585",
-        "source": "yes24",
-        "language": "en",
-        "rank": 12,
-        "publisher": "Atheneum Books for Young Readers"
-      }
-    ],
+    "foreignBestsellers": [],
     "englishBestsellers": [
       {
-        "id": "seed-nyt-1",
-        "title": "The Women",
-        "author": "Kristin Hannah",
-        "coverUrl": "https://covers.openlibrary.org/b/isbn/9781250178633-L.jpg",
-        "link": "https://openlibrary.org/trending/daily",
-        "source": "seed",
+        "id": "ol-OL17930368W",
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "coverUrl": "https://covers.openlibrary.org/b/id/12539702-L.jpg",
+        "link": "https://openlibrary.org/works/OL17930368W",
+        "source": "openlibrary",
         "language": "en",
-        "rank": 1,
-        "publisher": "St. Martin's Press"
+        "rank": 1
       },
       {
-        "id": "seed-nyt-2",
-        "title": "Iron Flame",
-        "author": "Rebecca Yarros",
-        "coverUrl": "https://covers.openlibrary.org/b/isbn/9781649374172-L.jpg",
-        "link": "https://openlibrary.org/trending/daily",
-        "source": "seed",
+        "id": "ol-OL1968368W",
+        "title": "The 48 Laws of Power",
+        "author": "Robert Greene",
+        "coverUrl": "https://covers.openlibrary.org/b/id/6424160-L.jpg",
+        "link": "https://openlibrary.org/works/OL1968368W",
+        "source": "openlibrary",
         "language": "en",
-        "rank": 2,
-        "publisher": "Red Tower Books"
+        "rank": 2
       },
       {
-        "id": "seed-nyt-3",
-        "title": "Funny Story",
-        "author": "Emily Henry",
-        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593441282-L.jpg",
-        "link": "https://openlibrary.org/trending/daily",
-        "source": "seed",
+        "id": "ol-OL2010879W",
+        "title": "Rich Dad, Poor Dad",
+        "author": "Robert T. Kiyosaki",
+        "coverUrl": "https://covers.openlibrary.org/b/id/8315603-L.jpg",
+        "link": "https://openlibrary.org/works/OL2010879W",
+        "source": "openlibrary",
         "language": "en",
-        "rank": 3,
-        "publisher": "Berkley"
+        "rank": 3
       },
       {
-        "id": "seed-nyt-4",
-        "title": "James",
-        "author": "Percival Everett",
-        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780385550369-L.jpg",
-        "link": "https://openlibrary.org/trending/daily",
-        "source": "seed",
+        "id": "ol-OL527464W",
+        "title": "Think and Grow Rich",
+        "author": "Napoleon Hill",
+        "coverUrl": "https://covers.openlibrary.org/b/id/14542536-L.jpg",
+        "link": "https://openlibrary.org/works/OL527464W",
+        "source": "openlibrary",
         "language": "en",
-        "rank": 4,
-        "publisher": "Doubleday"
+        "rank": 4
       },
       {
-        "id": "seed-nyt-5",
-        "title": "The Heaven & Earth Grocery Store",
-        "author": "James McBride",
-        "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593422946-L.jpg",
-        "link": "https://openlibrary.org/trending/daily",
-        "source": "seed",
+        "id": "ol-OL21640039W",
+        "title": "The Psychology of Money",
+        "author": "Morgan Housel",
+        "coverUrl": "https://covers.openlibrary.org/b/id/10389354-L.jpg",
+        "link": "https://openlibrary.org/works/OL21640039W",
+        "source": "openlibrary",
         "language": "en",
-        "rank": 5,
-        "publisher": "Riverhead"
+        "rank": 5
       },
       {
-        "id": "seed-nyt-6",
-        "title": "Fourth Wing",
-        "author": "Rebecca Yarros",
-        "coverUrl": "https://covers.openlibrary.org/b/isbn/9781649374042-L.jpg",
-        "link": "https://openlibrary.org/trending/daily",
-        "source": "seed",
+        "id": "ol-OL2629977W",
+        "title": "The 7 Habits of Highly Effective People",
+        "author": "Stephen R. Covey",
+        "coverUrl": "https://covers.openlibrary.org/b/id/10079937-L.jpg",
+        "link": "https://openlibrary.org/works/OL2629977W",
+        "source": "openlibrary",
         "language": "en",
-        "rank": 6,
-        "publisher": "Red Tower Books"
+        "rank": 6
+      },
+      {
+        "id": "ol-OL17075811W",
+        "title": "Sapiens",
+        "author": "Yuval Noah Harari",
+        "coverUrl": "https://covers.openlibrary.org/b/id/8634250-L.jpg",
+        "link": "https://openlibrary.org/works/OL17075811W",
+        "source": "openlibrary",
+        "language": "en",
+        "rank": 7
+      },
+      {
+        "id": "ol-OL15992072W",
+        "title": "Thinking, fast and slow",
+        "author": "Daniel Kahneman",
+        "coverUrl": "https://covers.openlibrary.org/b/id/13290711-L.jpg",
+        "link": "https://openlibrary.org/works/OL15992072W",
+        "source": "openlibrary",
+        "language": "en",
+        "rank": 8
+      },
+      {
+        "id": "ol-OL273184W",
+        "title": "The Intelligent Investor",
+        "author": "Benjamin Graham",
+        "coverUrl": "https://covers.openlibrary.org/b/id/36434-L.jpg",
+        "link": "https://openlibrary.org/works/OL273184W",
+        "source": "openlibrary",
+        "language": "en",
+        "rank": 9
+      },
+      {
+        "id": "ol-OL17713267W",
+        "title": "Deep Work",
+        "author": "Cal Newport",
+        "coverUrl": "https://covers.openlibrary.org/b/id/7988607-L.jpg",
+        "link": "https://openlibrary.org/works/OL17713267W",
+        "source": "openlibrary",
+        "language": "en",
+        "rank": 10
+      },
+      {
+        "id": "ol-OL8165007W",
+        "title": "The Richest Man in Babylon",
+        "author": "George S. Clason",
+        "coverUrl": "https://covers.openlibrary.org/b/id/10491331-L.jpg",
+        "link": "https://openlibrary.org/works/OL8165007W",
+        "source": "openlibrary",
+        "language": "en",
+        "rank": 11
+      },
+      {
+        "id": "ol-OL17078706W",
+        "title": "Zero to One",
+        "author": "Peter A. Thiel",
+        "coverUrl": "https://covers.openlibrary.org/b/id/9002334-L.jpg",
+        "link": "https://openlibrary.org/works/OL17078706W",
+        "source": "openlibrary",
+        "language": "en",
+        "rank": 12
       }
     ]
   },
