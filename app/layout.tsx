@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s · SavvyBookClub",
   },
   description:
-    "국내 베스트와 영문 원서 추천을 한곳에서. 읽는 사람을 위한 도서 큐레이션.",
+    "데이터에 기반한 경제, 경영 추천 도서 분석. 브런치 @econbook 서평과 국내·해외 베스트.",
 };
 
 export default function RootLayout({

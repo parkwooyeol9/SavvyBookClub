@@ -31,10 +31,13 @@ export default function AboutPage() {
         <p>
           메인 베스트·뉴스 목록은 API 키 없이 공개 웹페이지를 매일 아침{" "}
           <strong>한국시간 오전 9시</strong>에 크롤링해 갱신합니다. 알라딘·Yes24
-          베스트/신간, Open Library 트렌딩, 네이버·구글 뉴스 등 여러 언론 서평을
-          함께 수집합니다. 같은 출처 뉴스는 최대 3건까지입니다.
+          국내 베스트/신간, Open Library의 경제·경영·논픽션 트렌딩, 네이버·구글
+          뉴스 등 여러 언론 서평을 함께 수집합니다. 같은 출처 뉴스는 최대
+          3건까지입니다.
         </p>
         <p>
+          <Link href="/map">지식 지도 보기 →</Link>
+          {" · "}
           <Link href="/reviews">서평 보러 가기 →</Link>
         </p>
       </div>

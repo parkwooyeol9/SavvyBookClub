@@ -6,7 +6,6 @@ import { scrapeBookNews } from "@/lib/books/scrape-news";
 import { scrapeOpenLibraryTrending } from "@/lib/books/scrape-openlibrary";
 import {
   scrapeYes24Bestsellers,
-  scrapeYes24ForeignBestsellers,
   scrapeYes24NewReleases,
 } from "@/lib/books/scrape-yes24";
 import type { Book, BookCatalog, BookNewsItem, CatalogSection } from "@/lib/books/types";
@@ -78,7 +77,6 @@ export async function syncBookCatalog(): Promise<BookCatalog> {
     yes24Best,
     aladinNew,
     yes24New,
-    yes24Foreign,
     openLibrary,
     bookNews,
   ] = await Promise.all([
@@ -86,7 +84,6 @@ export async function syncBookCatalog(): Promise<BookCatalog> {
     scrapeYes24Bestsellers(),
     scrapeAladinNewReleases(),
     scrapeYes24NewReleases(),
-    scrapeYes24ForeignBestsellers(),
     scrapeOpenLibraryTrending(),
     scrapeBookNews(),
   ]);
@@ -108,10 +105,7 @@ export async function syncBookCatalog(): Promise<BookCatalog> {
         aladinNew.length > 0 ? aladinNew : yes24New,
         seedCatalog.sections.newReleases,
       ),
-      foreignBestsellers: withFallback(
-        yes24Foreign,
-        seedCatalog.sections.foreignBestsellers,
-      ),
+      foreignBestsellers: [],
       englishBestsellers: withFallback(
         openLibrary,
         seedCatalog.sections.englishBestsellers,

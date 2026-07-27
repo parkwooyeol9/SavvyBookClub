@@ -38,7 +38,6 @@ export default async function HomePage() {
         <Reveal>
           <NewsRail
             title="오늘의 신간·서평 뉴스"
-            subtitle="네이버·구글 뉴스 등 여러 언론사의 신간·서평을 모았습니다. 같은 출처는 최대 3건까지."
             items={catalog.bookNews}
           />
         </Reveal>
@@ -66,14 +65,7 @@ export default async function HomePage() {
 
         <Reveal>
           <BookRail
-            title="외국도서 베스트"
-            books={catalog.sections.foreignBestsellers}
-          />
-        </Reveal>
-
-        <Reveal>
-          <BookRail
-            title="영문 트렌딩"
+            title="영문 트렌딩 · 경제·경영·논픽션"
             books={catalog.sections.englishBestsellers}
           />
         </Reveal>

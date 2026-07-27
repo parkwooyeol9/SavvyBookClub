@@ -6,11 +6,9 @@ export function Hero() {
       <div className="hero__backdrop" aria-hidden />
       <div className="hero__content">
         <p className="hero__brand">SavvyBookClub</p>
-        <h1 className="hero__headline">경제·경영 책을, 데이터로 고르다.</h1>
-        <p className="hero__lede">
-          브런치 @econbook 서평과 국내·해외 베스트를 한곳에서. 다음에 읽을 책을 더
-          분명하게.
-        </p>
+        <h1 className="hero__headline">
+          데이터에 기반한 경제, 경영 추천 도서 분석
+        </h1>
         <div className="hero__actions">
           <Link href="#my-reviews" className="btn btn--primary">
             내 서평 보기

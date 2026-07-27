@@ -3,6 +3,7 @@ import Link from "next/link";
 const links = [
   { href: "/", label: "홈" },
   { href: "/reviews", label: "서평" },
+  { href: "/map", label: "지식 지도" },
   { href: "/about", label: "소개" },
 ];
 

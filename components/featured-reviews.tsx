@@ -40,10 +40,7 @@ export function FeaturedReviews({ reviews }: { reviews: Review[] }) {
     <section className="featured-reviews" id="my-reviews">
       <div className="book-rail__heading">
         <h2>브런치 서평 · 경제·경영·과학</h2>
-        <p>
-          brunch.co.kr/@econbook 원문으로 바로 연결됩니다. 표지·별점·한줄평은 브런치
-          글을 따릅니다.
-        </p>
+        <p>brunch.co.kr/@econbook 원문으로 바로 연결됩니다.</p>
       </div>
       <div className="featured-grid">
         {reviews.map((review) => (

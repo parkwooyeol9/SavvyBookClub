@@ -49,11 +49,15 @@ export function BookRail({
   title,
   subtitle,
   books,
+  limit = 8,
 }: {
   title: string;
   subtitle?: string;
   books: Book[];
+  limit?: number;
 }) {
+  const visible = books.slice(0, limit);
+
   return (
     <section className="book-rail">
       <div className="book-rail__heading">
@@ -61,7 +65,7 @@ export function BookRail({
         {subtitle ? <p>{subtitle}</p> : null}
       </div>
       <div className="book-rail__track">
-        {books.map((book) => (
+        {visible.map((book) => (
           <BookCover key={book.id} book={book} />
         ))}
       </div>

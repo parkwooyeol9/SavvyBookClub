@@ -17,8 +17,8 @@ export default async function ReviewsPage() {
     <div className="page-shell">
       <h1 className="page-title">서평</h1>
       <p className="page-lede">
-        brunch.co.kr/@econbook 의 도서 이미지·서평을 기본 데이터로 사용합니다.
-        경제·경영·과학·기술 책을 중심으로, 별점과 한줄평을 함께 모았습니다.
+        brunch.co.kr/@econbook 서평만 모았습니다. 표지·별점·한줄평은 브런치
+        원문을 따릅니다.
       </p>
       <p className="catalog-meta">
         현재 {reviews.length}편 ·{" "}

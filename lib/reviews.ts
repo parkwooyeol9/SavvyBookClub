@@ -1,14 +1,8 @@
+import { fetchBrunchReviews } from "@/lib/brunch";
+import type { Review } from "@/lib/books/types";
 import { promises as fs } from "fs";
 import path from "path";
-import matter from "gray-matter";
-import { fetchBrunchReviews } from "@/lib/brunch";
-import type { Review, ReviewLanguage } from "@/lib/books/types";
 
-const REVIEWS_DIR = path.join(
-  /* turbopackIgnore: true */ process.cwd(),
-  "content",
-  "reviews",
-);
 const BRUNCH_CACHE = path.join(
   /* turbopackIgnore: true */ process.cwd(),
   "data",
@@ -16,49 +10,6 @@ const BRUNCH_CACHE = path.join(
   "brunch-reviews.json",
 );
 const BRUNCH_TMP = path.join("/tmp", "savvy-book-club", "brunch-reviews.json");
-
-interface ReviewFrontmatter {
-  title: string;
-  author: string;
-  year: number;
-  language: ReviewLanguage;
-  isOriginalEnglish?: boolean;
-  coverUrl: string;
-  excerpt: string;
-  whyRead: string;
-  purchaseUrl?: string;
-  tags?: string[];
-}
-
-async function listReviewFiles(): Promise<string[]> {
-  try {
-    const entries = await fs.readdir(REVIEWS_DIR);
-    return entries.filter((name) => name.endsWith(".md")).sort();
-  } catch {
-    return [];
-  }
-}
-
-function parseReview(slug: string, raw: string): Review {
-  const { data, content } = matter(raw);
-  const fm = data as ReviewFrontmatter;
-
-  return {
-    slug,
-    title: fm.title,
-    author: fm.author,
-    year: fm.year,
-    language: fm.language,
-    isOriginalEnglish: Boolean(fm.isOriginalEnglish),
-    coverUrl: fm.coverUrl,
-    excerpt: fm.excerpt,
-    whyRead: fm.whyRead,
-    body: content.trim(),
-    purchaseUrl: fm.purchaseUrl,
-    tags: fm.tags ?? [],
-    source: "local",
-  };
-}
 
 async function readBrunchCache(): Promise<Review[] | null> {
   for (const filePath of [BRUNCH_TMP, BRUNCH_CACHE]) {
@@ -98,17 +49,6 @@ export async function syncBrunchReviews(): Promise<Review[]> {
   return reviews;
 }
 
-export async function getLocalReviews(): Promise<Review[]> {
-  const files = await listReviewFiles();
-  return Promise.all(
-    files.map(async (file) => {
-      const slug = file.replace(/\.md$/, "");
-      const raw = await fs.readFile(path.join(REVIEWS_DIR, file), "utf8");
-      return parseReview(slug, raw);
-    }),
-  );
-}
-
 export async function getBrunchReviews(): Promise<Review[]> {
   const cached = await readBrunchCache();
   if (cached) return cached;
@@ -121,19 +61,10 @@ export async function getBrunchReviews(): Promise<Review[]> {
   }
 }
 
-/** Brunch reviews first, then local samples that are not duplicates by title. */
+/** Brunch @econbook reviews only. */
 export async function getAllReviews(): Promise<Review[]> {
-  const [brunch, local] = await Promise.all([
-    getBrunchReviews(),
-    getLocalReviews(),
-  ]);
-
-  const titles = new Set(brunch.map((r) => r.title.replace(/\s+/g, "")));
-  const extras = local.filter(
-    (r) => !titles.has(r.title.replace(/\s+/g, "")),
-  );
-
-  return [...brunch, ...extras].sort(
+  const brunch = await getBrunchReviews();
+  return [...brunch].sort(
     (a, b) => b.year - a.year || a.title.localeCompare(b.title, "ko"),
   );
 }
