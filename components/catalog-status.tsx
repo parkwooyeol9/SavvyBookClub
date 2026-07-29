@@ -1,12 +1,27 @@
 import type { BookCatalog } from "@/lib/books/types";
+import { pickChartBooks } from "@/lib/books/chart-periods";
 import { isCatalogStale } from "@/lib/books/freshness";
+
+function catalogBookCount(catalog: BookCatalog): number {
+  const charted = [
+    catalog.sections.domesticBestsellers,
+    catalog.sections.yes24Bestsellers,
+    catalog.sections.foreignBestsellers,
+  ];
+  const chartCount = charted.reduce(
+    (sum, section) => sum + pickChartBooks(section, "daily").length,
+    0,
+  );
+  return (
+    chartCount +
+    catalog.sections.newReleases.length +
+    catalog.sections.englishBestsellers.length
+  );
+}
 
 export function CatalogStatus({ catalog }: { catalog: BookCatalog }) {
   const stale = isCatalogStale(catalog.updatedAt);
-  const bookCount = Object.values(catalog.sections).reduce(
-    (sum, books) => sum + books.length,
-    0,
-  );
+  const bookCount = catalogBookCount(catalog);
 
   return (
     <section

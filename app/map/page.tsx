@@ -20,8 +20,8 @@ export default async function KnowledgeMapPage() {
       <p className="map-page__eyebrow">KNOWLEDGE MAP</p>
       <h1 className="page-title">지식 지도</h1>
       <p className="page-lede map-page__lede">
-        지식은 목록이 아니라 구조입니다. 분야를 고르면 핵심 개념과 연결된 서평이
-        함께 펼쳐집니다.
+        4개 분야 카드에서 서평을 한눈에 보고, 분야를 선택하면 연결된 책 목록이
+        아래에 펼쳐집니다.
       </p>
 
       <KnowledgeMapExplorer grouped={grouped} />

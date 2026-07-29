@@ -1,12 +1,30 @@
 import * as cheerio from "cheerio";
 import { absoluteUrl, cleanText, fetchHtml } from "@/lib/books/fetch-html";
+import type { ChartPeriod } from "@/lib/books/chart-periods";
 import type { Book } from "@/lib/books/types";
 
 const YES24_ORIGIN = "https://www.yes24.com";
 
+function yes24BestsellerUrl(
+  categoryNumber: string,
+  period: ChartPeriod,
+): string {
+  if (period === "daily") {
+    return `${YES24_ORIGIN}/Product/Category/daybestseller?categoryNumber=${categoryNumber}`;
+  }
+  if (period === "monthly") {
+    return `${YES24_ORIGIN}/Product/Category/monthbestseller?categoryNumber=${categoryNumber}`;
+  }
+  return `${YES24_ORIGIN}/Product/Category/BestSeller?categoryNumber=${categoryNumber}&pageNumber=1&pageSize=24`;
+}
+
 function parseYes24List(
   html: string,
-  options: { language: Book["language"]; idPrefix: string },
+  options: {
+    language: Book["language"];
+    idPrefix: string;
+    chartPeriod?: ChartPeriod;
+  },
 ): Book[] {
   const $ = cheerio.load(html);
   const books: Book[] = [];
@@ -40,10 +58,10 @@ function parseYes24List(
       language: options.language,
       rank: index + 1,
       publisher: cleanText(root.find(".info_pub a").first().text()),
+      chartPeriod: options.chartPeriod,
     });
   });
 
-  // NewProduct pages may not use #yesBestList
   if (books.length === 0) {
     $("a.gd_name").each((index, el) => {
       if (books.length >= 12) return false;
@@ -66,6 +84,7 @@ function parseYes24List(
         source: "yes24",
         language: options.language,
         rank: index + 1,
+        chartPeriod: options.chartPeriod,
       });
     });
   }
@@ -73,13 +92,21 @@ function parseYes24List(
   return books;
 }
 
-export async function scrapeYes24Bestsellers(): Promise<Book[]> {
-  const html = await fetchHtml(
-    `${YES24_ORIGIN}/Product/Category/BestSeller?categoryNumber=001&pageNumber=1&pageSize=24`,
-    { live: true },
-  );
+export async function scrapeYes24Bestsellers(
+  period: ChartPeriod = "weekly",
+  categoryNumber = "001",
+): Promise<Book[]> {
+  const html = await fetchHtml(yes24BestsellerUrl(categoryNumber, period), {
+    live: true,
+  });
   if (!html) return [];
-  return parseYes24List(html, { language: "ko", idPrefix: "yes24-best" });
+  const prefix =
+    categoryNumber === "002" ? `yes24-foreign-${period}` : `yes24-${period}`;
+  return parseYes24List(html, {
+    language: categoryNumber === "002" ? "en" : "ko",
+    idPrefix: prefix,
+    chartPeriod: period,
+  });
 }
 
 export async function scrapeYes24NewReleases(): Promise<Book[]> {
@@ -91,11 +118,8 @@ export async function scrapeYes24NewReleases(): Promise<Book[]> {
   return parseYes24List(html, { language: "ko", idPrefix: "yes24-new" });
 }
 
-export async function scrapeYes24ForeignBestsellers(): Promise<Book[]> {
-  const html = await fetchHtml(
-    `${YES24_ORIGIN}/Product/Category/BestSeller?categoryNumber=002&pageNumber=1&pageSize=24`,
-    { live: true },
-  );
-  if (!html) return [];
-  return parseYes24List(html, { language: "en", idPrefix: "yes24-foreign" });
+export async function scrapeYes24ForeignBestsellers(
+  period: ChartPeriod = "weekly",
+): Promise<Book[]> {
+  return scrapeYes24Bestsellers(period, "002");
 }

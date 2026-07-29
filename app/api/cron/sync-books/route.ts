@@ -1,12 +1,19 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import { syncBookCatalog } from "@/lib/books/cache";
+import type { ChartedBooks } from "@/lib/books/chart-periods";
+import type { Book } from "@/lib/books/types";
 import { syncBrunchReviews } from "@/lib/reviews";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 /** Allow enough time for multi-site HTML crawls. */
 export const maxDuration = 60;
+
+function sectionCount(books: Book[] | ChartedBooks): number {
+  if (Array.isArray(books)) return books.length;
+  return books.daily.length + books.weekly.length + books.monthly.length;
+}
 
 function authorize(request: Request): boolean {
   const secret = process.env.CRON_SECRET;
@@ -46,7 +53,7 @@ async function handleSync(request: Request) {
         ...Object.fromEntries(
           Object.entries(catalog.sections).map(([key, books]) => [
             key,
-            books.length,
+            sectionCount(books),
           ]),
         ),
         bookNews: catalog.bookNews.length,

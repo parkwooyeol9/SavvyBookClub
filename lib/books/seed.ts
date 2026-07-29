@@ -1,6 +1,11 @@
 import type { BookCatalog } from "@/lib/books/types";
+import { emptyChartedBooks } from "@/lib/books/chart-periods";
 
-/** Fallback catalog when crawl has not run yet. */
+function seedChart(
+  books: BookCatalog["sections"]["newReleases"],
+): BookCatalog["sections"]["domesticBestsellers"] {
+  return { ...emptyChartedBooks(), weekly: books };
+}
 export const seedCatalog: BookCatalog = {
   updatedAt: "2026-07-26T00:00:00.000Z",
   updatedAtKst: "2026. 7. 26. 오전 9:00",
@@ -24,7 +29,7 @@ export const seedCatalog: BookCatalog = {
     },
   ],
   sections: {
-    domesticBestsellers: [
+    domesticBestsellers: seedChart([
       {
         id: "seed-ko-1",
         title: "작별하지 않는다",
@@ -91,7 +96,7 @@ export const seedCatalog: BookCatalog = {
         rank: 6,
         publisher: "나무옆의자",
       },
-    ],
+    ]),
     newReleases: [
       {
         id: "seed-new-1",
@@ -138,8 +143,8 @@ export const seedCatalog: BookCatalog = {
         publisher: "팩토리나인",
       },
     ],
-    foreignBestsellers: [],
-    yes24Bestsellers: [
+    foreignBestsellers: emptyChartedBooks(),
+    yes24Bestsellers: seedChart([
       {
         id: "seed-yes-1",
         title: "역행자",
@@ -180,7 +185,7 @@ export const seedCatalog: BookCatalog = {
         language: "ko",
         rank: 4,
       },
-    ],
+    ]),
     englishBestsellers: [
       {
         id: "seed-en-1",

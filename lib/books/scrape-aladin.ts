@@ -1,12 +1,23 @@
 import * as cheerio from "cheerio";
 import { absoluteUrl, cleanText, fetchHtml } from "@/lib/books/fetch-html";
+import type { ChartPeriod } from "@/lib/books/chart-periods";
 import type { Book } from "@/lib/books/types";
 
 const ALADIN_ORIGIN = "https://www.aladin.co.kr";
 
+const ALADIN_BEST_TYPE: Record<ChartPeriod, string> = {
+  daily: "DailyBest",
+  weekly: "Bestseller",
+  monthly: "MonthlyBest",
+};
+
 function parseAladinBoxes(
   html: string,
-  options: { language: Book["language"]; idPrefix: string },
+  options: {
+    language: Book["language"];
+    idPrefix: string;
+    chartPeriod?: ChartPeriod;
+  },
 ): Book[] {
   const $ = cheerio.load(html);
   const books: Book[] = [];
@@ -40,19 +51,27 @@ function parseAladinBoxes(
       source: "aladin",
       language: options.language,
       rank: index + 1,
+      chartPeriod: options.chartPeriod,
     });
   });
 
   return books;
 }
 
-export async function scrapeAladinBestsellers(): Promise<Book[]> {
+export async function scrapeAladinBestsellers(
+  period: ChartPeriod = "weekly",
+): Promise<Book[]> {
+  const bestType = ALADIN_BEST_TYPE[period];
   const html = await fetchHtml(
-    `${ALADIN_ORIGIN}/shop/common/wbest.aspx?BestType=Bestseller&BranchType=1&CID=0`,
+    `${ALADIN_ORIGIN}/shop/common/wbest.aspx?BestType=${bestType}&BranchType=1&CID=0`,
     { live: true },
   );
   if (!html) return [];
-  return parseAladinBoxes(html, { language: "ko", idPrefix: "aladin-best" });
+  return parseAladinBoxes(html, {
+    language: "ko",
+    idPrefix: `aladin-${period}`,
+    chartPeriod: period,
+  });
 }
 
 export async function scrapeAladinNewReleases(): Promise<Book[]> {

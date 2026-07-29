@@ -1,3 +1,5 @@
+import type { ChartedBooks } from "@/lib/books/chart-periods";
+
 export type BookSource =
   | "aladin"
   | "yes24"
@@ -6,6 +8,8 @@ export type BookSource =
   | "seed";
 
 export type BookLanguage = "ko" | "en";
+
+export type ChartPeriod = "daily" | "weekly" | "monthly";
 
 export interface Book {
   id: string;
@@ -19,6 +23,7 @@ export interface Book {
   publisher?: string;
   description?: string;
   isbn?: string;
+  chartPeriod?: ChartPeriod;
 }
 
 export type NewsSourceKey =
@@ -49,7 +54,13 @@ export type CatalogSection =
 export interface BookCatalog {
   updatedAt: string;
   updatedAtKst: string;
-  sections: Record<CatalogSection, Book[]>;
+  sections: {
+    domesticBestsellers: ChartedBooks;
+    yes24Bestsellers: ChartedBooks;
+    newReleases: Book[];
+    foreignBestsellers: ChartedBooks;
+    englishBestsellers: Book[];
+  };
   bookNews: BookNewsItem[];
 }
 

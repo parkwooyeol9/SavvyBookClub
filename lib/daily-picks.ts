@@ -1,4 +1,5 @@
 import type { Book, BookCatalog, Review } from "@/lib/books/types";
+import { pickChartBooks } from "@/lib/books/chart-periods";
 import { kstDaySeed } from "@/lib/books/freshness";
 
 export type DailyPick =
@@ -44,26 +45,32 @@ export function buildDailyPicks(
 ): DailyPick[] {
   const seed = kstDaySeed();
   const pools: DailyPick[] = [
-    ...catalog.sections.domesticBestsellers.slice(0, 8).map((book) => ({
-      kind: "book" as const,
-      book,
-      label: "알라딘 베스트",
-    })),
-    ...catalog.sections.yes24Bestsellers.slice(0, 8).map((book) => ({
-      kind: "book" as const,
-      book,
-      label: "Yes24 베스트",
-    })),
+    ...pickChartBooks(catalog.sections.domesticBestsellers, "daily")
+      .slice(0, 8)
+      .map((book) => ({
+        kind: "book" as const,
+        book,
+        label: "알라딘 일간",
+      })),
+    ...pickChartBooks(catalog.sections.yes24Bestsellers, "daily")
+      .slice(0, 8)
+      .map((book) => ({
+        kind: "book" as const,
+        book,
+        label: "Yes24 일간",
+      })),
     ...catalog.sections.newReleases.slice(0, 8).map((book) => ({
       kind: "book" as const,
       book,
       label: "신간",
     })),
-    ...catalog.sections.foreignBestsellers.slice(0, 6).map((book) => ({
-      kind: "book" as const,
-      book,
-      label: "외국도서",
-    })),
+    ...pickChartBooks(catalog.sections.foreignBestsellers, "weekly")
+      .slice(0, 6)
+      .map((book) => ({
+        kind: "book" as const,
+        book,
+        label: "외국도서",
+      })),
     ...catalog.sections.englishBestsellers.slice(0, 6).map((book) => ({
       kind: "book" as const,
       book,
