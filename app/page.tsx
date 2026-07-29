@@ -118,6 +118,7 @@ export default async function HomePage() {
           <Reveal>
             <ChartBookRail
               title="Yes24 외국도서 베스트"
+              subtitle="일본어 서적·잡지 제외"
               charted={catalog.sections.foreignBestsellers}
               defaultPeriod="weekly"
             />
@@ -126,7 +127,8 @@ export default async function HomePage() {
 
         <Reveal>
           <BookRail
-            title="영문 트렌딩 · 경제·경영·논픽션"
+            subtitle="저명한 저자·리뷰 많은 영문 논픽션"
+            title="영문 베스트 · 논픽션"
             books={catalog.sections.englishBestsellers}
             limit={6}
           />

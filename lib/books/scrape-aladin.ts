@@ -30,7 +30,6 @@ function parseAladinBoxes(
     const root = $(el);
     const boxHtml = root.html() ?? "";
     const boxText = cleanText(root.text());
-    if (isMangaBookFromAladinBox(boxHtml, boxText)) return;
 
     const linkEl = root
       .find('a[href*="wproduct.aspx"]')
@@ -42,6 +41,10 @@ function parseAladinBoxes(
     const author = cleanText(
       root.find('a[href*="AuthorSearch"]').first().text(),
     );
+    const publisher = cleanText(
+      root.find('a[href*="PublisherSearch"]').first().text(),
+    );
+    if (isMangaBookFromAladinBox(boxHtml, boxText, title, publisher)) return;
     let coverUrl = "";
     root.find("img").each((_, img) => {
       const src = $(img).attr("src") || "";
@@ -58,6 +61,7 @@ function parseAladinBoxes(
       source: "aladin",
       language: options.language,
       rank: books.length + 1,
+      publisher: publisher || undefined,
       chartPeriod: options.chartPeriod,
     });
   });

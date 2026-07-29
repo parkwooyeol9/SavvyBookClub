@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-29T07:48:56.979Z",
-  "updatedAtKst": "2026. 7. 29. 오후 4:48",
+  "updatedAt": "2026-07-29T07:58:40.000Z",
+  "updatedAtKst": "2026. 7. 29. 오후 4:58",
   "sections": {
     "domesticBestsellers": {
       "daily": [
@@ -13,6 +13,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 1,
+          "publisher": "북다",
           "chartPeriod": "daily"
         },
         {
@@ -24,6 +25,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 2,
+          "publisher": "논픽션",
           "chartPeriod": "daily"
         },
         {
@@ -35,6 +37,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 3,
+          "publisher": "안전가옥",
           "chartPeriod": "daily"
         },
         {
@@ -46,6 +49,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 4,
+          "publisher": "민음사",
           "chartPeriod": "daily"
         },
         {
@@ -57,6 +61,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 5,
+          "publisher": "현대문학",
           "chartPeriod": "daily"
         },
         {
@@ -68,6 +73,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 6,
+          "publisher": "포스터샵",
           "chartPeriod": "daily"
         },
         {
@@ -79,6 +85,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 7,
+          "publisher": "자이언트북스",
           "chartPeriod": "daily"
         },
         {
@@ -90,6 +97,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 8,
+          "publisher": "알에이치코리아(RHK)",
           "chartPeriod": "daily"
         },
         {
@@ -101,6 +109,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 9,
+          "publisher": "생각의길",
           "chartPeriod": "daily"
         },
         {
@@ -112,6 +121,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 10,
+          "publisher": "재인",
           "chartPeriod": "daily"
         },
         {
@@ -123,6 +133,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 11,
+          "publisher": "래빗홀",
           "chartPeriod": "daily"
         },
         {
@@ -134,6 +145,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 12,
+          "publisher": "현대문학",
           "chartPeriod": "daily"
         }
       ],
@@ -147,6 +159,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 1,
+          "publisher": "북다",
           "chartPeriod": "weekly"
         },
         {
@@ -158,6 +171,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 2,
+          "publisher": "자이언트북스",
           "chartPeriod": "weekly"
         },
         {
@@ -169,6 +183,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 3,
+          "publisher": "생각의길",
           "chartPeriod": "weekly"
         },
         {
@@ -180,6 +195,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 4,
+          "publisher": "민음사",
           "chartPeriod": "weekly"
         },
         {
@@ -191,6 +207,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 5,
+          "publisher": "포스터샵",
           "chartPeriod": "weekly"
         },
         {
@@ -202,6 +219,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 6,
+          "publisher": "논픽션",
           "chartPeriod": "weekly"
         },
         {
@@ -213,6 +231,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 7,
+          "publisher": "메이븐",
           "chartPeriod": "weekly"
         },
         {
@@ -224,6 +243,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 8,
+          "publisher": "안전가옥",
           "chartPeriod": "weekly"
         },
         {
@@ -235,6 +255,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 9,
+          "publisher": "알에이치코리아(RHK)",
           "chartPeriod": "weekly"
         },
         {
@@ -246,6 +267,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 10,
+          "publisher": "래빗홀",
           "chartPeriod": "weekly"
         },
         {
@@ -257,6 +279,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 11,
+          "publisher": "필름(Feelm)",
           "chartPeriod": "weekly"
         },
         {
@@ -268,6 +291,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 12,
+          "publisher": "사이언스북스",
           "chartPeriod": "weekly"
         }
       ],
@@ -281,6 +305,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 1,
+          "publisher": "알에이치코리아(RHK)",
           "chartPeriod": "monthly"
         },
         {
@@ -292,6 +317,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 2,
+          "publisher": "생각의길",
           "chartPeriod": "monthly"
         },
         {
@@ -303,6 +329,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 3,
+          "publisher": "민음사",
           "chartPeriod": "monthly"
         },
         {
@@ -314,6 +341,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 4,
+          "publisher": "알에이치코리아(RHK)",
           "chartPeriod": "monthly"
         },
         {
@@ -325,6 +353,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 5,
+          "publisher": "북다",
           "chartPeriod": "monthly"
         },
         {
@@ -336,6 +365,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 6,
+          "publisher": "알에이치코리아(RHK)",
           "chartPeriod": "monthly"
         },
         {
@@ -347,6 +377,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 7,
+          "publisher": "이투스북",
           "chartPeriod": "monthly"
         },
         {
@@ -358,6 +389,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 8,
+          "publisher": "이투스북",
           "chartPeriod": "monthly"
         },
         {
@@ -369,6 +401,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 9,
+          "publisher": "사이언스북스",
           "chartPeriod": "monthly"
         },
         {
@@ -380,6 +413,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 10,
+          "publisher": "라곰",
           "chartPeriod": "monthly"
         },
         {
@@ -391,6 +425,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 11,
+          "publisher": "이투스북",
           "chartPeriod": "monthly"
         },
         {
@@ -402,6 +437,7 @@
           "source": "aladin",
           "language": "ko",
           "rank": 12,
+          "publisher": "포스터샵",
           "chartPeriod": "monthly"
         }
       ]
@@ -849,269 +885,257 @@
     "newReleases": [
       {
         "id": "aladin-new-1",
-        "title": "서유요원전 서역편 : 화염산의 장 4",
-        "author": "모로호시 다이지로",
-        "coverUrl": "https://image.aladin.co.kr/product/39948/66/cover200/k412130428_1.jpg",
-        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399486670",
-        "source": "aladin",
-        "language": "ko",
-        "rank": 1
-      },
-      {
-        "id": "aladin-new-2",
-        "title": "서유요원전 서역편 : 화염산의 장 3",
-        "author": "모로호시 다이지로",
-        "coverUrl": "https://image.aladin.co.kr/product/39948/66/cover200/k472130428_1.jpg",
-        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399486641",
-        "source": "aladin",
-        "language": "ko",
-        "rank": 2
-      },
-      {
-        "id": "aladin-new-3",
         "title": "봉이 김 선달",
         "author": "양태석",
         "coverUrl": "https://image.aladin.co.kr/product/39945/49/cover200/8965796407_1.jpg",
         "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399454916",
         "source": "aladin",
         "language": "ko",
-        "rank": 3
+        "rank": 1,
+        "publisher": "은하수미디어"
       },
       {
-        "id": "aladin-new-4",
+        "id": "aladin-new-2",
         "title": "개념연결 문화유산 답사 사전 : 대구·경북 편",
         "author": "문화유산답사교사모임 대구·경북팀",
         "coverUrl": "https://image.aladin.co.kr/product/39945/34/cover200/k092130321_1.jpg",
         "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399453481",
         "source": "aladin",
         "language": "ko",
-        "rank": 4
+        "rank": 2,
+        "publisher": "비아에듀"
       },
       {
-        "id": "aladin-new-5",
-        "title": "숨막힐 정도의 사랑을 줄게 7 (특장판)",
-        "author": "이와시타 케이코",
-        "coverUrl": "https://image.aladin.co.kr/product/39945/17/cover200/k242130320_1.jpg",
-        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399451722",
-        "source": "aladin",
-        "language": "ko",
-        "rank": 5
-      },
-      {
-        "id": "aladin-new-6",
+        "id": "aladin-new-3",
         "title": "두부곰 도시락집 1",
         "author": "황섭균",
         "coverUrl": "https://image.aladin.co.kr/product/39942/97/cover200/k802130328_1.jpg",
         "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399429790",
         "source": "aladin",
         "language": "ko",
-        "rank": 6
+        "rank": 3,
+        "publisher": "미래엔아이세움"
       },
       {
-        "id": "aladin-new-7",
-        "title": "딸기 시 포도 분이 시작됐어요",
-        "author": "서지원",
-        "coverUrl": "https://image.aladin.co.kr/product/39942/68/cover200/k692130328_1.jpg",
-        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399426810",
-        "source": "aladin",
-        "language": "ko",
-        "rank": 7
-      },
-      {
-        "id": "aladin-new-8",
+        "id": "aladin-new-4",
         "title": "야수의 산",
         "author": "홍진희",
         "coverUrl": "https://image.aladin.co.kr/product/39942/56/cover200/k312130328_1.jpg",
         "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399425637",
         "source": "aladin",
         "language": "ko",
-        "rank": 8
+        "rank": 4,
+        "publisher": "클레이하우스"
       },
       {
-        "id": "aladin-new-9",
+        "id": "aladin-new-5",
         "title": "호아",
         "author": "강진아",
         "coverUrl": "https://image.aladin.co.kr/product/39942/39/cover200/8937449102_1.jpg",
         "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399423901",
         "source": "aladin",
         "language": "ko",
-        "rank": 9
+        "rank": 5,
+        "publisher": "민음사"
       },
       {
-        "id": "aladin-new-10",
+        "id": "aladin-new-6",
         "title": "반려 별자리",
         "author": "정끝별",
         "coverUrl": "https://image.aladin.co.kr/product/39941/43/cover200/k662130226_1.jpg",
         "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399414328",
         "source": "aladin",
         "language": "ko",
-        "rank": 10
+        "rank": 6,
+        "publisher": "문학동네"
       },
       {
-        "id": "aladin-new-11",
+        "id": "aladin-new-7",
         "title": "펫페페페",
         "author": "짐리원",
         "coverUrl": "https://image.aladin.co.kr/product/39941/7/cover200/k192130226_1.jpg",
         "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399410759",
         "source": "aladin",
         "language": "ko",
-        "rank": 11
+        "rank": 7,
+        "publisher": "아작"
       },
       {
-        "id": "aladin-new-12",
+        "id": "aladin-new-8",
         "title": "내 마음도 있지!",
         "author": "조현숙",
         "coverUrl": "https://image.aladin.co.kr/product/39940/83/cover200/8955828551_1.jpg",
         "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399408322",
         "source": "aladin",
         "language": "ko",
-        "rank": 12
+        "rank": 8,
+        "publisher": "길벗어린이"
+      },
+      {
+        "id": "aladin-new-9",
+        "title": "오뒷세이아",
+        "author": "호메로스",
+        "coverUrl": "https://image.aladin.co.kr/product/39940/12/cover200/8932476462_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399401298",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 9,
+        "publisher": "을유문화사"
+      },
+      {
+        "id": "aladin-new-10",
+        "title": "초능력 가족",
+        "author": "이안",
+        "coverUrl": "https://image.aladin.co.kr/product/39939/52/cover200/k642130223_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399395278",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 10,
+        "publisher": "한림출판사"
+      },
+      {
+        "id": "aladin-new-11",
+        "title": "오디세이 메이킹북",
+        "author": "제임스 모트램",
+        "coverUrl": "https://image.aladin.co.kr/product/39939/38/cover200/k192130223_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399393858",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 11,
+        "publisher": "더모던"
+      },
+      {
+        "id": "aladin-new-12",
+        "title": "지배할 것인가 평생 지배당할 것인가",
+        "author": "진시황",
+        "coverUrl": "https://image.aladin.co.kr/product/39939/33/cover200/k932130223_1.jpg",
+        "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399393325",
+        "source": "aladin",
+        "language": "ko",
+        "rank": 12,
+        "publisher": "ORIGIN"
       }
     ],
     "foreignBestsellers": {
       "daily": [
         {
           "id": "yes24-foreign-daily-1",
-          "title": "sweet(スウィ-ト) 2026年8月號",
-          "author": "편집부",
-          "coverUrl": "https://image.yes24.com/goods/191533845/L",
-          "link": "https://www.yes24.com/product/goods/191533845",
-          "source": "yes24",
-          "language": "en",
-          "rank": 1,
-          "publisher": "寶島社",
-          "chartPeriod": "daily"
-        },
-        {
-          "id": "yes24-foreign-daily-2",
           "title": "Wonder (미국판) : 줄리아 로버츠 주연 영화 '원더' 원작 소설",
           "author": "R. J. 팔라시오",
           "coverUrl": "https://image.yes24.com/goods/14121630/L",
           "link": "https://www.yes24.com/product/goods/14121630",
           "source": "yes24",
           "language": "en",
-          "rank": 2,
+          "rank": 1,
           "publisher": "Random House",
           "chartPeriod": "daily"
         },
         {
-          "id": "yes24-foreign-daily-3",
+          "id": "yes24-foreign-daily-2",
           "title": "Project Hail Mary",
           "author": "앤디 위어",
           "coverUrl": "https://image.yes24.com/goods/110969306/L",
           "link": "https://www.yes24.com/product/goods/110969306",
           "source": "yes24",
           "language": "en",
-          "rank": 3,
+          "rank": 2,
           "publisher": "Ballantine Books",
           "chartPeriod": "daily"
         },
         {
-          "id": "yes24-foreign-daily-4",
-          "title": "デイリ-クロッシェウエア",
-          "author": "저자 미상",
-          "coverUrl": "https://image.yes24.com/goods/144081838/L",
-          "link": "https://www.yes24.com/product/goods/144081838",
-          "source": "yes24",
-          "language": "en",
-          "rank": 4,
-          "publisher": "アップルミンツ",
-          "chartPeriod": "daily"
-        },
-        {
-          "id": "yes24-foreign-daily-5",
-          "title": "(예약도서) 永遠の記憶",
-          "author": "히가시노 게이고",
-          "coverUrl": "https://image.yes24.com/goods/191483766/L",
-          "link": "https://www.yes24.com/product/goods/191483766",
-          "source": "yes24",
-          "language": "en",
-          "rank": 5,
-          "publisher": "文藝春秋",
-          "chartPeriod": "daily"
-        },
-        {
-          "id": "yes24-foreign-daily-6",
+          "id": "yes24-foreign-daily-3",
           "title": "The Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living",
           "author": "스티븐 핸슬먼",
           "coverUrl": "https://image.yes24.com/goods/24734678/L",
           "link": "https://www.yes24.com/product/goods/24734678",
           "source": "yes24",
           "language": "en",
-          "rank": 6,
+          "rank": 3,
           "publisher": "Portfolio",
           "chartPeriod": "daily"
         },
         {
-          "id": "yes24-foreign-daily-7",
-          "title": "(예약도서) MAPS JAPAN No.10 FALL Issue B ver. [SHOTARO(RIIZE)]",
-          "author": "저자 미상",
-          "coverUrl": "https://image.yes24.com/goods/194510695/L",
-          "link": "https://www.yes24.com/product/goods/194510695",
-          "source": "yes24",
-          "language": "en",
-          "rank": 7,
-          "publisher": "MAPS JAPAN株式會社",
-          "chartPeriod": "daily"
-        },
-        {
-          "id": "yes24-foreign-daily-8",
+          "id": "yes24-foreign-daily-4",
           "title": "The Giver 기억 전달자",
           "author": "로이스 라우리",
           "coverUrl": "https://image.yes24.com/goods/13901514/L",
           "link": "https://www.yes24.com/product/goods/13901514",
           "source": "yes24",
           "language": "en",
-          "rank": 8,
+          "rank": 4,
           "publisher": "Houghton Mifflin Harcourt",
           "chartPeriod": "daily"
         },
         {
-          "id": "yes24-foreign-daily-9",
-          "title": "少年サンデ-增刊 2026年9月號",
-          "author": "편집부",
-          "coverUrl": "https://image.yes24.com/goods/193081510/L",
-          "link": "https://www.yes24.com/product/goods/193081510",
-          "source": "yes24",
-          "language": "en",
-          "rank": 9,
-          "publisher": "小學館",
-          "chartPeriod": "daily"
-        },
-        {
-          "id": "yes24-foreign-daily-10",
+          "id": "yes24-foreign-daily-5",
           "title": "Disney/Pixar Toy Story 5 My Busy Books",
           "author": "Phidal Publishing Inc.",
           "coverUrl": "https://image.yes24.com/goods/189792825/L",
           "link": "https://www.yes24.com/product/goods/189792825",
           "source": "yes24",
           "language": "en",
-          "rank": 10,
+          "rank": 5,
           "publisher": "Phidal",
           "chartPeriod": "daily"
         },
         {
-          "id": "yes24-foreign-daily-11",
-          "title": "太糸で編むクロッシェレース ドイリー＆テーブルクロス",
-          "author": "편집부",
-          "coverUrl": "https://image.yes24.com/goods/189234540/L",
-          "link": "https://www.yes24.com/product/goods/189234540",
+          "id": "yes24-foreign-daily-6",
+          "title": "Restart",
+          "author": "고든 코먼",
+          "coverUrl": "https://image.yes24.com/goods/45090025/L",
+          "link": "https://www.yes24.com/product/goods/45090025",
           "source": "yes24",
           "language": "en",
-          "rank": 11,
-          "publisher": "日本ヴォ-グ社",
+          "rank": 6,
+          "publisher": "Scholastic Press",
           "chartPeriod": "daily"
         },
         {
-          "id": "yes24-foreign-daily-12",
-          "title": "SPRiNG(スプリング) 2026年7月號",
-          "author": "편집부",
-          "coverUrl": "https://image.yes24.com/goods/186939824/L",
-          "link": "https://www.yes24.com/product/goods/186939824",
+          "id": "yes24-foreign-daily-7",
+          "title": "A Long Walk to Water",
+          "author": "린다 수 박",
+          "coverUrl": "https://image.yes24.com/goods/4543257/L",
+          "link": "https://www.yes24.com/product/goods/4543257",
           "source": "yes24",
           "language": "en",
-          "rank": 12,
-          "publisher": "寶島社",
+          "rank": 7,
+          "publisher": "Clarion Books",
+          "chartPeriod": "daily"
+        },
+        {
+          "id": "yes24-foreign-daily-8",
+          "title": "Justice: What's the Right Thing to Do?",
+          "author": "마이클 샌델",
+          "coverUrl": "https://image.yes24.com/goods/3748055/L",
+          "link": "https://www.yes24.com/product/goods/3748055",
+          "source": "yes24",
+          "language": "en",
+          "rank": 8,
+          "publisher": "Farrar, Straus and Giroux",
+          "chartPeriod": "daily"
+        },
+        {
+          "id": "yes24-foreign-daily-9",
+          "title": "Dragon Masters #32 : Heart of the Ruby Dragon (A Branches Book)",
+          "author": "Tracey West",
+          "coverUrl": "https://image.yes24.com/goods/189182879/L",
+          "link": "https://www.yes24.com/product/goods/189182879",
+          "source": "yes24",
+          "language": "en",
+          "rank": 9,
+          "publisher": "Scholastic Inc",
+          "chartPeriod": "daily"
+        },
+        {
+          "id": "yes24-foreign-daily-10",
+          "title": "Press Start! #17 : The Super Jump Between Worlds! (A Branches Book)",
+          "author": "Thomas Flintham",
+          "coverUrl": "https://image.yes24.com/goods/139824034/L",
+          "link": "https://www.yes24.com/product/goods/139824034",
+          "source": "yes24",
+          "language": "en",
+          "rank": 10,
+          "publisher": "Scholastic Inc.",
           "chartPeriod": "daily"
         }
       ],
@@ -1130,295 +1154,285 @@
         },
         {
           "id": "yes24-foreign-weekly-2",
-          "title": "sweet(スウィ-ト) 2026年8月號",
-          "author": "편집부",
-          "coverUrl": "https://image.yes24.com/goods/191533845/L",
-          "link": "https://www.yes24.com/product/goods/191533845",
-          "source": "yes24",
-          "language": "en",
-          "rank": 2,
-          "publisher": "寶島社",
-          "chartPeriod": "weekly"
-        },
-        {
-          "id": "yes24-foreign-weekly-3",
-          "title": "(예약도서) Vジャンプ 2026年10月號 (원피스카드없음)",
-          "author": "편집부",
-          "coverUrl": "https://image.yes24.com/goods/194191367/L",
-          "link": "https://www.yes24.com/product/goods/194191367",
-          "source": "yes24",
-          "language": "en",
-          "rank": 3,
-          "publisher": "集英社",
-          "chartPeriod": "weekly"
-        },
-        {
-          "id": "yes24-foreign-weekly-4",
           "title": "Project Hail Mary",
           "author": "앤디 위어",
           "coverUrl": "https://image.yes24.com/goods/110969306/L",
           "link": "https://www.yes24.com/product/goods/110969306",
           "source": "yes24",
           "language": "en",
-          "rank": 4,
+          "rank": 2,
           "publisher": "Ballantine Books",
           "chartPeriod": "weekly"
         },
         {
-          "id": "yes24-foreign-weekly-5",
+          "id": "yes24-foreign-weekly-3",
           "title": "The Wild Robot #1 : The Wild Robot (미국판)",
           "author": "피터 브라운",
           "coverUrl": "https://image.yes24.com/goods/43630157/L",
           "link": "https://www.yes24.com/product/goods/43630157",
           "source": "yes24",
           "language": "en",
-          "rank": 5,
+          "rank": 3,
           "publisher": "Little, Brown Books for Young Readers",
           "chartPeriod": "weekly"
         },
         {
-          "id": "yes24-foreign-weekly-6",
+          "id": "yes24-foreign-weekly-4",
           "title": "The Giver 기억 전달자",
           "author": "로이스 라우리",
           "coverUrl": "https://image.yes24.com/goods/13901514/L",
           "link": "https://www.yes24.com/product/goods/13901514",
           "source": "yes24",
           "language": "en",
-          "rank": 6,
+          "rank": 4,
           "publisher": "Houghton Mifflin Harcourt",
           "chartPeriod": "weekly"
         },
         {
-          "id": "yes24-foreign-weekly-7",
+          "id": "yes24-foreign-weekly-5",
           "title": "The Magician's Elephant",
           "author": "DiCamillo, Kate / Tanaka, Yoko",
           "coverUrl": "https://image.yes24.com/goods/17307012/L",
           "link": "https://www.yes24.com/product/goods/17307012",
           "source": "yes24",
           "language": "en",
-          "rank": 7,
+          "rank": 5,
           "publisher": "Candlewick Press (MA)",
           "chartPeriod": "weekly"
         },
         {
-          "id": "yes24-foreign-weekly-8",
+          "id": "yes24-foreign-weekly-6",
           "title": "The Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living",
           "author": "스티븐 핸슬먼",
           "coverUrl": "https://image.yes24.com/goods/24734678/L",
           "link": "https://www.yes24.com/product/goods/24734678",
           "source": "yes24",
           "language": "en",
-          "rank": 8,
+          "rank": 6,
           "publisher": "Portfolio",
           "chartPeriod": "weekly"
         },
         {
-          "id": "yes24-foreign-weekly-9",
+          "id": "yes24-foreign-weekly-7",
           "title": "Frindle",
           "author": "앤드루 클레먼츠",
           "coverUrl": "https://image.yes24.com/goods/436585/L",
           "link": "https://www.yes24.com/product/goods/436585",
           "source": "yes24",
           "language": "en",
-          "rank": 9,
+          "rank": 7,
           "publisher": "Atheneum Books for Young Readers",
           "chartPeriod": "weekly"
         },
         {
-          "id": "yes24-foreign-weekly-10",
+          "id": "yes24-foreign-weekly-8",
           "title": "Coraline",
           "author": "닐 게이먼",
           "coverUrl": "https://image.yes24.com/goods/565734/L",
           "link": "https://www.yes24.com/product/goods/565734",
           "source": "yes24",
           "language": "en",
-          "rank": 10,
+          "rank": 8,
           "publisher": "HarperCollins",
           "chartPeriod": "weekly"
         },
         {
-          "id": "yes24-foreign-weekly-11",
+          "id": "yes24-foreign-weekly-9",
           "title": "Poppy",
           "author": "Avi",
           "coverUrl": "https://image.yes24.com/goods/564912/L",
           "link": "https://www.yes24.com/product/goods/564912",
           "source": "yes24",
           "language": "en",
-          "rank": 11,
+          "rank": 9,
           "publisher": "HarperCollins",
           "chartPeriod": "weekly"
         },
         {
-          "id": "yes24-foreign-weekly-12",
+          "id": "yes24-foreign-weekly-10",
           "title": "Diary of a Wimpy Kid #1",
           "author": "제프 키니",
           "coverUrl": "https://image.yes24.com/goods/3455034/L",
           "link": "https://www.yes24.com/product/goods/3455034",
           "source": "yes24",
           "language": "en",
-          "rank": 12,
+          "rank": 10,
           "publisher": "Amulet Books",
           "chartPeriod": "weekly"
-        }
-      ],
-      "monthly": [
-        {
-          "id": "yes24-foreign-monthly-1",
-          "title": "smart(スマ-ト) 2026年9月號",
-          "author": "편집부",
-          "coverUrl": "https://image.yes24.com/goods/190236796/L",
-          "link": "https://www.yes24.com/product/goods/190236796",
-          "source": "yes24",
-          "language": "en",
-          "rank": 1,
-          "publisher": "寶島社",
-          "chartPeriod": "monthly"
         },
         {
-          "id": "yes24-foreign-monthly-2",
+          "id": "yes24-foreign-weekly-11",
           "title": "Disney/Pixar Toy Story 5 My Busy Books",
           "author": "Phidal Publishing Inc.",
           "coverUrl": "https://image.yes24.com/goods/189792825/L",
           "link": "https://www.yes24.com/product/goods/189792825",
           "source": "yes24",
           "language": "en",
-          "rank": 2,
+          "rank": 11,
+          "publisher": "Phidal",
+          "chartPeriod": "weekly"
+        },
+        {
+          "id": "yes24-foreign-weekly-12",
+          "title": "Fahrenheit 451",
+          "author": "레이 브래드버리",
+          "coverUrl": "https://image.yes24.com/goods/7109443/L",
+          "link": "https://www.yes24.com/product/goods/7109443",
+          "source": "yes24",
+          "language": "en",
+          "rank": 12,
+          "publisher": "Simon & Schuster",
+          "chartPeriod": "weekly"
+        }
+      ],
+      "monthly": [
+        {
+          "id": "yes24-foreign-monthly-1",
+          "title": "Disney/Pixar Toy Story 5 My Busy Books",
+          "author": "Phidal Publishing Inc.",
+          "coverUrl": "https://image.yes24.com/goods/189792825/L",
+          "link": "https://www.yes24.com/product/goods/189792825",
+          "source": "yes24",
+          "language": "en",
+          "rank": 1,
           "publisher": "Phidal",
           "chartPeriod": "monthly"
         },
         {
-          "id": "yes24-foreign-monthly-3",
-          "title": "sweet(スウィ-ト) 2026年8月號",
-          "author": "편집부",
-          "coverUrl": "https://image.yes24.com/goods/191533845/L",
-          "link": "https://www.yes24.com/product/goods/191533845",
-          "source": "yes24",
-          "language": "en",
-          "rank": 3,
-          "publisher": "寶島社",
-          "chartPeriod": "monthly"
-        },
-        {
-          "id": "yes24-foreign-monthly-4",
+          "id": "yes24-foreign-monthly-2",
           "title": "Wonder (미국판) : 줄리아 로버츠 주연 영화 '원더' 원작 소설",
           "author": "R. J. 팔라시오",
           "coverUrl": "https://image.yes24.com/goods/14121630/L",
           "link": "https://www.yes24.com/product/goods/14121630",
           "source": "yes24",
           "language": "en",
-          "rank": 4,
+          "rank": 2,
           "publisher": "Random House",
           "chartPeriod": "monthly"
         },
         {
-          "id": "yes24-foreign-monthly-5",
+          "id": "yes24-foreign-monthly-3",
           "title": "Project Hail Mary",
           "author": "앤디 위어",
           "coverUrl": "https://image.yes24.com/goods/110969306/L",
           "link": "https://www.yes24.com/product/goods/110969306",
           "source": "yes24",
           "language": "en",
-          "rank": 5,
+          "rank": 3,
           "publisher": "Ballantine Books",
           "chartPeriod": "monthly"
         },
         {
-          "id": "yes24-foreign-monthly-6",
-          "title": "(예약도서) Vジャンプ 2026年10月號 (원피스카드없음)",
-          "author": "편집부",
-          "coverUrl": "https://image.yes24.com/goods/194191367/L",
-          "link": "https://www.yes24.com/product/goods/194191367",
-          "source": "yes24",
-          "language": "en",
-          "rank": 6,
-          "publisher": "集英社",
-          "chartPeriod": "monthly"
-        },
-        {
-          "id": "yes24-foreign-monthly-7",
-          "title": "リンネル 2026年8月號",
-          "author": "편집부",
-          "coverUrl": "https://image.yes24.com/goods/189695129/L",
-          "link": "https://www.yes24.com/product/goods/189695129",
-          "source": "yes24",
-          "language": "en",
-          "rank": 7,
-          "publisher": "寶島社",
-          "chartPeriod": "monthly"
-        },
-        {
-          "id": "yes24-foreign-monthly-8",
+          "id": "yes24-foreign-monthly-4",
           "title": "The Giver 기억 전달자",
           "author": "로이스 라우리",
           "coverUrl": "https://image.yes24.com/goods/13901514/L",
           "link": "https://www.yes24.com/product/goods/13901514",
           "source": "yes24",
           "language": "en",
-          "rank": 8,
+          "rank": 4,
           "publisher": "Houghton Mifflin Harcourt",
           "chartPeriod": "monthly"
         },
         {
-          "id": "yes24-foreign-monthly-9",
+          "id": "yes24-foreign-monthly-5",
           "title": "The Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living",
           "author": "스티븐 핸슬먼",
           "coverUrl": "https://image.yes24.com/goods/24734678/L",
           "link": "https://www.yes24.com/product/goods/24734678",
           "source": "yes24",
           "language": "en",
-          "rank": 9,
+          "rank": 5,
           "publisher": "Portfolio",
           "chartPeriod": "monthly"
         },
         {
-          "id": "yes24-foreign-monthly-10",
+          "id": "yes24-foreign-monthly-6",
           "title": "Studio Ghibli 100 Collectible Postcards : 스튜디오 지브리 엽서 100장 세트 (소장용 포스트 카드 박스 세트)",
           "author": "Studio Ghibli",
           "coverUrl": "https://image.yes24.com/goods/78494245/L",
           "link": "https://www.yes24.com/product/goods/78494245",
           "source": "yes24",
           "language": "en",
-          "rank": 10,
+          "rank": 6,
           "publisher": "chronicle",
           "chartPeriod": "monthly"
         },
         {
-          "id": "yes24-foreign-monthly-11",
-          "title": "(예약도서) ドラゴンボ-ルス-パ-カ-ドゲ-ム フュ-ジョンワ-ルド 1st COMPLETE CARD COLLECTION",
-          "author": "Vジャンプ編集部",
-          "coverUrl": "https://image.yes24.com/goods/141230409/L",
-          "link": "https://www.yes24.com/product/goods/141230409",
-          "source": "yes24",
-          "language": "en",
-          "rank": 11,
-          "publisher": "集英社",
-          "chartPeriod": "monthly"
-        },
-        {
-          "id": "yes24-foreign-monthly-12",
+          "id": "yes24-foreign-monthly-7",
           "title": "Disney Zootopia 2 My Busy Books",
           "author": "Phidal Publishing Inc.",
           "coverUrl": "https://image.yes24.com/goods/159170348/L",
           "link": "https://www.yes24.com/product/goods/159170348",
           "source": "yes24",
           "language": "en",
-          "rank": 12,
+          "rank": 7,
           "publisher": "Phidal",
+          "chartPeriod": "monthly"
+        },
+        {
+          "id": "yes24-foreign-monthly-8",
+          "title": "The Wild Robot #1 : The Wild Robot (미국판)",
+          "author": "피터 브라운",
+          "coverUrl": "https://image.yes24.com/goods/43630157/L",
+          "link": "https://www.yes24.com/product/goods/43630157",
+          "source": "yes24",
+          "language": "en",
+          "rank": 8,
+          "publisher": "Little, Brown Books for Young Readers",
+          "chartPeriod": "monthly"
+        },
+        {
+          "id": "yes24-foreign-monthly-9",
+          "title": "Coraline",
+          "author": "닐 게이먼",
+          "coverUrl": "https://image.yes24.com/goods/565734/L",
+          "link": "https://www.yes24.com/product/goods/565734",
+          "source": "yes24",
+          "language": "en",
+          "rank": 9,
+          "publisher": "HarperCollins",
+          "chartPeriod": "monthly"
+        },
+        {
+          "id": "yes24-foreign-monthly-10",
+          "title": "Poppy",
+          "author": "Avi",
+          "coverUrl": "https://image.yes24.com/goods/564912/L",
+          "link": "https://www.yes24.com/product/goods/564912",
+          "source": "yes24",
+          "language": "en",
+          "rank": 10,
+          "publisher": "HarperCollins",
+          "chartPeriod": "monthly"
+        },
+        {
+          "id": "yes24-foreign-monthly-11",
+          "title": "Frindle",
+          "author": "앤드루 클레먼츠",
+          "coverUrl": "https://image.yes24.com/goods/436585/L",
+          "link": "https://www.yes24.com/product/goods/436585",
+          "source": "yes24",
+          "language": "en",
+          "rank": 11,
+          "publisher": "Atheneum Books for Young Readers",
+          "chartPeriod": "monthly"
+        },
+        {
+          "id": "yes24-foreign-monthly-12",
+          "title": "The Magician's Elephant",
+          "author": "DiCamillo, Kate / Tanaka, Yoko",
+          "coverUrl": "https://image.yes24.com/goods/17307012/L",
+          "link": "https://www.yes24.com/product/goods/17307012",
+          "source": "yes24",
+          "language": "en",
+          "rank": 12,
+          "publisher": "Candlewick Press (MA)",
           "chartPeriod": "monthly"
         }
       ]
     },
     "englishBestsellers": [
-      {
-        "id": "ol-OL17930368W",
-        "title": "Atomic Habits",
-        "author": "James Clear",
-        "coverUrl": "https://covers.openlibrary.org/b/id/12539702-L.jpg",
-        "link": "https://openlibrary.org/works/OL17930368W",
-        "source": "openlibrary",
-        "language": "en",
-        "rank": 1
-      },
       {
         "id": "ol-OL1968368W",
         "title": "The 48 Laws of Power",
@@ -1427,47 +1441,7 @@
         "link": "https://openlibrary.org/works/OL1968368W",
         "source": "openlibrary",
         "language": "en",
-        "rank": 2
-      },
-      {
-        "id": "ol-OL2010879W",
-        "title": "Rich Dad, Poor Dad",
-        "author": "Robert T. Kiyosaki",
-        "coverUrl": "https://covers.openlibrary.org/b/id/8315603-L.jpg",
-        "link": "https://openlibrary.org/works/OL2010879W",
-        "source": "openlibrary",
-        "language": "en",
-        "rank": 3
-      },
-      {
-        "id": "ol-OL527464W",
-        "title": "Think and Grow Rich",
-        "author": "Napoleon Hill",
-        "coverUrl": "https://covers.openlibrary.org/b/id/14542536-L.jpg",
-        "link": "https://openlibrary.org/works/OL527464W",
-        "source": "openlibrary",
-        "language": "en",
-        "rank": 4
-      },
-      {
-        "id": "ol-OL21640039W",
-        "title": "The Psychology of Money",
-        "author": "Morgan Housel",
-        "coverUrl": "https://covers.openlibrary.org/b/id/10389354-L.jpg",
-        "link": "https://openlibrary.org/works/OL21640039W",
-        "source": "openlibrary",
-        "language": "en",
-        "rank": 5
-      },
-      {
-        "id": "ol-OL2629977W",
-        "title": "The 7 Habits of Highly Effective People",
-        "author": "Stephen R. Covey",
-        "coverUrl": "https://covers.openlibrary.org/b/id/10079937-L.jpg",
-        "link": "https://openlibrary.org/works/OL2629977W",
-        "source": "openlibrary",
-        "language": "en",
-        "rank": 6
+        "rank": 1
       },
       {
         "id": "ol-OL17075811W",
@@ -1477,17 +1451,27 @@
         "link": "https://openlibrary.org/works/OL17075811W",
         "source": "openlibrary",
         "language": "en",
-        "rank": 7
+        "rank": 2
       },
       {
-        "id": "ol-OL15992072W",
-        "title": "Thinking, fast and slow",
-        "author": "Daniel Kahneman",
-        "coverUrl": "https://covers.openlibrary.org/b/id/13290711-L.jpg",
-        "link": "https://openlibrary.org/works/OL15992072W",
+        "id": "ol-OL16085155W",
+        "title": "Steve Jobs",
+        "author": "Walter Isaacson",
+        "coverUrl": "https://covers.openlibrary.org/b/id/12374726-L.jpg",
+        "link": "https://openlibrary.org/works/OL16085155W",
         "source": "openlibrary",
         "language": "en",
-        "rank": 8
+        "rank": 3
+      },
+      {
+        "id": "ol-OL17184556W",
+        "title": "Elon Musk",
+        "author": "Ashlee Vance",
+        "coverUrl": "https://covers.openlibrary.org/b/id/8463846-L.jpg",
+        "link": "https://openlibrary.org/works/OL17184556W",
+        "source": "openlibrary",
+        "language": "en",
+        "rank": 4
       },
       {
         "id": "ol-OL273184W",
@@ -1497,34 +1481,74 @@
         "link": "https://openlibrary.org/works/OL273184W",
         "source": "openlibrary",
         "language": "en",
+        "rank": 5
+      },
+      {
+        "id": "ol-OL5749847W",
+        "title": "Outliers",
+        "author": "Malcolm Gladwell",
+        "coverUrl": "https://covers.openlibrary.org/b/id/10021591-L.jpg",
+        "link": "https://openlibrary.org/works/OL5749847W",
+        "source": "openlibrary",
+        "language": "en",
+        "rank": 6
+      },
+      {
+        "id": "ol-OL74128W",
+        "title": "A short history of nearly everything",
+        "author": "Bill Bryson",
+        "coverUrl": "https://covers.openlibrary.org/b/id/12725620-L.jpg",
+        "link": "https://openlibrary.org/works/OL74128W",
+        "source": "openlibrary",
+        "language": "en",
+        "rank": 7
+      },
+      {
+        "id": "ol-OL5749849W",
+        "title": "Blink",
+        "author": "Malcolm Gladwell",
+        "coverUrl": "https://covers.openlibrary.org/b/id/14421850-L.jpg",
+        "link": "https://openlibrary.org/works/OL5749849W",
+        "source": "openlibrary",
+        "language": "en",
+        "rank": 8
+      },
+      {
+        "id": "ol-OL5749848W",
+        "title": "The Tipping Point",
+        "author": "Malcolm Gladwell",
+        "coverUrl": "https://covers.openlibrary.org/b/id/10873292-L.jpg",
+        "link": "https://openlibrary.org/works/OL5749848W",
+        "source": "openlibrary",
+        "language": "en",
         "rank": 9
       },
       {
-        "id": "ol-OL17713267W",
-        "title": "Deep Work",
-        "author": "Cal Newport",
-        "coverUrl": "https://covers.openlibrary.org/b/id/7988607-L.jpg",
-        "link": "https://openlibrary.org/works/OL17713267W",
+        "id": "ol-OL17892614W",
+        "title": "Bad Blood",
+        "author": "John Carreyrou",
+        "coverUrl": "https://covers.openlibrary.org/b/id/12735651-L.jpg",
+        "link": "https://openlibrary.org/works/OL17892614W",
         "source": "openlibrary",
         "language": "en",
         "rank": 10
       },
       {
-        "id": "ol-OL8165007W",
-        "title": "The Richest Man in Babylon",
-        "author": "George S. Clason",
-        "coverUrl": "https://covers.openlibrary.org/b/id/10491331-L.jpg",
-        "link": "https://openlibrary.org/works/OL8165007W",
+        "id": "ol-OL17825802W",
+        "title": "Shoe Dog",
+        "author": "Phil Knight",
+        "coverUrl": "https://covers.openlibrary.org/b/id/8858487-L.jpg",
+        "link": "https://openlibrary.org/works/OL17825802W",
         "source": "openlibrary",
         "language": "en",
         "rank": 11
       },
       {
-        "id": "ol-OL17078706W",
-        "title": "Zero to One",
-        "author": "Peter A. Thiel",
-        "coverUrl": "https://covers.openlibrary.org/b/id/9002334-L.jpg",
-        "link": "https://openlibrary.org/works/OL17078706W",
+        "id": "ol-OL13806374W",
+        "title": "Start with why",
+        "author": "Simon Sinek",
+        "coverUrl": "https://covers.openlibrary.org/b/id/6395237-L.jpg",
+        "link": "https://openlibrary.org/works/OL13806374W",
         "source": "openlibrary",
         "language": "en",
         "rank": 12
@@ -1606,6 +1630,54 @@
     },
     {
       "id": "naver-1-0",
+      "title": "숙면의 해답 한자리에…‘2026 국제 수면·치유 박람회’ 30일 개막",
+      "excerpt": "잘 자고 잘 쉬는 것. 바쁜 현대인에게 꼭 필요하지만 동시에 가장 어려운 과제다. 이런 고민에 답을 제시하는 ‘2026 국제 수면·치유 박람회’가 7월30일부터 8월1일까지 사흘간 서울 강남구 코엑스 B홀에서 열린다",
+      "link": "https://n.news.naver.com/mnews/article/662/0000100756",
+      "source": "농민신문",
+      "sourceKey": "naver"
+    },
+    {
+      "id": "naver-1-1",
+      "title": "\"할아버지 제자를 찾습니다\"…손녀 글에 찾아온 기적같은 일 [씬속뉴스]",
+      "excerpt": "\"부산 양정·연산·망미초 졸업생 여러분 황경목 선생님을 기억하시나요?\" 지난 14일 SNS 스레드에 올라온 글 하나 손녀가 대신 전한 할아버지의 마지막 소원 <황경목 선생님 친손녀> \"어릴 때 제가 할아버지 집에서",
+      "link": "https://n.news.naver.com/mnews/article/422/0000890244",
+      "source": "연합뉴스TV",
+      "sourceKey": "naver"
+    },
+    {
+      "id": "naver-1-2",
+      "title": "양산 40.3도, 올 여름 첫 40도 돌파…열대야 일수도 '역대 1위'(종합)",
+      "excerpt": "29일 전국이 폭염에 들끓었다. 경남 양산이 40도를 돌파하면서 올여름 전국에서 가장 높은 수치를 기록했다. 올해 첫 40도 돌파이자, 양산 지역 관측 이래 최고치다. 기상청 방재기상플랫폼에 따르면 경남 양산은 이날",
+      "link": "https://n.news.naver.com/mnews/article/003/0014096431",
+      "source": "뉴시스",
+      "sourceKey": "naver"
+    },
+    {
+      "id": "naver-1-3",
+      "title": "‘K팝 대표 혼성그룹’ 카드, 10년 여정 마무리…“마침표 아닌 쉼표, 향수 일으키는 그룹으로 남고 싶어”",
+      "excerpt": "“카드(KARD)가 향수를 불러일으키는 그룹으로 남았으면 좋겠어요. 저희를 생각하며 ‘옛 명곡’ 삼아 들어주시면 감사하겠습니다.” 2017년 데뷔 후 해외에서 큰 인기를 끌며 혼성 K팝그룹으로 입지를 굳혀왔던 그룹",
+      "link": "https://n.news.naver.com/mnews/article/032/0003461135",
+      "source": "경향신문",
+      "sourceKey": "naver"
+    },
+    {
+      "id": "naver-1-4",
+      "title": "경남 양산서 올해 첫 40℃ 돌파…부산도 역대 최고기온 경신",
+      "excerpt": "경남 양산 40.3도, 부산 38.8도 1904년 관측 이후 최고치 경신 3년 연속 전국 최고 40도 넘겨 29일 올여름 들어 처음으로 전국 최고기온이 40도를 넘겼다. 부산에서도 1904년 관측 이래 가장 높은 기",
+      "link": "https://n.news.naver.com/mnews/article/009/0005713911",
+      "source": "매일경제",
+      "sourceKey": "naver"
+    },
+    {
+      "id": "naver-1-7",
+      "title": "여름이면 더 청량한 ‘제니 칵테일’, “3:2:1로 드세요”",
+      "excerpt": "이탈리아 식전주의 상징 ‘스프리츠’ 뜨거운 여름, 시원한 칵테일의 계절이 왔다. 피부가 아리는 햇빛을 피해 얼음 가득 들어간 칵테일 한 모금. 여름을 버틸 수 있을 것만 같다. 이탈리아의 ‘국민 칵테일’로 불리는 스",
+      "link": "https://n.news.naver.com/mnews/article/023/0003990296",
+      "source": "조선일보",
+      "sourceKey": "naver"
+    },
+    {
+      "id": "naver-1-8",
       "title": "달바글로벌, 프리미엄 향수 브랜드 '쿠오카' 지분 투자",
       "excerpt": "프리미엄 비건 뷰티 브랜드 달바글로벌이 프리미엄 프래그런스 브랜드 '쿠오카(Kuoca)' 지분 34%에 대한 지분 투자를 결정했다고 29일 밝혔다. 이를 통해 달바글로버는 K뷰티에 이어 K향수로 사업 카테고리를 확장",
       "link": "https://n.news.naver.com/mnews/article/119/0003116216",
@@ -1613,7 +1685,7 @@
       "sourceKey": "naver"
     },
     {
-      "id": "naver-1-1",
+      "id": "naver-1-9",
       "title": "\"지역으로 차별하지 말라\"…'그래미 보이콧' 선언한 BTS 이유는?",
       "excerpt": "그룹 방탄소년단(BTS)이 내년 2월 미국에서 열리는 제69회 '그래미 어워즈'에 자신들의 음악을 출품하지 않겠다며 '보이콧'을 선언했다. BTS 멤버들은 29일 각자의 사회관계망서비스(SNS)를 통해 \"저희는 올해",
       "link": "https://n.news.naver.com/mnews/article/031/0001045782",
@@ -1621,61 +1693,12 @@
       "sourceKey": "naver"
     },
     {
-      "id": "naver-1-2",
-      "title": "\"북미서 날았다\" LG생활건강, 2분기 영업이익 1028억 87.5%↑(종합)",
-      "excerpt": "LG생활건강이 북미 시장 성장에 힘입어 2분기 호실적을 거뒀다. 특히 북미 매출이 분기 기준 처음으로 중국을 넘어서는 등 글로벌 사업의 성장축이 중국 중심에서 북미 등으로 다변화하는 모습이다. 29일 금융감독원 전자",
-      "link": "https://n.news.naver.com/mnews/article/003/0014096396",
-      "source": "뉴시스",
-      "sourceKey": "naver"
-    },
-    {
-      "id": "naver-1-3",
-      "title": "황정민 사생활 의혹에 소속사 “스토킹 범죄 피의자가 작성한 게시물”",
+      "id": "naver-1-11",
+      "title": "황정민 사생활 의혹에 소속사 “스토킹 피의자가 쓴 악의적 게시물”",
       "excerpt": "배우 황정민이 온라인상에서 불거진 사생활 관련 의혹을 부인하며 스토킹 범죄 피의자가 작성한 악의적인 게시물이라고 주장했다. 황정민의 소속사 샘컴퍼니는 29일 입장문을 내어 “황정민씨 관련 악성 게시물 작성자는 황정민",
       "link": "https://n.news.naver.com/mnews/article/028/0002816279",
       "source": "한겨레",
       "sourceKey": "naver"
-    },
-    {
-      "id": "naver-1-4",
-      "title": "그래미가 BTS 심사하던 시대는 끝났다…“내년 출품 안해”",
-      "excerpt": "명실상부 전 세계에서 가장 큰 그룹 중 하나인 방탄소년단(BTS)이 그래미를 거부했다. 방탄소년단은 20일 오후 사회관계망서비스(SNS)를 통해 내년 열리는 제69회 그래미 어워즈에 정규 5집 ‘아리랑(ARIRANG",
-      "link": "https://n.news.naver.com/mnews/article/016/0002676975",
-      "source": "헤럴드경제",
-      "sourceKey": "naver"
-    },
-    {
-      "id": "naver-1-7",
-      "title": "넥센타이어, 2분기 영업익 343억원…전년비 19.5% 감소",
-      "excerpt": "넥센타이어가 유럽 시장 판매 호조와 고부가가치 제품 판매 확대에 힘입어 2분기 매출 성장을 이어갔다. 다만 원재료 가격과 해상운임 상승, 미국 반덤핑 관세 관련 일회성 비용 등이 반영되며 영업이익은 전년 동기 대비",
-      "link": "https://n.news.naver.com/mnews/article/117/0004089639",
-      "source": "마이데일리",
-      "sourceKey": "naver"
-    },
-    {
-      "id": "naver-1-9",
-      "title": "“투견은 있었지만 도박은 없었다?” 동물 싸움 막지 못하는 동물보호법",
-      "excerpt": "지난 4월 대구 달성군의 한 공터에서 투견 현장이 적발됐다. 현장에는 철제 사각링, 피투성이가 된 핏불테리어, 피 묻은 수건과 싸우는 개를 떼어놓는 도구까지 발견됐다. 언론 보도에 따르면 당시 현장에는 60여 명이",
-      "link": "https://n.news.naver.com/mnews/article/469/0000945127",
-      "source": "한국일보",
-      "sourceKey": "naver"
-    },
-    {
-      "id": "naver-1-11",
-      "title": "아빠와 즐거운 물장난 [포토]",
-      "excerpt": "서울의 낮 최고기온이 34도까지 올라 폭염경보가 발효된 29일 오후 서울 종로구 광화문광장에 설치된 2026 서울썸머비치 수영장을 찾은 한 가족이 물놀이를 늘기고 있다. 기상청에 따르면 이날 각 지역의 낮 최고기온은",
-      "link": "https://n.news.naver.com/mnews/article/629/0000520121",
-      "source": "더팩트",
-      "sourceKey": "naver"
-    },
-    {
-      "id": "g-review-0",
-      "title": "회사는 ‘독서의 훼방꾼’… 책을 위한 사회는 없나[북리뷰] - 문화일보",
-      "excerpt": "회사는 ‘독서의 훼방꾼’… 책을 위한 사회는 없나[북리뷰]&nbsp;&nbsp;문화일보",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE91QlNVV0RPdktzNkFWb01ZSnhkdmJVeGFUMWpCaDNPYjU1NkpQTER4djhfQ1pGTGtBdF9KUHNueE55UUFMeXRuc1ZIQ1J1OUNi?oc=5",
-      "source": "문화일보",
-      "sourceKey": "google-news",
-      "publishedAt": "Fri, 24 Jul 2026 00:32:07 GMT"
     }
   ]
 }

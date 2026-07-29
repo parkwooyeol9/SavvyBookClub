@@ -1,6 +1,9 @@
 import * as cheerio from "cheerio";
 import { absoluteUrl, cleanText, fetchHtml } from "@/lib/books/fetch-html";
-import { isMangaBookFromYes24Item } from "@/lib/books/filter-books";
+import {
+  isJapaneseBookFromYes24Item,
+  isMangaBookFromYes24Item,
+} from "@/lib/books/filter-books";
 import type { ChartPeriod } from "@/lib/books/chart-periods";
 import type { Book } from "@/lib/books/types";
 
@@ -67,11 +70,21 @@ function parseYes24List(
     const root = $(el);
     const itemHtml = root.html() ?? "";
     const itemText = cleanText(root.text());
-    if (isMangaBookFromYes24Item(itemHtml, itemText)) return;
 
     const titleEl = root.find("a.gd_name").first();
     const title = cleanText(titleEl.text());
     if (!title) return;
+
+    const publisher = cleanText(root.find(".info_pub a").first().text());
+    if (isMangaBookFromYes24Item(itemHtml, itemText, title, publisher)) {
+      return;
+    }
+    if (
+      options.language === "en" &&
+      isJapaneseBookFromYes24Item(title, publisher, itemText)
+    ) {
+      return;
+    }
 
     const href = titleEl.attr("href");
     const author = cleanText(
@@ -90,7 +103,7 @@ function parseYes24List(
       author,
       coverUrl,
       link: absoluteUrl(YES24_ORIGIN, href),
-      publisher: cleanText(root.find(".info_pub a").first().text()),
+      publisher,
     });
   });
 
@@ -103,7 +116,16 @@ function parseYes24List(
       const root = titleEl.closest("li");
       const itemHtml = root.html() ?? "";
       const itemText = cleanText(root.text());
-      if (isMangaBookFromYes24Item(itemHtml, itemText)) return;
+      const publisher = cleanText(root.find(".info_pub a").first().text());
+      if (isMangaBookFromYes24Item(itemHtml, itemText, title, publisher)) {
+        return;
+      }
+      if (
+        options.language === "en" &&
+        isJapaneseBookFromYes24Item(title, publisher, itemText)
+      ) {
+        return;
+      }
 
       const img = root.find("img").first();
       pushYes24Book(books, options, {
@@ -116,6 +138,7 @@ function parseYes24List(
           img.attr("src") ||
           "",
         link: absoluteUrl(YES24_ORIGIN, titleEl.attr("href")),
+        publisher,
       });
     });
   }
