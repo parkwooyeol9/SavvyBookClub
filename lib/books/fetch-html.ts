@@ -7,7 +7,7 @@ const DEFAULT_HEADERS: HeadersInit = {
 
 export async function fetchHtml(
   url: string,
-  options?: { timeoutMs?: number },
+  options?: { timeoutMs?: number; live?: boolean },
 ): Promise<string | null> {
   const controller = new AbortController();
   const timeout = setTimeout(
@@ -19,7 +19,9 @@ export async function fetchHtml(
     const res = await fetch(url, {
       headers: DEFAULT_HEADERS,
       signal: controller.signal,
-      next: { revalidate: 86400, tags: ["books"] },
+      ...(options?.live
+        ? { cache: "no-store" as const }
+        : { next: { revalidate: 86400, tags: ["books"] } }),
     });
     if (!res.ok) {
       console.error("fetchHtml failed", url, res.status);

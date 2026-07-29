@@ -66,7 +66,9 @@ export function diversifyNewsBySource(
 }
 
 export async function scrapeHaniBookNews(): Promise<BookNewsItem[]> {
-  const html = await fetchHtml("https://www.hani.co.kr/arti/culture/book/");
+  const html = await fetchHtml("https://www.hani.co.kr/arti/culture/book/", {
+    live: true,
+  });
   if (!html) return [];
 
   try {
@@ -105,7 +107,7 @@ async function scrapeGoogleQuery(
   idPrefix: string,
 ): Promise<BookNewsItem[]> {
   const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
-  const xml = await fetchHtml(url);
+  const xml = await fetchHtml(url, { live: true });
   if (!xml) return [];
 
   try {
@@ -156,7 +158,9 @@ export async function scrapeGoogleBookNews(): Promise<BookNewsItem[]> {
 }
 
 export async function scrapeChosunBookNews(): Promise<BookNewsItem[]> {
-  const html = await fetchHtml("https://www.chosun.com/culture-life/book/");
+  const html = await fetchHtml("https://www.chosun.com/culture-life/book/", {
+    live: true,
+  });
   if (!html) return [];
 
   const $ = cheerio.load(html);
@@ -194,7 +198,7 @@ export async function scrapeNaverBookNews(): Promise<BookNewsItem[]> {
 
   const batches = await Promise.all(
     urls.map(async (url, pageIndex) => {
-      const html = await fetchHtml(url);
+      const html = await fetchHtml(url, { live: true });
       if (!html) return [] as BookNewsItem[];
 
       const $ = cheerio.load(html);

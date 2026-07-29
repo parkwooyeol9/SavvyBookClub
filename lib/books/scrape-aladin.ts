@@ -49,6 +49,7 @@ function parseAladinBoxes(
 export async function scrapeAladinBestsellers(): Promise<Book[]> {
   const html = await fetchHtml(
     `${ALADIN_ORIGIN}/shop/common/wbest.aspx?BestType=Bestseller&BranchType=1&CID=0`,
+    { live: true },
   );
   if (!html) return [];
   return parseAladinBoxes(html, { language: "ko", idPrefix: "aladin-best" });
@@ -57,6 +58,7 @@ export async function scrapeAladinBestsellers(): Promise<Book[]> {
 export async function scrapeAladinNewReleases(): Promise<Book[]> {
   const html = await fetchHtml(
     `${ALADIN_ORIGIN}/shop/common/wnew.aspx?BranchType=1`,
+    { live: true },
   );
   if (!html) return [];
   return parseAladinBoxes(html, { language: "ko", idPrefix: "aladin-new" });

@@ -60,7 +60,7 @@ async function search(query: string): Promise<OlSearchDoc[]> {
         Accept: "application/json",
         "User-Agent": "SavvyBookClub/1.0 (+https://savvybookclub.vercel.app)",
       },
-      next: { revalidate: 86400, tags: ["books"] },
+      cache: "no-store",
     });
     if (!res.ok) return [];
     const data = (await res.json()) as OlSearchResponse;

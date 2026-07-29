@@ -76,6 +76,7 @@ function parseYes24List(
 export async function scrapeYes24Bestsellers(): Promise<Book[]> {
   const html = await fetchHtml(
     `${YES24_ORIGIN}/Product/Category/BestSeller?categoryNumber=001&pageNumber=1&pageSize=24`,
+    { live: true },
   );
   if (!html) return [];
   return parseYes24List(html, { language: "ko", idPrefix: "yes24-best" });
@@ -84,6 +85,7 @@ export async function scrapeYes24Bestsellers(): Promise<Book[]> {
 export async function scrapeYes24NewReleases(): Promise<Book[]> {
   const html = await fetchHtml(
     `${YES24_ORIGIN}/Product/Category/NewProduct?categoryNumber=001`,
+    { live: true },
   );
   if (!html) return [];
   return parseYes24List(html, { language: "ko", idPrefix: "yes24-new" });
@@ -92,6 +94,7 @@ export async function scrapeYes24NewReleases(): Promise<Book[]> {
 export async function scrapeYes24ForeignBestsellers(): Promise<Book[]> {
   const html = await fetchHtml(
     `${YES24_ORIGIN}/Product/Category/BestSeller?categoryNumber=002&pageNumber=1&pageSize=24`,
+    { live: true },
   );
   if (!html) return [];
   return parseYes24List(html, { language: "en", idPrefix: "yes24-foreign" });

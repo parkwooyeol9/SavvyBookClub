@@ -1,4 +1,6 @@
 import { BookRail } from "@/components/book-rail";
+import { CatalogStatus } from "@/components/catalog-status";
+import { DailyPicks } from "@/components/daily-picks";
 import { FeaturedReviews } from "@/components/featured-reviews";
 import { Hero } from "@/components/hero";
 import { KnowledgeMapExplorer } from "@/components/knowledge-map";
@@ -6,6 +8,7 @@ import { NewsletterCta } from "@/components/newsletter-cta";
 import { NewsRail } from "@/components/news-rail";
 import { Reveal } from "@/components/reveal";
 import { getBookCatalog } from "@/lib/books/cache";
+import { buildDailyPicks } from "@/lib/daily-picks";
 import { groupReviewsByDomain } from "@/lib/knowledge-map";
 import { getAllReviews, getFeaturedReviews } from "@/lib/reviews";
 
@@ -19,22 +22,28 @@ export default async function HomePage() {
     getAllReviews(),
   ]);
   const knowledgeGrouped = groupReviewsByDomain(reviews);
+  const dailyPicks = buildDailyPicks(catalog, reviews, 6);
+  const bookCount = Object.values(catalog.sections).reduce(
+    (sum, books) => sum + books.length,
+    0,
+  );
 
   return (
     <>
-      <Hero reviewCount={reviews.length} />
+      <Hero
+        reviewCount={reviews.length}
+        bookCount={bookCount}
+        newsCount={catalog.bookNews.length}
+        updatedAtKst={catalog.updatedAtKst}
+      />
       <div id="bestsellers" className="page-shell section-stack">
-        <p className="catalog-meta">
-          목록 갱신 (한국시간): {catalog.updatedAtKst} · 매일 오전 9시 자동
-          업데이트 · 서평 원문{" "}
-          <a
-            href="https://brunch.co.kr/@econbook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            brunch.co.kr/@econbook
-          </a>
-        </p>
+        <CatalogStatus catalog={catalog} />
+
+        <Reveal>
+          <section id="daily-picks">
+            <DailyPicks picks={dailyPicks} />
+          </section>
+        </Reveal>
 
         <section id="knowledge-map" className="home-kmap">
           <div className="book-rail__heading">
@@ -55,6 +64,7 @@ export default async function HomePage() {
         <Reveal>
           <NewsRail
             title="오늘의 신간·서평 뉴스"
+            subtitle={`${catalog.updatedAtKst} 기준`}
             items={catalog.bookNews}
           />
         </Reveal>
@@ -62,7 +72,24 @@ export default async function HomePage() {
         <Reveal>
           <BookRail
             title="알라딘 국내 베스트"
+            subtitle="오늘의 1위부터"
             books={catalog.sections.domesticBestsellers}
+          />
+        </Reveal>
+
+        <Reveal>
+          <BookRail
+            title="Yes24 국내 베스트"
+            subtitle="알라딘과 다른 순위도 함께"
+            books={catalog.sections.yes24Bestsellers}
+          />
+        </Reveal>
+
+        <Reveal>
+          <BookRail
+            title="주목할 신간"
+            subtitle="알라딘·Yes24 신간"
+            books={catalog.sections.newReleases}
           />
         </Reveal>
 

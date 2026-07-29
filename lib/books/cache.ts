@@ -1,6 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 import { seedCatalog } from "@/lib/books/seed";
+import { isCatalogStale } from "@/lib/books/freshness";
 import { scrapeAladinBestsellers, scrapeAladinNewReleases } from "@/lib/books/scrape-aladin";
 import { scrapeBookNews } from "@/lib/books/scrape-news";
 import { scrapeOpenLibraryTrending } from "@/lib/books/scrape-openlibrary";
@@ -12,11 +13,23 @@ import {
 import type { Book, BookCatalog, BookNewsItem, CatalogSection } from "@/lib/books/types";
 
 const CACHE_FILENAME = "catalog.json";
+const TMP_PATH = path.join("/tmp", "savvy-book-club", CACHE_FILENAME);
+const REPO_PATH = path.join(
+  /* turbopackIgnore: true */ process.cwd(),
+  "data",
+  "cache",
+  CACHE_FILENAME,
+);
 
-function cachePaths(): string[] {
-  const repoPath = path.join(process.cwd(), "data", "cache", CACHE_FILENAME);
-  const tmpPath = path.join("/tmp", "savvy-book-club", CACHE_FILENAME);
-  return [tmpPath, repoPath];
+function cacheReadPaths(): string[] {
+  // On Vercel, only /tmp is writable; bundled repo cache is often days old.
+  if (process.env.VERCEL) return [TMP_PATH];
+  return [TMP_PATH, REPO_PATH];
+}
+
+function cacheWritePaths(): string[] {
+  if (process.env.VERCEL) return [TMP_PATH];
+  return [REPO_PATH, TMP_PATH];
 }
 
 function formatKst(date: Date): string {
@@ -41,7 +54,7 @@ async function readJsonFile(filePath: string): Promise<BookCatalog | null> {
 }
 
 export async function readCatalogCache(): Promise<BookCatalog | null> {
-  for (const filePath of cachePaths()) {
+  for (const filePath of cacheReadPaths()) {
     const catalog = await readJsonFile(filePath);
     if (catalog) return catalog;
   }
@@ -49,12 +62,10 @@ export async function readCatalogCache(): Promise<BookCatalog | null> {
 }
 
 export async function writeCatalogCache(catalog: BookCatalog): Promise<string> {
-  const [tmpPath, repoPath] = cachePaths();
   const payload = JSON.stringify(catalog, null, 2);
-  const targets = process.env.VERCEL ? [tmpPath] : [repoPath, tmpPath];
-
   let written = "";
-  for (const target of targets) {
+
+  for (const target of cacheWritePaths()) {
     try {
       await fs.mkdir(path.dirname(target), { recursive: true });
       await fs.writeFile(target, payload, "utf8");
@@ -124,15 +135,22 @@ export async function syncBookCatalog(): Promise<BookCatalog> {
   return catalog;
 }
 
-/** Prefer cached crawl results so page views do not re-scrape every time. */
+/**
+ * Return fresh catalog data. Re-crawls when cache is missing or older than ~22h
+ * so production does not keep serving a stale bundled JSON forever.
+ */
 export async function getBookCatalog(): Promise<BookCatalog> {
   const cached = await readCatalogCache();
-  if (cached) return cached;
+
+  if (cached && !isCatalogStale(cached.updatedAt)) {
+    return cached;
+  }
 
   try {
     return await syncBookCatalog();
   } catch (error) {
-    console.error("Catalog sync failed, using seed", error);
+    console.error("Catalog sync failed", error);
+    if (cached) return cached;
     return seedCatalog;
   }
 }
