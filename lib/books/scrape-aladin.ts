@@ -1,9 +1,12 @@
 import * as cheerio from "cheerio";
 import { absoluteUrl, cleanText, fetchHtml } from "@/lib/books/fetch-html";
+import { isMangaBookFromAladinBox } from "@/lib/books/filter-books";
 import type { ChartPeriod } from "@/lib/books/chart-periods";
 import type { Book } from "@/lib/books/types";
 
 const ALADIN_ORIGIN = "https://www.aladin.co.kr";
+const TARGET_COUNT = 12;
+const MAX_SCAN = 48;
 
 const ALADIN_BEST_TYPE: Record<ChartPeriod, string> = {
   daily: "DailyBest",
@@ -23,8 +26,12 @@ function parseAladinBoxes(
   const books: Book[] = [];
 
   $("div.ss_book_box").each((index, el) => {
-    if (books.length >= 12) return false;
+    if (books.length >= TARGET_COUNT || index >= MAX_SCAN) return false;
     const root = $(el);
+    const boxHtml = root.html() ?? "";
+    const boxText = cleanText(root.text());
+    if (isMangaBookFromAladinBox(boxHtml, boxText)) return;
+
     const linkEl = root
       .find('a[href*="wproduct.aspx"]')
       .filter((_, a) => cleanText($(a).text()).length > 1)
@@ -43,14 +50,14 @@ function parseAladinBoxes(
     if (!coverUrl) coverUrl = root.find("img").first().attr("src") || "";
 
     books.push({
-      id: `${options.idPrefix}-${index + 1}`,
+      id: `${options.idPrefix}-${books.length + 1}`,
       title,
       author: author || "저자 미상",
       coverUrl,
       link: absoluteUrl(ALADIN_ORIGIN, linkEl.attr("href")),
       source: "aladin",
       language: options.language,
-      rank: index + 1,
+      rank: books.length + 1,
       chartPeriod: options.chartPeriod,
     });
   });
