@@ -254,5 +254,6 @@ export const seedCatalog: BookCatalog = {
         publisher: "HarperBusiness",
       },
     ],
+    categoryBestsellers: {},
   },
 };

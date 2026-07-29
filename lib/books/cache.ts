@@ -2,7 +2,12 @@ import { promises as fs } from "fs";
 import path from "path";
 import { seedCatalog } from "@/lib/books/seed";
 import { isCatalogStale } from "@/lib/books/freshness";
-import { scrapeAladinBestsellers, scrapeAladinNewReleases } from "@/lib/books/scrape-aladin";
+import {
+  ALADIN_CATEGORIES,
+  scrapeAladinBestsellers,
+  scrapeAladinCategoryBestsellers,
+  scrapeAladinNewReleases,
+} from "@/lib/books/scrape-aladin";
 import { scrapeBookNews } from "@/lib/books/scrape-news";
 import { scrapeOpenLibraryTrending } from "@/lib/books/scrape-openlibrary";
 import {
@@ -10,7 +15,7 @@ import {
   scrapeYes24ForeignBestsellers,
   scrapeYes24NewReleases,
 } from "@/lib/books/scrape-yes24";
-import type { Book, BookCatalog, BookNewsItem, CatalogSection } from "@/lib/books/types";
+import type { Book, BookCatalog, BookNewsItem, CatalogSection, CategoryBestsellers } from "@/lib/books/types";
 import {
   emptyChartedBooks,
   normalizeChartedBooks,
@@ -63,6 +68,10 @@ async function readJsonFile(filePath: string): Promise<BookCatalog | null> {
     parsed.sections.foreignBestsellers = normalizeChartedBooks(
       parsed.sections.foreignBestsellers as Book[] | ChartedBooks,
     );
+
+    if (!parsed.sections.categoryBestsellers) {
+      parsed.sections.categoryBestsellers = {};
+    }
 
     return parsed;
   } catch {
@@ -120,6 +129,25 @@ async function scrapeCharted(
   };
 }
 
+async function scrapeCategoryBestsellers(): Promise<CategoryBestsellers> {
+  const nonAllCategories = ALADIN_CATEGORIES.filter((c) => c.id !== "all");
+  const results: CategoryBestsellers = {};
+
+  const entries = await Promise.all(
+    nonAllCategories.map(async (cat) => {
+      const charted = await scrapeCharted((period) =>
+        scrapeAladinCategoryBestsellers(cat.id, period),
+      );
+      return [cat.id, charted] as const;
+    }),
+  );
+
+  for (const [id, charted] of entries) {
+    results[id] = charted;
+  }
+  return results;
+}
+
 export async function syncBookCatalog(): Promise<BookCatalog> {
   const [
     aladinCharts,
@@ -129,6 +157,7 @@ export async function syncBookCatalog(): Promise<BookCatalog> {
     yes24ForeignCharts,
     openLibrary,
     bookNews,
+    categoryCharts,
   ] = await Promise.all([
     scrapeCharted(scrapeAladinBestsellers),
     scrapeCharted(scrapeYes24Bestsellers),
@@ -137,6 +166,7 @@ export async function syncBookCatalog(): Promise<BookCatalog> {
     scrapeCharted(scrapeYes24ForeignBestsellers),
     scrapeOpenLibraryTrending(),
     scrapeBookNews(),
+    scrapeCategoryBestsellers(),
   ]);
 
   const now = new Date();
@@ -164,6 +194,7 @@ export async function syncBookCatalog(): Promise<BookCatalog> {
         openLibrary,
         seedCatalog.sections.englishBestsellers,
       ),
+      categoryBestsellers: categoryCharts,
     },
     bookNews: withFallback(bookNews, seedCatalog.bookNews) as BookNewsItem[],
   };
@@ -195,6 +226,6 @@ export async function getBookCatalog(): Promise<BookCatalog> {
 export function getSection(
   catalog: BookCatalog,
   section: CatalogSection,
-): Book[] | ChartedBooks {
+): Book[] | ChartedBooks | CategoryBestsellers {
   return catalog.sections[section] ?? [];
 }

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { SimilarReviews } from "@/components/similar-reviews";
 import { aladinSearchUrl } from "@/lib/books/affiliate";
-import { getReviewBySlug, getReviewSlugs } from "@/lib/reviews";
+import { getReviewBySlug, getReviewSlugs, getAllReviews } from "@/lib/reviews";
+import { getSimilarReviews } from "@/lib/similar-reviews";
 import { getSiteUrl } from "@/lib/site";
 
 type Props = {
@@ -52,9 +54,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ReviewDetailPage({ params }: Props) {
   const { slug } = await params;
-  const review = await getReviewBySlug(slug);
+  const [review, allReviews] = await Promise.all([
+    getReviewBySlug(slug),
+    getAllReviews(),
+  ]);
   if (!review) notFound();
 
+  const similar = getSimilarReviews(review, allReviews, 4);
   const brunchUrl = review.brunchUrl;
   const bookstoreUrl = aladinSearchUrl(
     review.title.split("—")[0]?.trim() || review.title,
@@ -115,6 +121,7 @@ export default async function ReviewDetailPage({ params }: Props) {
           </div>
         </div>
       </article>
+      <SimilarReviews reviews={similar} />
     </div>
   );
 }

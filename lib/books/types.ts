@@ -49,7 +49,11 @@ export type CatalogSection =
   | "newReleases"
   | "yes24Bestsellers"
   | "foreignBestsellers"
-  | "englishBestsellers";
+  | "englishBestsellers"
+  | "categoryBestsellers";
+
+/** categoryId → ChartedBooks map for per-genre Aladin bestsellers. */
+export type CategoryBestsellers = Record<string, ChartedBooks>;
 
 export interface BookCatalog {
   updatedAt: string;
@@ -60,6 +64,7 @@ export interface BookCatalog {
     newReleases: Book[];
     foreignBestsellers: ChartedBooks;
     englishBestsellers: Book[];
+    categoryBestsellers: CategoryBestsellers;
   };
   bookNews: BookNewsItem[];
 }

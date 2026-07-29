@@ -1,3 +1,4 @@
+import { CategoryChartRail } from "@/components/category-chart-rail";
 import { ChartBookRail } from "@/components/chart-book-rail";
 import { CatalogStatus } from "@/components/catalog-status";
 import { DailyPicks } from "@/components/daily-picks";
@@ -10,6 +11,7 @@ import { BookRail } from "@/components/book-rail";
 import { Reveal } from "@/components/reveal";
 import { pickChartBooks } from "@/lib/books/chart-periods";
 import { getBookCatalog } from "@/lib/books/cache";
+import { ALADIN_CATEGORIES } from "@/lib/books/scrape-aladin";
 import { buildDailyPicks } from "@/lib/daily-picks";
 import { groupReviewsByDomain } from "@/lib/knowledge-map";
 import { getAllReviews, getFeaturedReviews } from "@/lib/reviews";
@@ -88,10 +90,12 @@ export default async function HomePage() {
         </Reveal>
 
         <Reveal>
-          <ChartBookRail
+          <CategoryChartRail
             title="알라딘 국내 베스트"
-            subtitle="일간·주간·월간 차트 전환"
-            charted={catalog.sections.domesticBestsellers}
+            subtitle="분야별 · 일간·주간·월간 차트"
+            allCharted={catalog.sections.domesticBestsellers}
+            categoryCharted={catalog.sections.categoryBestsellers}
+            categories={ALADIN_CATEGORIES.filter((c) => c.id !== "all")}
             defaultPeriod="daily"
           />
         </Reveal>

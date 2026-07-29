@@ -2,7 +2,7 @@ import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import { syncBookCatalog } from "@/lib/books/cache";
 import type { ChartedBooks } from "@/lib/books/chart-periods";
-import type { Book } from "@/lib/books/types";
+import type { Book, CategoryBestsellers } from "@/lib/books/types";
 import { syncBrunchReviews } from "@/lib/reviews";
 
 export const runtime = "nodejs";
@@ -10,9 +10,19 @@ export const dynamic = "force-dynamic";
 /** Allow enough time for multi-site HTML crawls. */
 export const maxDuration = 60;
 
-function sectionCount(books: Book[] | ChartedBooks): number {
+function sectionCount(
+  books: Book[] | ChartedBooks | CategoryBestsellers,
+): number {
   if (Array.isArray(books)) return books.length;
-  return books.daily.length + books.weekly.length + books.monthly.length;
+  const obj = books as Record<string, unknown>;
+  if (Array.isArray(obj.daily)) {
+    const c = books as ChartedBooks;
+    return c.daily.length + c.weekly.length + c.monthly.length;
+  }
+  return Object.values(books as CategoryBestsellers).reduce(
+    (sum, ch) => sum + ch.daily.length + ch.weekly.length + ch.monthly.length,
+    0,
+  );
 }
 
 function authorize(request: Request): boolean {

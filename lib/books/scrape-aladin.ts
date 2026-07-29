@@ -85,6 +85,41 @@ export async function scrapeAladinBestsellers(
   });
 }
 
+export interface AladinCategory {
+  id: string;
+  label: string;
+  cid: string;
+}
+
+export const ALADIN_CATEGORIES: AladinCategory[] = [
+  { id: "all", label: "전체", cid: "0" },
+  { id: "business", label: "경제/경영", cid: "170" },
+  { id: "selfhelp", label: "자기계발", cid: "987" },
+  { id: "humanities", label: "인문", cid: "798" },
+  { id: "science", label: "과학", cid: "854" },
+  { id: "society", label: "사회/정치", cid: "336" },
+  { id: "it", label: "IT/컴퓨터", cid: "517" },
+];
+
+export async function scrapeAladinCategoryBestsellers(
+  categoryId: string,
+  period: ChartPeriod = "weekly",
+): Promise<Book[]> {
+  const category = ALADIN_CATEGORIES.find((c) => c.id === categoryId);
+  if (!category) return [];
+  const bestType = ALADIN_BEST_TYPE[period];
+  const html = await fetchHtml(
+    `${ALADIN_ORIGIN}/shop/common/wbest.aspx?BestType=${bestType}&BranchType=1&CID=${category.cid}`,
+    { live: true },
+  );
+  if (!html) return [];
+  return parseAladinBoxes(html, {
+    language: "ko",
+    idPrefix: `aladin-cat-${categoryId}-${period}`,
+    chartPeriod: period,
+  });
+}
+
 export async function scrapeAladinNewReleases(): Promise<Book[]> {
   const html = await fetchHtml(
     `${ALADIN_ORIGIN}/shop/common/wnew.aspx?BranchType=1`,
