@@ -40,7 +40,7 @@ export function FeaturedReviews({ reviews }: { reviews: Review[] }) {
     <section className="featured-reviews" id="my-reviews">
       <div className="book-rail__heading">
         <h2>브런치 서평 · 경제·경영·과학</h2>
-        <p>brunch.co.kr/@econbook 원문으로 바로 연결됩니다.</p>
+        <p>사이트에서 요약을 보고, 원문은 브런치에서 이어 읽을 수 있습니다.</p>
       </div>
       <div className="featured-grid">
         {reviews.map((review) => (
@@ -71,7 +71,7 @@ export function FeaturedReviews({ reviews }: { reviews: Review[] }) {
                 {typeof review.rating === "number" ? (
                   <span>★ {review.rating.toFixed(1)}</span>
                 ) : null}
-                {review.source === "brunch" ? <span>브런치 ↗</span> : null}
+                {review.source === "brunch" ? <span>서평</span> : null}
               </div>
               <h3 className="featured-card__title">{review.title}</h3>
               <p className="featured-card__why">{review.whyRead}</p>

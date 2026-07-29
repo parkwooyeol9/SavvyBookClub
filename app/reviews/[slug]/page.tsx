@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { aladinSearchUrl } from "@/lib/books/affiliate";
 import { getReviewBySlug, getReviewSlugs } from "@/lib/reviews";
+import { getSiteUrl } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -24,9 +26,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const review = await getReviewBySlug(slug);
   if (!review) return { title: "서평" };
+
+  const title = review.title;
+  const description = review.whyRead || review.excerpt;
+  const url = `${getSiteUrl()}/reviews/${review.slug}`;
+
   return {
-    title: review.title,
-    description: review.excerpt,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+      images: review.coverUrl ? [{ url: review.coverUrl }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: review.coverUrl ? [review.coverUrl] : undefined,
+    },
   };
 }
 
@@ -35,7 +55,10 @@ export default async function ReviewDetailPage({ params }: Props) {
   const review = await getReviewBySlug(slug);
   if (!review) notFound();
 
-  const externalUrl = review.brunchUrl || review.purchaseUrl;
+  const brunchUrl = review.brunchUrl;
+  const bookstoreUrl = aladinSearchUrl(
+    review.title.split("—")[0]?.trim() || review.title,
+  );
 
   return (
     <div className="page-shell">
@@ -70,18 +93,26 @@ export default async function ReviewDetailPage({ params }: Props) {
             {review.whyRead}
           </p>
           <div className="review-detail__body">{review.body}</div>
-          {externalUrl ? (
-            <p style={{ marginTop: "1.75rem" }}>
+          <div className="review-detail__actions">
+            {brunchUrl ? (
               <a
-                href={externalUrl}
+                href={brunchUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn--primary"
               >
-                {review.source === "brunch" ? "브런치 원문 읽기" : "책 보러 가기"}
+                브런치에서 전체 읽기
               </a>
-            </p>
-          ) : null}
+            ) : null}
+            <a
+              href={bookstoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--ghost-ink"
+            >
+              서점에서 찾기
+            </a>
+          </div>
         </div>
       </article>
     </div>

@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Review } from "@/lib/books/types";
 import {
   knowledgeDomains,
   type KnowledgeDomainId,
 } from "@/lib/knowledge-map";
+import { getReviewHref } from "@/lib/review-links";
 
 export function KnowledgeMapExplorer({
   grouped,
@@ -102,11 +104,9 @@ export function KnowledgeMapExplorer({
               <p className="empty-state">이 분야에 연결된 서평이 아직 없습니다.</p>
             ) : (
               books.slice(0, 6).map((review) => (
-                <a
+                <Link
                   key={review.slug}
-                  href={review.brunchUrl || `/reviews/${review.slug}`}
-                  target={review.brunchUrl ? "_blank" : undefined}
-                  rel={review.brunchUrl ? "noopener noreferrer" : undefined}
+                  href={getReviewHref(review)}
                   className="kmap__book"
                 >
                   <div className="kmap__book-cover">
@@ -130,7 +130,7 @@ export function KnowledgeMapExplorer({
                     <h3>{review.title}</h3>
                     <p>{review.whyRead}</p>
                   </div>
-                </a>
+                </Link>
               ))
             )}
           </div>

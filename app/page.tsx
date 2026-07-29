@@ -2,6 +2,7 @@ import { BookRail } from "@/components/book-rail";
 import { FeaturedReviews } from "@/components/featured-reviews";
 import { Hero } from "@/components/hero";
 import { KnowledgeMapExplorer } from "@/components/knowledge-map";
+import { NewsletterCta } from "@/components/newsletter-cta";
 import { NewsRail } from "@/components/news-rail";
 import { Reveal } from "@/components/reveal";
 import { getBookCatalog } from "@/lib/books/cache";
@@ -21,7 +22,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Hero />
+      <Hero reviewCount={reviews.length} />
       <div id="bestsellers" className="page-shell section-stack">
         <p className="catalog-meta">
           목록 갱신 (한국시간): {catalog.updatedAtKst} · 매일 오전 9시 자동
@@ -35,10 +36,6 @@ export default async function HomePage() {
           </a>
         </p>
 
-        <Reveal>
-          <FeaturedReviews reviews={featured} />
-        </Reveal>
-
         <section id="knowledge-map" className="home-kmap">
           <div className="book-rail__heading">
             <p className="home-kmap__eyebrow">KNOWLEDGE MAP</p>
@@ -50,6 +47,10 @@ export default async function HomePage() {
           </div>
           <KnowledgeMapExplorer grouped={knowledgeGrouped} />
         </section>
+
+        <Reveal>
+          <FeaturedReviews reviews={featured} />
+        </Reveal>
 
         <Reveal>
           <NewsRail
@@ -65,25 +66,25 @@ export default async function HomePage() {
           />
         </Reveal>
 
-        <Reveal>
-          <BookRail
-            title="Yes24 국내 베스트"
-            books={catalog.sections.yes24Bestsellers}
-          />
-        </Reveal>
-
-        <Reveal>
-          <BookRail
-            title="주목할 신간"
-            books={catalog.sections.newReleases}
-          />
-        </Reveal>
+        {catalog.sections.foreignBestsellers.length > 0 ? (
+          <Reveal>
+            <BookRail
+              title="Yes24 외국도서 베스트"
+              books={catalog.sections.foreignBestsellers}
+            />
+          </Reveal>
+        ) : null}
 
         <Reveal>
           <BookRail
             title="영문 트렌딩 · 경제·경영·논픽션"
             books={catalog.sections.englishBestsellers}
+            limit={6}
           />
+        </Reveal>
+
+        <Reveal>
+          <NewsletterCta />
         </Reveal>
       </div>
     </>

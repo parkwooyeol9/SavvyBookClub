@@ -53,39 +53,123 @@ function slugify(no: number): string {
   return `brunch-${no}`;
 }
 
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function brunchArticleUrl(no: number): string {
   return `https://brunch.co.kr/@${PROFILE}/${no}`;
 }
 
-function detectLanguage(title: string, summary: string): Review["language"] {
-  const text = `${title} ${summary}`;
-  if (/원서|english|livewired|weird|thinking,? fast/i.test(text)) return "en";
-  // Titles that are primarily Latin script
+function detectLanguage(
+  title: string,
+  summary: string,
+  subTitle: string,
+): Review["language"] {
+  // Korean translation note ⇒ Korean edition of a foreign book
+  if (/한국어\s*번역/.test(summary)) return "ko";
+
   const latin = (title.match(/[A-Za-z]/g) || []).length;
   const hangul = (title.match(/[가-힣]/g) || []).length;
   if (latin > 8 && hangul < 4) return "en";
+
+  // Structured “원서” markers only (avoid false positives in roundup essays)
+  if (
+    /한줄평:[^\n]{0,40}원서|원서\s*[:：]|원서로\s*읽|english\s*edition/i.test(
+      summary,
+    )
+  ) {
+    return "en";
+  }
+
+  const knownEnglish = /livewired|thinking,? fast and slow|\bweird\b/i;
+  if (knownEnglish.test(`${title} ${subTitle}`) && hangul < 8) return "en";
+
   return "ko";
 }
 
-function extractAuthor(title: string, subTitle: string, summary: string): string {
-  const underscore = title.match(/_(.+)$/);
-  if (underscore?.[1]) return underscore[1].trim();
+function looksLikePersonName(value: string): boolean {
+  const name = value.trim().replace(/^[-–—]\s*/, "");
+  if (name.length < 2 || name.length > 24) return false;
+  if (/["""''「」『』()[\]{}]/.test(name)) return false;
+  if (/\d/.test(name)) return false;
+  if (/\s{2,}/.test(name)) return false;
 
-  const comma = title.match(/,\s*([^,]+)$/);
-  if (comma?.[1] && /[가-힣A-Za-z]/.test(comma[1]) && comma[1].length < 30) {
-    return comma[1].trim();
+  const wordCount = name.split(/\s+/).filter(Boolean).length;
+  if (wordCount > 4) return false;
+
+  // Particles / phrase leftovers — not a person name
+  if (/(을|를|한\s*번에|어떻게|국제|제작|비교|합격)/.test(name)) {
+    return false;
+  }
+
+  // Subtitle / slogan fragments, not people
+  if (
+    /착각|시대|방법|세계|미래|위기|로드맵|이론|역사|시장|정부|기술|답이다|대하여|유니콘|코딩|자격증|기계|예고|전쟁|사람들|미신|연준|후기|보고서|메타버스|방정식|자본주의|불확실|격변|헛소리|스토리|데이터|그림/.test(
+      name,
+    )
+  ) {
+    return false;
+  }
+
+  // Prefer names that look like person tokens (Hangul 2–6 chars, or Latin words)
+  const hangulOnly = /^[가-힣]{2,6}([·.\s][가-힣]{1,6}){0,3}$/.test(name);
+  const latinName = /^[A-Za-z][A-Za-z.'\-\s]{1,22}$/.test(name);
+  const mixed =
+    /^[가-힣A-Za-z][가-힣A-Za-z·.\s'\-]{1,22}$/.test(name) &&
+    /[가-힣]/.test(name) &&
+    name.length <= 18 &&
+    !/[A-Z]{2,}/.test(name); // reject FRM-style acronyms
+
+  return hangulOnly || latinName || mixed;
+}
+
+function extractAuthor(title: string, subTitle: string, summary: string): string {
+  const haystacks = [title, subTitle].filter(Boolean);
+
+  for (const text of haystacks) {
+    const underscore = text.match(/_([^_]+)$/);
+    if (underscore?.[1] && looksLikePersonName(underscore[1])) {
+      return underscore[1].replace(/\s+/g, " ").trim();
+    }
+  }
+
+  for (const text of haystacks) {
+    // "Book — Author" or "Book - AuthorName"
+    const dashAuthor = text.match(/[—–]\s*([^—–,]{2,24})$/);
+    if (dashAuthor?.[1] && looksLikePersonName(dashAuthor[1])) {
+      return dashAuthor[1].replace(/\s+/g, " ").trim();
+    }
+  }
+
+  for (const text of haystacks) {
+    // "…, Edward Chancellor" / "Livewired, 데이비드 이글먼"
+    const comma = text.match(/,\s*([^,]{2,24})$/);
+    if (comma?.[1] && looksLikePersonName(comma[1])) {
+      return comma[1].replace(/\s+/g, " ").trim();
+    }
+  }
+
+  for (const text of haystacks) {
+    // "도파민네이션-에나 렘키"
+    const hyphenName = text.match(/[-–—]([가-힣A-Za-z][가-힣A-Za-z·.\s]{1,20})$/);
+    if (hyphenName?.[1] && looksLikePersonName(hyphenName[1])) {
+      return hyphenName[1].replace(/\s+/g, " ").trim();
+    }
   }
 
   const fromSummary = summary.match(
-    /(?:저자|지은이|글)\s*[:：]?\s*([^\s/,]{2,30})/,
+    /(?:저자|지은이|글쓴이)\s*[:：]\s*([가-힣A-Za-z.·\s]{2,24})/,
   );
-  if (fromSummary?.[1]) return fromSummary[1];
-
-  if (subTitle && subTitle.length < 40 && !/방법|시대|답이다|세계/.test(subTitle)) {
-    // subtitle is usually not author; ignore
+  if (fromSummary?.[1] && looksLikePersonName(fromSummary[1])) {
+    return fromSummary[1].replace(/\s+/g, " ").trim();
   }
 
-  return "데이터분석가 추천";
+  if (subTitle && looksLikePersonName(subTitle)) {
+    return subTitle.trim();
+  }
+
+  return "저자 미상";
 }
 
 function extractRating(summary: string): number | undefined {
@@ -102,27 +186,43 @@ function extractWhyRead(summary: string, subTitle: string): string {
   return summary.replace(/\s+/g, " ").trim().slice(0, 100);
 }
 
+/** Strip trailing `_Author` from title or subtitle segments. */
+function stripAuthorSuffix(text: string): string {
+  return text.replace(/_[^_]+$/, "").trim();
+}
+
 function cleanTitle(title: string): string {
-  return title.replace(/_[^_]+$/, "").trim();
+  return stripAuthorSuffix(title);
 }
 
 export function mapBrunchArticle(article: BrunchArticle): Review {
-  const title = cleanTitle(article.title ?? "제목 없음");
-  const subTitle = (article.subTitle ?? "").trim();
+  const rawTitle = article.title ?? "제목 없음";
+  const rawSubTitle = (article.subTitle ?? "").trim();
+  const title = cleanTitle(rawTitle);
+  const subTitle = stripAuthorSuffix(rawSubTitle);
   const summary = (article.contentSummary ?? "").replace(/\s+/g, " ").trim();
   const year = article.publishTime
     ? new Date(article.publishTime).getFullYear()
     : new Date().getFullYear();
-  const language = detectLanguage(title, summary);
-  const displayTitle = subTitle ? `${title} — ${subTitle}` : title;
+  const author = extractAuthor(rawTitle, rawSubTitle, summary);
+  const language = detectLanguage(title, summary, subTitle);
+  let displayTitle = subTitle ? `${title} — ${subTitle}` : title;
+  if (author !== "저자 미상") {
+    displayTitle = displayTitle
+      .replace(new RegExp(`[,，]\\s*${escapeRegExp(author)}\\s*$`), "")
+      .replace(new RegExp(`[—–-]\\s*${escapeRegExp(author)}\\s*$`), "")
+      .trim();
+  }
+  const isOriginalEnglish =
+    language === "en" || /원서로\s*읽|english\s*edition/i.test(summary);
 
   return {
     slug: slugify(article.no),
     title: displayTitle,
-    author: extractAuthor(article.title ?? "", subTitle, summary),
+    author,
     year,
     language,
-    isOriginalEnglish: language === "en",
+    isOriginalEnglish,
     coverUrl: pickCover(article.articleImageList),
     excerpt: summary.slice(0, 180),
     whyRead: extractWhyRead(summary, subTitle),

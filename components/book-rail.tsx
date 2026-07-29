@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withAffiliateParams } from "@/lib/books/affiliate";
 import type { Book } from "@/lib/books/types";
 
 const sourceLabel: Record<Book["source"], string> = {
@@ -10,9 +11,11 @@ const sourceLabel: Record<Book["source"], string> = {
 };
 
 export function BookCover({ book }: { book: Book }) {
+  const href = withAffiliateParams(book.link, book.source);
+
   return (
     <a
-      href={book.link}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className="book-cover"

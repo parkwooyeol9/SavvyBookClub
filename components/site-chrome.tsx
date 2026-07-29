@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { SiteNav } from "@/components/site-nav";
 
-const links = [
-  { href: "/", label: "홈" },
-  { href: "/#knowledge-map", label: "지식 지도" },
-  { href: "/reviews", label: "서평" },
-  { href: "/about", label: "소개" },
-];
+function newsletterHref(): string | null {
+  return (
+    process.env.NEXT_PUBLIC_NEWSLETTER_URL ||
+    process.env.NEXT_PUBLIC_KAKAO_CHANNEL_URL ||
+    null
+  );
+}
 
 export function SiteHeader() {
   return (
@@ -14,19 +16,15 @@ export function SiteHeader() {
         <Link href="/" className="site-logo">
           SavvyBookClub
         </Link>
-        <nav className="site-nav" aria-label="주요 메뉴">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href} className="site-nav__link">
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <SiteNav />
       </div>
     </header>
   );
 }
 
 export function SiteFooter() {
+  const newsletter = newsletterHref();
+
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
@@ -41,6 +39,13 @@ export function SiteFooter() {
             brunch.co.kr/@econbook
           </a>
         </p>
+        {newsletter ? (
+          <p className="site-footer__note">
+            <a href={newsletter} target="_blank" rel="noopener noreferrer">
+              주간 추천 받아보기 →
+            </a>
+          </p>
+        ) : null}
       </div>
     </footer>
   );

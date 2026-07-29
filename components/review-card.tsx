@@ -28,7 +28,7 @@ export function ReviewCard({ review }: { review: Review }) {
           {typeof review.rating === "number" ? (
             <span>★ {review.rating.toFixed(1)}</span>
           ) : null}
-          {review.source === "brunch" ? <span>브런치 ↗</span> : null}
+          {review.source === "brunch" ? <span>서평</span> : null}
         </div>
         <h2 className="review-card__title">{review.title}</h2>
         <p className="review-card__author">{review.author}</p>
