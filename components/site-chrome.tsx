@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SiteNav } from "@/components/site-nav";
+import { SiteQr } from "@/components/site-qr";
 
 function newsletterHref(): string | null {
   return (
@@ -16,7 +17,10 @@ export function SiteHeader() {
         <Link href="/" className="site-logo">
           SavvyBookClub
         </Link>
-        <SiteNav />
+        <div className="site-header__actions">
+          <SiteNav />
+          <SiteQr />
+        </div>
       </div>
     </header>
   );
