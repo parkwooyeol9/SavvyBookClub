@@ -1,7 +1,7 @@
 import { CategoryChartRail } from "@/components/category-chart-rail";
 import { ChartBookRail } from "@/components/chart-book-rail";
 import { CatalogStatus } from "@/components/catalog-status";
-import { DailyPicks } from "@/components/daily-picks";
+import { HomeSpotlight } from "@/components/home-spotlight";
 import { FeaturedReviews } from "@/components/featured-reviews";
 import { Hero } from "@/components/hero";
 import { KnowledgeMapExplorer } from "@/components/knowledge-map";
@@ -60,9 +60,7 @@ export default async function HomePage() {
         <CatalogStatus catalog={catalog} />
 
         <Reveal>
-          <section id="daily-picks">
-            <DailyPicks picks={dailyPicks} />
-          </section>
+          <HomeSpotlight picks={dailyPicks} />
         </Reveal>
 
         <section id="knowledge-map" className="home-kmap">

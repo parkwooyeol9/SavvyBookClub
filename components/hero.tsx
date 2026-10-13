@@ -47,9 +47,12 @@ export function Hero({
         </div>
         <p className="hero__updated">목록 갱신 {updatedAtKst}</p>
         <div className="hero__actions">
-          <Link href="#daily-picks" className="btn btn--primary">
+          <a href="#daily-picks" className="btn btn--primary">
             오늘의 추천
-          </Link>
+          </a>
+          <a href="#yeouido" className="btn btn--ghost">
+            여의도 명당
+          </a>
           <Link href="/map" className="btn btn--ghost">
             지식 지도
           </Link>

@@ -5,7 +5,13 @@ import { formatKstDate } from "@/lib/books/freshness";
 import type { DailyPick } from "@/lib/daily-picks";
 import { getReviewHref } from "@/lib/review-links";
 
-export function DailyPicks({ picks }: { picks: DailyPick[] }) {
+export function DailyPicks({
+  picks,
+  embedded = false,
+}: {
+  picks: DailyPick[];
+  embedded?: boolean;
+}) {
   const today = formatKstDate(new Date());
 
   return (
@@ -13,9 +19,16 @@ export function DailyPicks({ picks }: { picks: DailyPick[] }) {
       <div className="daily-picks__header">
         <div>
           <p className="daily-picks__eyebrow">TODAY&apos;S PICKS</p>
-          <h2 id="daily-picks-heading">오늘의 추천 {picks.length}선</h2>
+          {embedded ? (
+            <h2 id="daily-picks-heading" className="sr-only">
+              오늘의 추천 {picks.length}선
+            </h2>
+          ) : (
+            <h2 id="daily-picks-heading">오늘의 추천 {picks.length}선</h2>
+          )}
           <p className="daily-picks__lede">
-            {today} 기준 — 알라딘·Yes24·신간·서평에서 매일 다른 조합을 보여줍니다.
+            {today} 기준 — 알라딘·Yes24·신간·서평에서 매일 다른 조합{" "}
+            {picks.length}선을 보여줍니다.
           </p>
         </div>
       </div>
