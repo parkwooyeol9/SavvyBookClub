@@ -473,7 +473,7 @@ img {
 }
 
 .spotlight,
-#yeouido {
+#yeoidoMyongDang {
   scroll-margin-top: 5.25rem;
 }
 
@@ -488,6 +488,9 @@ img {
 }
 
 .spotlight-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   appearance: none;
   border: none;
   background: transparent;
@@ -496,6 +499,7 @@ img {
   border-radius: 999px;
   font-family: var(--font-literata), Georgia, serif;
   font-size: 1.02rem;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -620,6 +624,18 @@ img {
   display: flex;
   gap: 0.75rem;
   align-items: flex-start;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+
+.yeouido-card.is-selected {
+  background: rgba(92, 107, 74, 0.1);
 }
 
 .yeouido-num {
@@ -773,6 +789,136 @@ img {
   margin-top: 0.45rem;
   color: var(--olive);
   font-weight: 600;
+}
+
+.yeouido-screen {
+  width: min(1240px, calc(100% - 2rem));
+  margin: 1rem auto 2.5rem;
+}
+
+.yeouido-share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.9rem;
+}
+
+.yeouido-share code {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 0.84rem;
+}
+
+.yeouido-share button,
+.yeouido-search input {
+  font: inherit;
+  color: var(--ink);
+}
+
+.yeouido-share button {
+  min-height: 2.2rem;
+  padding: 0.35rem 0.75rem;
+  border: 0;
+  border-radius: 7px;
+  background: var(--olive);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.yeouido-workspace {
+  display: grid;
+  grid-template-columns: minmax(280px, 390px) minmax(0, 1fr);
+  height: min(740px, calc(100vh - 7.5rem));
+  min-height: 520px;
+  margin-top: 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.yeouido-sidebar {
+  min-height: 0;
+  overflow: auto;
+  border-right: 1px solid var(--line);
+}
+
+.yeouido-screen .yeouido-list {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.yeouido-search {
+  display: block;
+  padding: 0.85rem 0.85rem 0;
+}
+
+.yeouido-search input {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.yeouido-map {
+  height: 100%;
+  min-height: 320px;
+  z-index: 0;
+  background: #e7ebdf;
+}
+
+.yeouido-pin-wrap {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.yeouido-pin {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--olive);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(15, 28, 46, 0.28);
+}
+
+.yeouido-pin--food {
+  background: var(--sepia);
+}
+
+.yeouido-pin--hidden {
+  background: #6e6082;
+}
+
+.yeouido-pin--walk {
+  background: #3f7576;
+}
+
+.yeouido-pin--lotto {
+  background: var(--ink);
+}
+
+.yeouido-pin.is-selected {
+  outline: 3px solid rgba(15, 28, 46, 0.35);
+  transform: scale(1.08);
+}
+
+.yeouido-empty {
+  margin: 0;
+  padding: 1.4rem 1rem 1.6rem;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
 }
 
 .yeouido__caution,
@@ -1914,6 +2060,23 @@ img {
 
   .yeouido-intents {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .yeouido-workspace {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    min-height: 0;
+  }
+
+  .yeouido-map {
+    height: 380px;
+  }
+
+  .yeouido-sidebar {
+    max-height: 560px;
+    border-right: 0;
+    border-top: 1px solid var(--line);
   }
 
   .yeouido-routes__grid {

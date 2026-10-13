@@ -1,6 +1,7 @@
 import { CategoryChartRail } from "@/components/category-chart-rail";
 import { ChartBookRail } from "@/components/chart-book-rail";
 import { CatalogStatus } from "@/components/catalog-status";
+import { HomeMode } from "@/components/home-mode";
 import { HomeSpotlight } from "@/components/home-spotlight";
 import { FeaturedReviews } from "@/components/featured-reviews";
 import { Hero } from "@/components/hero";
@@ -49,7 +50,9 @@ export default async function HomePage() {
   const bookCount = catalogBookCount(catalog);
 
   return (
-    <>
+    <HomeMode
+      home={
+        <>
       <Hero
         reviewCount={reviews.length}
         bookCount={bookCount}
@@ -140,6 +143,8 @@ export default async function HomePage() {
           <NewsletterCta />
         </Reveal>
       </div>
-    </>
+        </>
+      }
+    />
   );
 }

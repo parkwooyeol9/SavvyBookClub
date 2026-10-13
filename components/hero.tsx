@@ -50,7 +50,7 @@ export function Hero({
           <a href="#daily-picks" className="btn btn--primary">
             오늘의 추천
           </a>
-          <a href="#yeouido" className="btn btn--ghost">
+          <a href="#yeoidoMyongDang" className="btn btn--ghost">
             여의도 명당
           </a>
           <Link href="/map" className="btn btn--ghost">
