@@ -1,6 +1,6 @@
 export type YeouidoSourceCategory = "lotto" | "food" | "hidden" | "cafe" | "walk";
 
-export type YeouidoView = "book" | "food" | "cafe" | "walk" | "lotto";
+export type YeouidoView = "all" | "book" | "food" | "cafe" | "walk" | "lotto";
 
 export type YeouidoPlace = {
   id: string;
@@ -17,6 +17,7 @@ export type YeouidoPlace = {
   note: string;
   bookCafe?: boolean;
   shelf?: string;
+  wins?: { first: string; second: string };
 };
 
 export type YeouidoRoute = {
@@ -30,15 +31,48 @@ export const yeouidoChecked = "2026.10.13";
 
 export const yeouidoGuideUrl = "https://yeouido-myeongdang.savvyetf.chatgpt.site/";
 
-export const yeouidoViews: { id: YeouidoView; label: string }[] = [
-  { id: "book", label: "북카페" },
-  { id: "food", label: "맛집" },
-  { id: "cafe", label: "카페·디저트" },
-  { id: "walk", label: "산책·전망" },
-  { id: "lotto", label: "복권 판매점" },
+export const yeouidoIntents: {
+  id: Exclude<YeouidoView, "all">;
+  icon: string;
+  title: string;
+  hint: string;
+}[] = [
+  { id: "food", icon: "♨", title: "점심 먹기", hint: "식사 장소 찾기" },
+  { id: "book", icon: "▤", title: "책 읽기", hint: "북카페 4곳" },
+  { id: "cafe", icon: "☕", title: "커피 한 잔", hint: "잠깐 쉬어가기" },
+  { id: "walk", icon: "⌁", title: "산책하기", hint: "공원과 전망" },
+  { id: "lotto", icon: "✳", title: "복권 판매점", hint: "위치와 당첨 이력" },
 ];
 
-const bookOrder = ["arc", "gangbyeon", "comma", "seowon"];
+const editorOrder = [
+  "hana",
+  "jinju",
+  "heejeong",
+  "transport",
+  "daedong",
+  "brighton",
+  "jeongin",
+  "hwamok",
+  "stand",
+  "jinjin",
+  "comma",
+  "yeouidocoffee",
+  "keepthat",
+  "teddy",
+  "terarosa",
+  "bread05",
+  "hangang",
+  "mulbit",
+  "saetgang",
+  "seouldal",
+  "yeouidopark",
+  "gayang",
+  "izawa",
+  "salady",
+  "arc",
+  "gangbyeon",
+  "seowon",
+];
 
 export const yeouidoPlaces: YeouidoPlace[] = [
   {
@@ -384,6 +418,7 @@ export const yeouidoPlaces: YeouidoPlace[] = [
     source: "https://todaylotto.kr/store/8375ceeab5412b31",
     sourceName: "투데이로또 · 판매점 안내",
     note: "민간 출처의 당첨 이력은 참고 정보입니다. 현재 판매 여부는 방문 전 확인하세요.",
+    wins: { first: "4건", second: "10~11건" },
   },
   {
     id: "transport",
@@ -398,6 +433,7 @@ export const yeouidoPlaces: YeouidoPlace[] = [
     source: "https://lottis.kr/stores/4187",
     sourceName: "로티스 · 교통카드판매대",
     note: "민간 목록의 당첨 인원과 공식 집계는 대조하지 않았습니다.",
+    wins: { first: "1건", second: "12건" },
   },
   {
     id: "brighton",
@@ -426,6 +462,7 @@ export const yeouidoPlaces: YeouidoPlace[] = [
     source: "https://lottologics.com/stores/서울특별시/영등포구/여의도동",
     sourceName: "로또로직스 · 여의도동 판매점",
     note: "과거 목록일 수 있어 이전·폐점 여부와 현재 판매 상태를 확인해야 합니다.",
+    wins: { first: "1건", second: "6건" },
   },
 ];
 
@@ -450,7 +487,7 @@ export const yeouidoRoutes: YeouidoRoute[] = [
   },
 ];
 
-export function yeouidoViewOf(place: YeouidoPlace): YeouidoView {
+export function yeouidoViewOf(place: YeouidoPlace): Exclude<YeouidoView, "all"> {
   if (place.bookCafe) return "book";
   if (place.cat === "food" || place.cat === "hidden") return "food";
   if (place.cat === "cafe") return "cafe";
@@ -458,11 +495,32 @@ export function yeouidoViewOf(place: YeouidoPlace): YeouidoView {
   return "lotto";
 }
 
+export function yeouidoKind(place: YeouidoPlace): string {
+  if (place.bookCafe) return "북카페";
+  if (place.cat === "hidden") return "숨은 맛집 후보";
+  if (place.cat === "food") return "식사 명당";
+  if (place.cat === "cafe") return "카페·디저트";
+  if (place.cat === "walk") return "산책·전망";
+  return "복권 판매점";
+}
+
+export function yeouidoTone(
+  place: YeouidoPlace,
+): "food" | "hidden" | "cafe" | "walk" | "lotto" {
+  if (place.cat === "hidden") return "hidden";
+  if (place.cat === "food") return "food";
+  if (place.cat === "cafe") return "cafe";
+  if (place.cat === "walk") return "walk";
+  return "lotto";
+}
+
 export function placesForView(view: YeouidoView): YeouidoPlace[] {
-  const places = yeouidoPlaces.filter((place) => yeouidoViewOf(place) === view);
-  if (view !== "book") return places;
+  const places =
+    view === "all"
+      ? yeouidoPlaces
+      : yeouidoPlaces.filter((place) => yeouidoViewOf(place) === view);
   return [...places].sort(
-    (a, b) => bookOrder.indexOf(a.id) - bookOrder.indexOf(b.id),
+    (a, b) => editorOrder.indexOf(a.id) - editorOrder.indexOf(b.id),
   );
 }
 
