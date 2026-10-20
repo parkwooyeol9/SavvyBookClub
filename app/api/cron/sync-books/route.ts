@@ -1,6 +1,8 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import { syncBookCatalog } from "@/lib/books/cache";
+import { blobEnabled } from "@/lib/books/persist";
+import { countRankDeltas } from "@/lib/books/rank-history";
 import type { ChartedBooks } from "@/lib/books/chart-periods";
 import type { Book, CategoryBestsellers } from "@/lib/books/types";
 import { syncBrunchReviews } from "@/lib/reviews";
@@ -50,14 +52,18 @@ async function handleSync(request: Request) {
       syncBookCatalog(),
       syncBrunchReviews(),
     ]);
-    revalidateTag("books", "max");
-    revalidateTag("brunch", "max");
+    revalidateTag("books", { expire: 0 });
+    revalidateTag("brunch", { expire: 0 });
     revalidatePath("/");
     revalidatePath("/reviews");
+    revalidatePath("/search");
+    revalidatePath("/books/[slug]", "page");
     return NextResponse.json({
       ok: true,
       updatedAt: catalog.updatedAt,
       updatedAtKst: catalog.updatedAtKst,
+      cache: blobEnabled() ? "blob" : "filesystem",
+      rankChanges: countRankDeltas(catalog),
       schedule: "매일 09:00 Asia/Seoul (Cron UTC 00:00)",
       counts: {
         ...Object.fromEntries(

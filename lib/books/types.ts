@@ -19,7 +19,10 @@ export interface Book {
   link: string;
   source: BookSource;
   language: BookLanguage;
+  /** Bookstore position before manga filtering, not a renumbered list index. */
   rank?: number;
+  /** Previous store rank minus current rank. Positive means the book climbed. */
+  rankDelta?: number;
   publisher?: string;
   description?: string;
   isbn?: string;

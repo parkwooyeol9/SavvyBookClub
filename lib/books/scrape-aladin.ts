@@ -45,6 +45,7 @@ function parseAladinBoxes(
       root.find('a[href*="PublisherSearch"]').first().text(),
     );
     if (isMangaBookFromAladinBox(boxHtml, boxText, title, publisher)) return;
+    const storeRank = index + 1;
     let coverUrl = "";
     root.find("img").each((_, img) => {
       const src = $(img).attr("src") || "";
@@ -53,14 +54,14 @@ function parseAladinBoxes(
     if (!coverUrl) coverUrl = root.find("img").first().attr("src") || "";
 
     books.push({
-      id: `${options.idPrefix}-${books.length + 1}`,
+      id: `${options.idPrefix}-${storeRank}`,
       title,
       author: author || "저자 미상",
       coverUrl,
       link: absoluteUrl(ALADIN_ORIGIN, linkEl.attr("href")),
       source: "aladin",
       language: options.language,
-      rank: books.length + 1,
+      rank: storeRank,
       publisher: publisher || undefined,
       chartPeriod: options.chartPeriod,
     });

@@ -1,4 +1,6 @@
+import { unstable_cache } from "next/cache";
 import { fetchBrunchReviews } from "@/lib/brunch";
+import { readSharedText, writeSharedText } from "@/lib/books/persist";
 import type { Review } from "@/lib/books/types";
 import { promises as fs } from "fs";
 import path from "path";
@@ -10,13 +12,29 @@ const BRUNCH_CACHE = path.join(
   "brunch-reviews.json",
 );
 const BRUNCH_TMP = path.join("/tmp", "savvy-book-club", "brunch-reviews.json");
+const BRUNCH_NAME = "brunch-reviews.json";
+
+function parseReviews(raw: string): Review[] | null {
+  try {
+    const parsed = JSON.parse(raw) as Review[];
+    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+  } catch {
+    return null;
+  }
+  return null;
+}
 
 async function readBrunchCache(): Promise<Review[] | null> {
+  const shared = await readSharedText(BRUNCH_NAME);
+  if (shared) {
+    const parsed = parseReviews(shared);
+    if (parsed) return parsed;
+  }
+
   for (const filePath of [BRUNCH_TMP, BRUNCH_CACHE]) {
     try {
-      const raw = await fs.readFile(filePath, "utf8");
-      const parsed = JSON.parse(raw) as Review[];
-      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      const parsed = parseReviews(await fs.readFile(filePath, "utf8"));
+      if (parsed) return parsed;
     } catch {
       // continue
     }
@@ -26,6 +44,7 @@ async function readBrunchCache(): Promise<Review[] | null> {
 
 export async function writeBrunchCache(reviews: Review[]): Promise<void> {
   const payload = JSON.stringify(reviews, null, 2);
+  await writeSharedText(BRUNCH_NAME, payload);
   const targets = process.env.VERCEL
     ? [BRUNCH_TMP]
     : [BRUNCH_CACHE, BRUNCH_TMP];
@@ -49,7 +68,7 @@ export async function syncBrunchReviews(): Promise<Review[]> {
   return reviews;
 }
 
-export async function getBrunchReviews(): Promise<Review[]> {
+async function loadBrunchReviews(): Promise<Review[]> {
   const cached = await readBrunchCache();
   if (cached) return cached;
 
@@ -59,6 +78,15 @@ export async function getBrunchReviews(): Promise<Review[]> {
     console.error("Brunch sync failed", error);
     return [];
   }
+}
+
+const loadCachedBrunchReviews = unstable_cache(loadBrunchReviews, ["brunch-reviews-v1"], {
+  tags: ["brunch"],
+  revalidate: 86400,
+});
+
+export async function getBrunchReviews(): Promise<Review[]> {
+  return loadCachedBrunchReviews();
 }
 
 /**

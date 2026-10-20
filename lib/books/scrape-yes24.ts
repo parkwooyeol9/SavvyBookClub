@@ -26,6 +26,7 @@ function yes24BestsellerUrl(
 
 function pushYes24Book(
   books: Book[],
+  storeRank: number,
   options: {
     language: Book["language"];
     idPrefix: string;
@@ -41,14 +42,14 @@ function pushYes24Book(
 ): void {
   if (books.length >= TARGET_COUNT) return;
   books.push({
-    id: `${options.idPrefix}-${books.length + 1}`,
+    id: `${options.idPrefix}-${storeRank}`,
     title: data.title,
     author: data.author || "저자 미상",
     coverUrl: data.coverUrl,
     link: data.link,
     source: "yes24",
     language: options.language,
-    rank: books.length + 1,
+    rank: storeRank,
     publisher: data.publisher,
     chartPeriod: options.chartPeriod,
   });
@@ -98,7 +99,7 @@ function parseYes24List(
       img.attr("src") ||
       "";
 
-    pushYes24Book(books, options, {
+    pushYes24Book(books, index + 1, options, {
       title,
       author,
       coverUrl,
@@ -128,7 +129,7 @@ function parseYes24List(
       }
 
       const img = root.find("img").first();
-      pushYes24Book(books, options, {
+      pushYes24Book(books, index + 1, options, {
         title,
         author:
           cleanText(root.find(".info_auth a").first().text()) || "저자 미상",
