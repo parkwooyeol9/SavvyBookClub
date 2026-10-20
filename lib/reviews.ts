@@ -61,10 +61,13 @@ export async function getBrunchReviews(): Promise<Review[]> {
   }
 }
 
-/** Brunch @econbook reviews only. */
+/**
+ * Brunch @econbook book reviews only. Posts without a 별점 are essays
+ * (연간 결산, 자격증 후기, 코딩 일지 등), not reviews, and are left out.
+ */
 export async function getAllReviews(): Promise<Review[]> {
   const brunch = await getBrunchReviews();
-  return [...brunch].sort(
+  return brunch.filter((review) => review.rating !== undefined).sort(
     (a, b) => b.year - a.year || a.title.localeCompare(b.title, "ko"),
   );
 }

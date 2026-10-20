@@ -172,6 +172,22 @@ function extractAuthor(title: string, subTitle: string, summary: string): string
   return "저자 미상";
 }
 
+/**
+ * Brunch posts whose title/subtitle omit the author. Keyed by article no;
+ * authors checked against Aladin search (2026-10-20).
+ */
+const AUTHOR_OVERRIDES: Record<number, string> = {
+  9: "크리스토퍼 레너드",
+  26: "장강명",
+  27: "마이클 오핸런",
+  28: "콜리 황",
+  29: "필리프 슈테르처",
+  30: "피터 터친",
+  31: "네이트 실버",
+  34: "루치르 샤르마",
+  35: "스티븐 위트",
+};
+
 function extractRating(summary: string): number | undefined {
   const m = summary.match(/별점:\s*([0-9.]+)/);
   if (!m) return undefined;
@@ -204,7 +220,8 @@ export function mapBrunchArticle(article: BrunchArticle): Review {
   const year = article.publishTime
     ? new Date(article.publishTime).getFullYear()
     : new Date().getFullYear();
-  const author = extractAuthor(rawTitle, rawSubTitle, summary);
+  const author =
+    AUTHOR_OVERRIDES[article.no] ?? extractAuthor(rawTitle, rawSubTitle, summary);
   const language = detectLanguage(title, summary, subTitle);
   let displayTitle = subTitle ? `${title} — ${subTitle}` : title;
   if (author !== "저자 미상") {
