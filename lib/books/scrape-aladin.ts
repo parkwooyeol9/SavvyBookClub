@@ -96,6 +96,7 @@ export const ALADIN_CATEGORIES: AladinCategory[] = [
   { id: "business", label: "경제/경영", cid: "170" },
   { id: "selfhelp", label: "자기계발", cid: "987" },
   { id: "humanities", label: "인문", cid: "798" },
+  { id: "fiction", label: "소설/문학", cid: "1" },
   { id: "science", label: "과학", cid: "854" },
   { id: "society", label: "사회/정치", cid: "336" },
   { id: "it", label: "IT/컴퓨터", cid: "517" },

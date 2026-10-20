@@ -26,7 +26,14 @@ const COMIC_PUBLISHER_PATTERNS = [
   /광음미디어/,
   /애니플러스/,
   /서울문화사/,
+  /서울미디어코믹스/,
+  /소미미디어/,
+  /디앤씨미디어/,
+  /영상출판미디어/,
 ];
+
+/** 번역 라이트노벨 신호. 권 번호만으로는 판단하지 않는다 (번역 장편소설 1·2권 오탐). */
+const LIGHT_NOVEL_PATTERNS = /요원전|라노벨|라이트\s*노벨|\bL\s*Novel\b|노블엔진|J노블/i;
 
 const COMIC_BUNDLE_PATTERNS = [
   /아크릴\s*스탠드/,
@@ -83,9 +90,11 @@ function isLikelyMangaOrComicFromMetadata(
   if (hasAuthorAndIllustrator(fullText) && hasSerializedVolume(title, fullText)) {
     return true;
   }
+  // Translated + volume number alone also matches multi-volume novels
+  // (e.g. 이민진 『아메리칸 학원 1·2』), so require an explicit light-novel signal.
   if (
     /\(지은이\).*\(옮긴이\)/.test(fullText) &&
-    (hasSerializedVolume(title, fullText) || /요원전|라노벨|라이트\s*노벨/.test(title))
+    LIGHT_NOVEL_PATTERNS.test(`${title} ${publisher}`)
   ) {
     return true;
   }
