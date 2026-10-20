@@ -1,6 +1,5 @@
 import { CategoryChartRail } from "@/components/category-chart-rail";
 import { ChartBookRail } from "@/components/chart-book-rail";
-import { CatalogStatus } from "@/components/catalog-status";
 import { HomeMode } from "@/components/home-mode";
 import { HomeSpotlight } from "@/components/home-spotlight";
 import { FeaturedReviews } from "@/components/featured-reviews";
@@ -12,6 +11,7 @@ import { BookRail } from "@/components/book-rail";
 import { Reveal } from "@/components/reveal";
 import { pickChartBooks } from "@/lib/books/chart-periods";
 import { getBookCatalog } from "@/lib/books/cache";
+import { isCatalogStale } from "@/lib/books/freshness";
 import { ALADIN_CATEGORIES } from "@/lib/books/scrape-aladin";
 import { buildDailyPicks } from "@/lib/daily-picks";
 import { groupReviewsByDomain } from "@/lib/knowledge-map";
@@ -58,10 +58,9 @@ export default async function HomePage() {
         bookCount={bookCount}
         newsCount={catalog.bookNews.length}
         updatedAtKst={catalog.updatedAtKst}
+        stale={isCatalogStale(catalog.updatedAt)}
       />
       <div id="bestsellers" className="page-shell section-stack">
-        <CatalogStatus catalog={catalog} />
-
         <Reveal>
           <HomeSpotlight picks={dailyPicks} />
         </Reveal>
