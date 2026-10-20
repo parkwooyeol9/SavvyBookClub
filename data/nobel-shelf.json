@@ -1,0 +1,190 @@
+{
+  "updated": "2026-10-20",
+  "note": "수상 연표에는 저서가 없어, 한국어로 읽을 대표작을 서가로 골랐습니다. 연도는 수상 연도입니다.",
+  "shelves": [
+    {
+      "id": "literature",
+      "label": "문학상",
+      "books": [
+        {
+          "id": "hesse-demian",
+          "laureate": "헤르만 헤세",
+          "year": 1946,
+          "title": "데미안",
+          "author": "헤르만 헤세",
+          "publisher": "민음사",
+          "difficulty": 2,
+          "reason": "자아를 찾는 성장 소설. 헤세를 처음 읽을 때 길이가 가장 짧습니다."
+        },
+        {
+          "id": "hesse-siddhartha",
+          "laureate": "헤르만 헤세",
+          "year": 1946,
+          "title": "싯다르타",
+          "author": "헤르만 헤세",
+          "publisher": "민음사",
+          "difficulty": 2,
+          "reason": "깨달음을 찾아 강을 건너는 이야기. 오늘 차트에 자주 다시 오릅니다."
+        },
+        {
+          "id": "camus-stranger",
+          "laureate": "알베르 카뮈",
+          "year": 1957,
+          "title": "이방인",
+          "author": "알베르 카뮈",
+          "publisher": "민음사",
+          "isbn": "8937443848",
+          "difficulty": 2,
+          "reason": "부조리를 짧은 소설로 만나는 입구. 민음사 세계문학전집 판입니다."
+        },
+        {
+          "id": "camus-plague",
+          "laureate": "알베르 카뮈",
+          "year": 1957,
+          "title": "페스트",
+          "author": "알베르 카뮈",
+          "publisher": "민음사",
+          "difficulty": 2,
+          "reason": "재난 한복판에서 연대가 무엇을 의미하는지 묻습니다."
+        },
+        {
+          "id": "steinbeck-mice",
+          "laureate": "존 스타인벡",
+          "year": 1962,
+          "title": "생쥐와 인간",
+          "author": "존 스타인벡",
+          "difficulty": 1,
+          "reason": "짧은 중편이라 스타인벡에 들어가기 좋습니다."
+        },
+        {
+          "id": "steinbeck-grapes",
+          "laureate": "존 스타인벡",
+          "year": 1962,
+          "title": "분노의 포도",
+          "author": "존 스타인벡",
+          "difficulty": 3,
+          "reason": "대공황 이주 노동을 따라가는 장편. 시간을 두고 읽는 사회소설입니다."
+        },
+        {
+          "id": "marquez-solitude",
+          "laureate": "가브리엘 가르시아 마르케스",
+          "year": 1982,
+          "title": "백년의 고독",
+          "author": "가브리엘 가르시아 마르케스",
+          "publisher": "민음사",
+          "difficulty": 3,
+          "reason": "마콘도 가문의 연대기. 마술적 사실주의를 대표하는 장편입니다."
+        },
+        {
+          "id": "pamuk-red",
+          "laureate": "오르한 파묵",
+          "year": 2006,
+          "title": "내 이름은 빨강",
+          "author": "오르한 파묵",
+          "difficulty": 3,
+          "reason": "오스만 세밀화 공방을 무대로 한 장편 추리입니다."
+        },
+        {
+          "id": "ishiguro-remains",
+          "laureate": "가즈오 이시구로",
+          "year": 2017,
+          "title": "남아 있는 나날",
+          "author": "가즈오 이시구로",
+          "difficulty": 2,
+          "reason": "한 집사의 회고로 후회와 품위를 동시에 읽습니다."
+        },
+        {
+          "id": "ernaux-event",
+          "laureate": "아니 에르노",
+          "year": 2022,
+          "title": "사건",
+          "author": "아니 에르노",
+          "difficulty": 2,
+          "reason": "자신의 경험을 건조하게 기록한 짧은 산문입니다."
+        },
+        {
+          "id": "han-vegetarian",
+          "laureate": "한강",
+          "year": 2024,
+          "title": "채식주의자",
+          "author": "한강",
+          "publisher": "창비",
+          "difficulty": 2,
+          "reason": "한국 작가의 노벨문학상 수상작. 몸의 거부를 세 편의 이야기로 읽습니다."
+        },
+        {
+          "id": "carson-autobiography",
+          "laureate": "앤 카슨",
+          "year": 2026,
+          "title": "빨강의 자서전",
+          "author": "앤 카슨",
+          "publisher": "한겨레출판",
+          "difficulty": 3,
+          "reason": "2026년 문학상 수상자의 시적 산문. 오늘 베스트 차트에 올라 있습니다."
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "label": "경제학상",
+      "books": [
+        {
+          "id": "kahneman-thinking",
+          "laureate": "대니얼 카너먼",
+          "year": 2002,
+          "title": "생각에 관한 생각",
+          "author": "대니얼 카너먼",
+          "publisher": "김영사",
+          "difficulty": 2,
+          "reason": "빠른 직관과 느린 숙고를 나누어 보는 행동경제학의 기본 책입니다."
+        },
+        {
+          "id": "sen-development",
+          "laureate": "아마르티아 센",
+          "year": 1998,
+          "title": "자유로서의 발전",
+          "author": "아마르티아 센",
+          "difficulty": 3,
+          "reason": "소득이 아니라 사람이 누리는 자유로 발전을 정의합니다."
+        },
+        {
+          "id": "krugman-depression",
+          "laureate": "폴 크루그먼",
+          "year": 2008,
+          "title": "불황의 경제학",
+          "author": "폴 크루그먼",
+          "difficulty": 2,
+          "reason": "수요가 부족할 때 불황이 어떻게 길어지는지 설명합니다."
+        },
+        {
+          "id": "shiller-exuberance",
+          "laureate": "로버트 실러",
+          "year": 2013,
+          "title": "비이성적 과열",
+          "author": "로버트 실러",
+          "difficulty": 2,
+          "reason": "이야기와 심리가 자산 가격을 밀어 올리는 과정을 다룹니다."
+        },
+        {
+          "id": "banerjee-poor",
+          "laureate": "아비지트 배너지",
+          "year": 2019,
+          "title": "가난한 사람이 더 합리적이다",
+          "author": "아비지트 배너지",
+          "difficulty": 2,
+          "reason": "현장 실험으로 빈곤 정책을 다시 읽게 하는 책입니다."
+        },
+        {
+          "id": "acemoglu-nations",
+          "laureate": "대런 애쓰모글루",
+          "year": 2024,
+          "title": "국가는 왜 실패하는가",
+          "author": "대런 애쓰모글루",
+          "publisher": "시공사",
+          "difficulty": 2,
+          "reason": "제도가 번영을 가른다는 2024년 수상자 애쓰모글루의 대표 저작입니다."
+        }
+      ]
+    }
+  ]
+}

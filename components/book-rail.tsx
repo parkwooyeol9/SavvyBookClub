@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { withAffiliateParams } from "@/lib/books/affiliate";
+import Link from "next/link";
+import { bookHref } from "@/lib/books/identity";
 import type { Book } from "@/lib/books/types";
 
 const sourceLabel: Record<Book["source"], string> = {
@@ -11,15 +12,12 @@ const sourceLabel: Record<Book["source"], string> = {
 };
 
 export function BookCover({ book }: { book: Book }) {
-  const href = withAffiliateParams(book.link, book.source);
+  const delta = book.rankDelta;
+  const deltaLabel =
+    delta && delta !== 0 ? (delta > 0 ? `▲${delta}` : `▼${Math.abs(delta)}`) : null;
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="book-cover"
-    >
+    <Link href={bookHref(book)} className="book-cover">
       <div className="book-cover__frame">
         {book.coverUrl ? (
           <Image
@@ -38,13 +36,20 @@ export function BookCover({ book }: { book: Book }) {
       </div>
       <div className="book-cover__meta">
         {book.rank ? (
-          <span className="book-cover__rank">{book.rank}</span>
+          <span className="book-cover__rank">
+            {book.rank}위
+            {deltaLabel ? (
+              <span className={`book-cover__delta${delta && delta > 0 ? " is-up" : " is-down"}`}>
+                {deltaLabel}
+              </span>
+            ) : null}
+          </span>
         ) : null}
         <h3 className="book-cover__title">{book.title}</h3>
         <p className="book-cover__author">{book.author}</p>
         <p className="book-cover__source">{sourceLabel[book.source]}</p>
       </div>
-    </a>
+    </Link>
   );
 }
 
@@ -53,18 +58,20 @@ export function BookRail({
   subtitle,
   books,
   limit = 8,
+  embedded = false,
 }: {
   title: string;
   subtitle?: string;
   books: Book[];
   limit?: number;
+  embedded?: boolean;
 }) {
   const visible = books.slice(0, limit);
 
   return (
-    <section className="book-rail">
+    <section className={`book-rail${embedded ? " book-rail--embedded" : ""}`}>
       <div className="book-rail__heading">
-        <h2>{title}</h2>
+        {embedded ? null : <h2>{title}</h2>}
         {subtitle ? <p>{subtitle}</p> : null}
       </div>
       <div className="book-rail__track">

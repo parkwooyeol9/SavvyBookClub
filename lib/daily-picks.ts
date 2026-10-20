@@ -1,6 +1,7 @@
 import type { Book, BookCatalog, Review } from "@/lib/books/types";
 import { pickChartBooks } from "@/lib/books/chart-periods";
 import { kstDaySeed } from "@/lib/books/freshness";
+import { workKey } from "@/lib/books/identity";
 import { ALADIN_CATEGORIES } from "@/lib/books/scrape-aladin";
 
 export type DailyPick =
@@ -50,17 +51,6 @@ interface WorkGroup {
   entries: ChartEntry[];
   families: Set<ChartFamily>;
   languages: Set<Book["language"]>;
-}
-
-/** Same work across volumes/editions: "아메리칸 학원 1" ≈ "아메리칸 학원 2", "(양장)" ignored. */
-function workKey(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/\[[^\]]*\]/g, "")
-    .replace(/\([^)]*\)/g, "")
-    .split(/\s[:\-–]\s|\s*:\s/)[0]
-    .replace(/\s*\d+\s*(?:~\s*\d+)?\s*(?:권|세트)?\s*$/, "")
-    .replace(/[^\p{L}\p{N}]/gu, "");
 }
 
 function authorKey(author: string): string | null {

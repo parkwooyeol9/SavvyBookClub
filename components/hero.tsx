@@ -42,8 +42,8 @@ export function Hero({
           <a href="#daily-picks" className="btn btn--primary">
             오늘의 추천
           </a>
-          <a href="#yeoidoMyongDang" className="btn btn--ghost">
-            여의도 명당
+          <a href="#store-charts" className="btn btn--ghost">
+            서점 차트
           </a>
           <Link href="/map" className="btn btn--ghost">
             지식 지도

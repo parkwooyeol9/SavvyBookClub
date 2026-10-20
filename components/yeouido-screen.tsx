@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { SpotlightTabs } from "@/components/home-spotlight";
 import { YeouidoMap } from "@/components/yeouido-map";
 import {
   placesForView,
@@ -72,7 +71,14 @@ export function YeouidoScreen() {
 
   return (
     <div className="yeouido-screen">
-      <SpotlightTabs active="yeouido" />
+      <div className="spotlight-tabs" role="tablist" aria-label="책 추천과 여의도 명당">
+        <a href="#daily-picks" className="spotlight-tab" role="tab">
+          오늘의 추천
+        </a>
+        <span className="spotlight-tab is-active" role="tab" aria-selected="true">
+          여의도 명당
+        </span>
+      </div>
       <div className="yeouido__intro">
         <p className="daily-picks__eyebrow">THE YEOUIDO NEIGHBORHOOD GUIDE</p>
         <h2>오늘 여의도에서 무엇을 할까요?</h2>

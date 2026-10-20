@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { getBookCatalog } from "@/lib/books/cache";
+import { listBookSlugs } from "@/lib/books/catalog-index";
 import { getReviewSlugs } from "@/lib/reviews";
 import { getSiteUrl } from "@/lib/site";
 
@@ -26,7 +28,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    {
+      url: `${base}/search`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.6,
+    },
   ];
+
+  let bookRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const catalog = await getBookCatalog();
+    bookRoutes = listBookSlugs(catalog).map((slug) => ({
+      url: `${base}/books/${slug}`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.5,
+    }));
+  } catch {
+    bookRoutes = [];
+  }
 
   let reviewRoutes: MetadataRoute.Sitemap = [];
   try {
@@ -41,5 +62,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     reviewRoutes = [];
   }
 
-  return [...staticRoutes, ...reviewRoutes];
+  return [...staticRoutes, ...bookRoutes, ...reviewRoutes];
 }

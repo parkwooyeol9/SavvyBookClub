@@ -26,6 +26,7 @@ export function CategoryChartRail({
   categories,
   limit = 8,
   defaultPeriod = "daily",
+  embedded = false,
 }: {
   title: string;
   subtitle?: string;
@@ -34,6 +35,7 @@ export function CategoryChartRail({
   categories: Category[];
   limit?: number;
   defaultPeriod?: ChartPeriod;
+  embedded?: boolean;
 }) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [period, setPeriod] = useState<ChartPeriod>(defaultPeriod);
@@ -46,10 +48,10 @@ export function CategoryChartRail({
   const books = pickChartBooks(charted, period).slice(0, limit);
 
   return (
-    <section className="book-rail">
+    <section className={`book-rail${embedded ? " book-rail--embedded" : ""}`}>
       <div className="book-rail__heading book-rail__heading--chart">
         <div>
-          <h2>{title}</h2>
+          {embedded ? null : <h2>{title}</h2>}
           {subtitle ? <p>{subtitle}</p> : null}
           <p className="book-rail__period-note">
             {chartPeriodDescriptions[period]}

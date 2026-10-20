@@ -1,5 +1,3 @@
-import { CategoryChartRail } from "@/components/category-chart-rail";
-import { ChartBookRail } from "@/components/chart-book-rail";
 import { HomeMode } from "@/components/home-mode";
 import { HomeSpotlight } from "@/components/home-spotlight";
 import { FeaturedReviews } from "@/components/featured-reviews";
@@ -7,14 +5,16 @@ import { Hero } from "@/components/hero";
 import { KnowledgeMapExplorer } from "@/components/knowledge-map";
 import { NewsletterCta } from "@/components/newsletter-cta";
 import { NewsRail } from "@/components/news-rail";
-import { BookRail } from "@/components/book-rail";
+import { NobelShelf } from "@/components/nobel-shelf";
 import { Reveal } from "@/components/reveal";
+import { StoreCharts } from "@/components/store-charts";
 import { pickChartBooks } from "@/lib/books/chart-periods";
 import { getBookCatalog } from "@/lib/books/cache";
 import { isCatalogStale } from "@/lib/books/freshness";
 import { ALADIN_CATEGORIES } from "@/lib/books/scrape-aladin";
 import { buildDailyPicks } from "@/lib/daily-picks";
 import { groupReviewsByDomain } from "@/lib/knowledge-map";
+import { buildNobelShelves, nobelShelfNote } from "@/lib/nobel";
 import { getAllReviews, getFeaturedReviews } from "@/lib/reviews";
 
 /** Daily ISR; Cron at 09:00 KST also revalidates. */
@@ -47,6 +47,7 @@ export default async function HomePage() {
   ]);
   const knowledgeGrouped = groupReviewsByDomain(reviews);
   const dailyPicks = buildDailyPicks(catalog, reviews, 6);
+  const nobelShelves = buildNobelShelves(catalog);
   const bookCount = catalogBookCount(catalog);
 
   return (
@@ -63,6 +64,10 @@ export default async function HomePage() {
       <div id="bestsellers" className="page-shell section-stack">
         <Reveal>
           <HomeSpotlight picks={dailyPicks} />
+        </Reveal>
+
+        <Reveal>
+          <NobelShelf shelves={nobelShelves} note={nobelShelfNote} />
         </Reveal>
 
         <section id="knowledge-map" className="home-kmap">
@@ -90,51 +95,14 @@ export default async function HomePage() {
         </Reveal>
 
         <Reveal>
-          <CategoryChartRail
-            title="알라딘 국내 베스트"
-            subtitle="분야별 · 일간·주간·월간 차트"
-            allCharted={catalog.sections.domesticBestsellers}
-            categoryCharted={catalog.sections.categoryBestsellers}
+          <StoreCharts
+            aladin={catalog.sections.domesticBestsellers}
+            aladinCategories={catalog.sections.categoryBestsellers}
             categories={ALADIN_CATEGORIES.filter((c) => c.id !== "all")}
-            defaultPeriod="daily"
-          />
-        </Reveal>
-
-        <Reveal>
-          <ChartBookRail
-            title="Yes24 국내 베스트"
-            subtitle="알라딘과 다른 순위도 함께"
-            charted={catalog.sections.yes24Bestsellers}
-            defaultPeriod="daily"
-          />
-        </Reveal>
-
-        <Reveal>
-          <BookRail
-            title="주목할 신간"
-            subtitle="알라딘·Yes24 신간"
-            books={catalog.sections.newReleases}
-          />
-        </Reveal>
-
-        {pickChartBooks(catalog.sections.foreignBestsellers, "weekly").length >
-        0 ? (
-          <Reveal>
-            <ChartBookRail
-              title="Yes24 외국도서 베스트"
-              subtitle="일본어 서적·잡지 제외"
-              charted={catalog.sections.foreignBestsellers}
-              defaultPeriod="weekly"
-            />
-          </Reveal>
-        ) : null}
-
-        <Reveal>
-          <BookRail
-            subtitle="저명한 저자·리뷰 많은 영문 논픽션"
-            title="영문 베스트 · 논픽션"
-            books={catalog.sections.englishBestsellers}
-            limit={6}
+            yes24={catalog.sections.yes24Bestsellers}
+            foreign={catalog.sections.foreignBestsellers}
+            english={catalog.sections.englishBestsellers}
+            fresh={catalog.sections.newReleases}
           />
         </Reveal>
 

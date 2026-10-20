@@ -3,10 +3,38 @@
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 
+function NavLink({
+  href,
+  className,
+  onClick,
+  children,
+}: {
+  href: string;
+  className: string;
+  onClick?: () => void;
+  children: string;
+}) {
+  if (href.includes("#")) {
+    return (
+      <a href={href} className={className} onClick={onClick}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  );
+}
+
 const links = [
   { href: "/", label: "홈" },
+  { href: "/#store-charts", label: "차트" },
   { href: "/map", label: "지식 지도" },
   { href: "/reviews", label: "서평" },
+  { href: "/#nobel-shelf", label: "노벨" },
+  { href: "/#yeoidoMyongDang", label: "여의도" },
   { href: "/about", label: "소개" },
 ];
 
@@ -27,9 +55,9 @@ export function SiteNav() {
     <>
       <nav className="site-nav site-nav--desktop" aria-label="주요 메뉴">
         {links.map((link) => (
-          <Link key={link.href} href={link.href} className="site-nav__link">
+          <NavLink key={link.href} href={link.href} className="site-nav__link">
             {link.label}
-          </Link>
+          </NavLink>
         ))}
       </nav>
 
@@ -46,14 +74,14 @@ export function SiteNav() {
         {open ? (
           <nav id={panelId} className="site-nav-drawer" aria-label="모바일 메뉴">
             {links.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 href={link.href}
                 className="site-nav-drawer__link"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
         ) : null}

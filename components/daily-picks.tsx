@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { withAffiliateParams } from "@/lib/books/affiliate";
+import { bookHref } from "@/lib/books/identity";
 import { formatKstDate } from "@/lib/books/freshness";
 import type { DailyPick } from "@/lib/daily-picks";
 import { getReviewHref } from "@/lib/review-links";
@@ -36,13 +36,11 @@ export function DailyPicks({
       <div className="daily-picks__grid">
         {picks.map((pick, index) => {
           if (pick.kind === "book") {
-            const href = withAffiliateParams(pick.book.link, pick.book.source);
+            const delta = pick.book.rankDelta;
             return (
-              <a
+              <Link
                 key={`book-${pick.book.id}`}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={bookHref(pick.book)}
                 className="daily-pick-card"
               >
                 <span className="daily-pick-card__rank">{index + 1}</span>
@@ -60,11 +58,14 @@ export function DailyPicks({
                   )}
                 </div>
                 <div className="daily-pick-card__body">
-                  <span className="daily-pick-card__tag">{pick.label}</span>
+                  <span className="daily-pick-card__tag">
+                    {pick.label}
+                    {delta ? (delta > 0 ? ` ▲${delta}` : ` ▼${Math.abs(delta)}`) : ""}
+                  </span>
                   <h3>{pick.book.title}</h3>
                   <p>{pick.book.author}</p>
                 </div>
-              </a>
+              </Link>
             );
           }
 

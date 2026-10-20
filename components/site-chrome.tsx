@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BookSearchForm } from "@/components/book-search-form";
 import { SiteNav } from "@/components/site-nav";
 import { SiteQr } from "@/components/site-qr";
 
@@ -17,6 +18,7 @@ export function SiteHeader() {
         <Link href="/" className="site-logo">
           SavvyBookClub
         </Link>
+        <BookSearchForm id="header-book-q" />
         <div className="site-header__actions">
           <SiteNav />
           <SiteQr />
@@ -33,6 +35,11 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <p className="site-footer__brand">SavvyBookClub</p>
+        <p className="site-footer__note">
+          <Link href="/#yeoidoMyongDang">여의도 명당</Link>
+          {" · "}
+          맛집·산책·로또 판매점. 책 추천과는 따로 두었습니다.
+        </p>
         <p className="site-footer__note">
           경제·경영 서평 원문:{" "}
           <a

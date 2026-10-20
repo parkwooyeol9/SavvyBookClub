@@ -19,7 +19,10 @@ export function YeouidoMap({
   const groupRef = useRef<LayerGroup | null>(null);
   const onSelectRef = useRef(onSelect);
   const [ready, setReady] = useState(false);
-  onSelectRef.current = onSelect;
+
+  useEffect(() => {
+    onSelectRef.current = onSelect;
+  }, [onSelect]);
 
   useEffect(() => {
     let disposed = false;

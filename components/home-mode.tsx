@@ -19,7 +19,20 @@ export function HomeMode({ home }: { home: ReactNode }) {
     };
     apply();
     window.addEventListener("hashchange", apply);
-    return () => window.removeEventListener("hashchange", apply);
+    // Same-page hash links sometimes update the URL without a hashchange event.
+    const onClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const link = target.closest("a");
+      const href = link?.getAttribute("href") ?? "";
+      if (!href.includes("#")) return;
+      window.setTimeout(apply, 0);
+    };
+    document.addEventListener("click", onClick);
+    return () => {
+      window.removeEventListener("hashchange", apply);
+      document.removeEventListener("click", onClick);
+    };
   }, []);
 
   if (yeouido) return <YeouidoScreen />;
