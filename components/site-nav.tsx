@@ -33,7 +33,7 @@ const links = [
   { href: "/#store-charts", label: "차트" },
   { href: "/map", label: "지식 지도" },
   { href: "/reviews", label: "서평" },
-  { href: "/#nobel-shelf", label: "노벨" },
+  { href: "/nobel", label: "노벨" },
   { href: "/#yeoidoMyongDang", label: "여의도" },
   { href: "/about", label: "소개" },
 ];

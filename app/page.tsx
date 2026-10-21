@@ -67,7 +67,7 @@ export default async function HomePage() {
         </Reveal>
 
         <Reveal>
-          <NobelShelf shelves={nobelShelves} note={nobelShelfNote} />
+          <NobelShelf shelves={nobelShelves} note={nobelShelfNote} moreHref="/nobel" />
         </Reveal>
 
         <section id="knowledge-map" className="home-kmap">

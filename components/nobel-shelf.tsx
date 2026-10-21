@@ -14,9 +14,12 @@ const difficultyLabel = {
 export function NobelShelf({
   shelves,
   note,
+  moreHref,
 }: {
   shelves: NobelShelfView[];
   note: string;
+  /** 홈에서는 /nobel 상세로 가는 링크를 붙인다. */
+  moreHref?: string;
 }) {
   const [active, setActive] = useState(shelves[0]?.id ?? "literature");
   const shelf = shelves.find((item) => item.id === active) ?? shelves[0];
@@ -28,6 +31,11 @@ export function NobelShelf({
         <p className="home-kmap__eyebrow">NOBEL SHELF</p>
         <h2 id="nobel-shelf-heading">노벨상 서가</h2>
         <p>{note}</p>
+        {moreHref ? (
+          <Link href={moreHref} className="nobel-shelf__more">
+            역대 경제학상 수상자·시대별 수상 기조 보기 →
+          </Link>
+        ) : null}
       </div>
       <div className="store-tabs" role="tablist" aria-label="노벨상 분야">
         {shelves.map((item) => (
@@ -40,6 +48,7 @@ export function NobelShelf({
             onClick={() => setActive(item.id)}
           >
             {item.label}
+            <span className="store-tab__count">{item.books.length}</span>
           </button>
         ))}
       </div>
@@ -54,6 +63,7 @@ export function NobelShelf({
                     alt={`${book.title} 표지`}
                     width={120}
                     height={180}
+                    loading="lazy"
                     unoptimized
                   />
                 ) : (
@@ -62,7 +72,9 @@ export function NobelShelf({
               </div>
               <div className="nobel-card__body">
                 <p className="nobel-card__meta">
-                  {book.year} · {book.laureate} · {difficultyLabel[book.difficulty]}
+                  {book.year}
+                  {book.field ? ` ${book.field}` : ""} · {book.laureate} ·{" "}
+                  {difficultyLabel[book.difficulty]}
                 </p>
                 <h3>{book.title}</h3>
                 <p>{book.reason}</p>
@@ -76,7 +88,9 @@ export function NobelShelf({
                       : ""}
                   </span>
                 ) : (
-                  <span className="nobel-card__quiet">차트 밖 · 서점에서 찾기</span>
+                  <span className="nobel-card__quiet">
+                    {book.publisher ? `${book.publisher} · ` : ""}알라딘에서 보기
+                  </span>
                 )}
               </div>
             </>

@@ -1,0 +1,1977 @@
+{
+ "updated": "2026-10-21",
+ "source": "NobelPrize.org API(출생·사망·소속·수상 사유), 이력·분류는 작성자 정리",
+ "catName": {
+  "A": "거시·통화·성장",
+  "B": "미시이론·제도",
+  "C": "실증·행동·금융"
+ },
+ "prizes": [
+  {
+   "year": 1969,
+   "field": "경제 과정 분석을 위한 동태 모형",
+   "cat": "C",
+   "motivation": "for having developed and applied dynamic models for the analysis of economic processes",
+   "laureates": [
+    {
+     "ko": "랑나르 프리슈",
+     "en": "Ragnar Frisch",
+     "born": "1895",
+     "died": "1973",
+     "birthCountry": "노르웨이",
+     "affiliation": [
+      "University of Oslo"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "오슬로대 교수. '계량경제학(econometrics)'이라는 말을 만들고 계량경제학회와 학술지 Econometrica를 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1969/summary/"
+    },
+    {
+     "ko": "얀 틴베르헌",
+     "en": "Jan Tinbergen",
+     "born": "1903",
+     "died": "1994",
+     "birthCountry": "네덜란드",
+     "affiliation": [
+      "The Netherlands School of Economics"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "네덜란드 중앙계획국 초대 국장. 최초의 국가 단위 거시계량 모형을 만들었고 물리학 박사 출신이다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1969/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1970,
+   "field": "정태·동태 경제이론의 과학적 분석",
+   "cat": "B",
+   "motivation": "for the scientific work through which he has developed static and dynamic economic theory and actively contributed to raising the level of analysis in economic science",
+   "laureates": [
+    {
+     "ko": "폴 새뮤얼슨",
+     "en": "Paul A. Samuelson",
+     "born": "1915",
+     "died": "2009",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Massachusetts Institute of Technology (MIT)"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "MIT 교수. 교과서 『경제학』(1948)으로 전후 경제학 교육을 표준화했고 신고전파 종합을 이끌었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1970/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1971,
+   "field": "경제성장의 실증적 해석",
+   "cat": "A",
+   "motivation": "for his empirically founded interpretation of economic growth which has led to new and deepened insight into the economic and social structure and process of development",
+   "laureates": [
+    {
+     "ko": "사이먼 쿠즈네츠",
+     "en": "Simon Kuznets",
+     "born": "1901",
+     "died": "1985",
+     "birthCountry": "벨라루스",
+     "affiliation": [
+      "Harvard University"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "하버드대 교수. 미국 국민소득 통계를 처음 체계화했고, 성장과 불평등의 '쿠즈네츠 곡선'을 제시했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1971/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1972,
+   "field": "일반균형이론과 후생이론",
+   "cat": "B",
+   "motivation": "for their pioneering contributions to general economic equilibrium theory and welfare theory",
+   "laureates": [
+    {
+     "ko": "존 힉스",
+     "en": "John R. Hicks",
+     "born": "1904",
+     "died": "1989",
+     "birthCountry": "영국",
+     "affiliation": [
+      "All Souls College"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "옥스퍼드대 교수. 케인스 이론을 IS-LM 모형으로 정리해 거시경제학 교과서의 뼈대를 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1972/summary/"
+    },
+    {
+     "ko": "케네스 애로",
+     "en": "Kenneth J. Arrow",
+     "born": "1921",
+     "died": "2017",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Harvard University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "스탠퍼드·하버드대 교수. 불가능성 정리와 일반균형 존재 증명을 남겼다. 51세 수상으로 역대 최연소 기록을 오래 지켰다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1972/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1973,
+   "field": "투입산출 분석",
+   "cat": "C",
+   "motivation": "for the development of the input-output method and for its application to important economic problems",
+   "laureates": [
+    {
+     "ko": "바실리 레온티예프",
+     "en": "Wassily Leontief",
+     "born": "1906",
+     "died": "1999",
+     "birthCountry": "러시아",
+     "affiliation": [
+      "Harvard University"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "하버드대 교수. 러시아 태생으로 산업 간 거래를 표로 정리한 투입산출 분석을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1973/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1974,
+   "field": "화폐·경기변동 이론, 경제·사회·제도의 상호의존",
+   "cat": "A",
+   "motivation": "for their pioneering work in the theory of money and economic fluctuations and for their penetrating analysis of the interdependence of economic, social and institutional phenomena",
+   "laureates": [
+    {
+     "ko": "군나르 뮈르달",
+     "en": "Gunnar Myrdal",
+     "born": "1898",
+     "died": "1987",
+     "birthCountry": "스웨덴",
+     "affiliation": [],
+     "portion": "1/2",
+     "female": false,
+     "bio": "스웨덴 상무장관·유엔 유럽경제위원회 사무총장. 미국 인종 문제를 다룬 『미국의 딜레마』를 썼다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1974/summary/"
+    },
+    {
+     "ko": "프리드리히 하이에크",
+     "en": "Friedrich von Hayek",
+     "born": "1899",
+     "died": "1992",
+     "birthCountry": "오스트리아",
+     "affiliation": [],
+     "portion": "1/2",
+     "female": false,
+     "bio": "LSE·시카고·프라이부르크대 교수. 『노예의 길』(1944)로 계획경제를 비판한 오스트리아학파의 대표 학자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1974/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1975,
+   "field": "자원의 최적 배분 이론",
+   "cat": "B",
+   "motivation": "for their contributions to the theory of optimum allocation of resources",
+   "laureates": [
+    {
+     "ko": "레오니트 칸토로비치",
+     "en": "Leonid Vitaliyevich Kantorovich",
+     "born": "1912",
+     "died": "1986",
+     "birthCountry": "러시아",
+     "affiliation": [
+      "Academy of Sciences"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "소련 과학아카데미 수학자. 선형계획법을 처음 고안했고, 소련 출신 유일한 경제학상 수상자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1975/summary/"
+    },
+    {
+     "ko": "찰링 쿠프만스",
+     "en": "Tjalling C. Koopmans",
+     "born": "1910",
+     "died": "1985",
+     "birthCountry": "네덜란드",
+     "affiliation": [
+      "Yale University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "예일대 교수. 네덜란드 출신 물리학도로, 수송 문제에서 출발해 활동분석과 최적 배분 이론을 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1975/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1976,
+   "field": "소비 분석, 통화사·통화이론, 안정화 정책의 복잡성",
+   "cat": "A",
+   "motivation": "for his achievements in the fields of consumption analysis, monetary history and theory and for his demonstration of the complexity of stabilization policy",
+   "laureates": [
+    {
+     "ko": "밀턴 프리드먼",
+     "en": "Milton Friedman",
+     "born": "1912",
+     "died": "2006",
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "시카고대 교수. 통화주의를 이끌었고 『미국 화폐사』, 『선택할 자유』로 대중적 영향력도 컸다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1976/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1977,
+   "field": "국제무역·국제자본이동 이론",
+   "cat": "A",
+   "motivation": "for their pathbreaking contribution to the theory of international trade and international capital movements",
+   "laureates": [
+    {
+     "ko": "베르틸 올린",
+     "en": "Bertil Ohlin",
+     "born": "1899",
+     "died": "1979",
+     "birthCountry": "스웨덴",
+     "affiliation": [
+      "Stockholm School of Economics"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "스톡홀름 상대 교수·스웨덴 자유당 대표. 헥셔-올린 무역이론을 만들었고 정치인으로도 활동했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1977/summary/"
+    },
+    {
+     "ko": "제임스 미드",
+     "en": "James E. Meade",
+     "born": "1907",
+     "died": "1995",
+     "birthCountry": "영국",
+     "affiliation": [
+      "University of Cambridge"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "케임브리지대 교수. 영국 전시 내각 경제부에서 일했고 국제수지 정책 이론을 체계화했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1977/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1978,
+   "field": "경제조직 내 의사결정(제한적 합리성)",
+   "cat": "C",
+   "motivation": "for his pioneering research into the decision-making process within economic organizations",
+   "laureates": [
+    {
+     "ko": "허버트 사이먼",
+     "en": "Herbert Simon",
+     "born": "1916",
+     "died": "2001",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Carnegie Mellon University"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "카네기멜런대 교수. '제한적 합리성'을 제시했고 인공지능·인지과학의 개척자이기도 하다(튜링상 수상).",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1978/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1979,
+   "field": "개발도상국 경제개발 연구",
+   "cat": "A",
+   "motivation": "for their pioneering research into economic development research with particular consideration of the problems of developing countries",
+   "laureates": [
+    {
+     "ko": "시어도어 슐츠",
+     "en": "Theodore W. Schultz",
+     "born": "1902",
+     "died": "1998",
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "시카고대 교수. 농업경제학자로 교육·건강을 투자로 보는 '인적자본' 개념을 정립했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1979/summary/"
+    },
+    {
+     "ko": "아서 루이스",
+     "en": "Sir Arthur Lewis",
+     "born": "1915",
+     "died": "1991",
+     "birthCountry": "세인트루시아",
+     "affiliation": [
+      "Princeton University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "프린스턴대 교수. 세인트루시아 출신으로 이중경제(루이스) 모형을 만들었고, 첫 흑인 경제학상 수상자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1979/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1980,
+   "field": "거시계량 모형과 경기변동·정책 분석",
+   "cat": "A",
+   "motivation": "for the creation of econometric models and the application to the analysis of economic fluctuations and economic policies",
+   "laureates": [
+    {
+     "ko": "로런스 클라인",
+     "en": "Lawrence R. Klein",
+     "born": "1920",
+     "died": "2013",
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Pennsylvania"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "펜실베이니아대 교수. 미국 경제 전체를 수백 개 방정식으로 그린 거시계량 모형(와튼 모형)을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1980/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1981,
+   "field": "금융시장과 지출·고용·생산·가격의 관계",
+   "cat": "A",
+   "motivation": "for his analysis of financial markets and their relations to expenditure decisions, employment, production and prices",
+   "laureates": [
+    {
+     "ko": "제임스 토빈",
+     "en": "James Tobin",
+     "born": "1918",
+     "died": "2002",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Yale University"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "예일대 교수. 포트폴리오 선택 이론과 토빈의 q를 남겼고, 외환거래세 '토빈세'를 제안했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1981/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1982,
+   "field": "산업구조·시장 기능·규제의 원인과 효과",
+   "cat": "B",
+   "motivation": "for his seminal studies of industrial structures, functioning of markets and causes and effects of public regulation",
+   "laureates": [
+    {
+     "ko": "조지 스티글러",
+     "en": "George J. Stigler",
+     "born": "1911",
+     "died": "1991",
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "시카고대 교수. 정보경제학을 열었고 규제가 업계에 포획된다는 규제포획 이론으로 유명하다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1982/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1983,
+   "field": "일반균형이론의 엄밀한 재정립",
+   "cat": "B",
+   "motivation": "for having incorporated new analytical methods into economic theory and for his rigorous reformulation of the theory of general equilibrium",
+   "laureates": [
+    {
+     "ko": "제라르 드브뢰",
+     "en": "Gerard Debreu",
+     "born": "1921",
+     "died": "2004",
+     "birthCountry": "프랑스",
+     "affiliation": [
+      "University of California"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "UC버클리 교수. 프랑스 수학자 출신으로 『가치론』에서 일반균형이론을 공리 체계로 재구성했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1983/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1984,
+   "field": "국민계정 체계 개발",
+   "cat": "C",
+   "motivation": "for having made fundamental contributions to the development of systems of national accounts and hence greatly improved the basis for empirical economic analysis",
+   "laureates": [
+    {
+     "ko": "리처드 스톤",
+     "en": "Richard Stone",
+     "born": "1913",
+     "died": "1991",
+     "birthCountry": "영국",
+     "affiliation": [
+      "University of Cambridge"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "케임브리지대 교수. 유엔 국민계정체계(SNA)를 설계해 오늘날 GDP 통계의 국제 표준을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1984/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1985,
+   "field": "저축과 금융시장(생애주기 가설)",
+   "cat": "A",
+   "motivation": "for his pioneering analyses of saving and of financial markets",
+   "laureates": [
+    {
+     "ko": "프랑코 모딜리아니",
+     "en": "Franco Modigliani",
+     "born": "1918",
+     "died": "2003",
+     "birthCountry": "이탈리아",
+     "affiliation": [
+      "Massachusetts Institute of Technology (MIT)"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "MIT 교수. 이탈리아 출신으로 생애주기 소비가설과 모딜리아니-밀러 정리를 남겼다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1985/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1986,
+   "field": "공공선택 이론의 계약·헌법적 기초",
+   "cat": "B",
+   "motivation": "for his development of the contractual and constitutional bases for the theory of economic and political decision-making",
+   "laureates": [
+    {
+     "ko": "제임스 뷰캐넌",
+     "en": "James M. Buchanan Jr.",
+     "born": "1919",
+     "died": "2013",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Center for Study of Public Choice"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "조지메이슨대 공공선택연구센터. 정치인과 관료도 사익을 좇는다는 공공선택론을 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1986/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1987,
+   "field": "경제성장 이론",
+   "cat": "A",
+   "motivation": "for his contributions to the theory of economic growth",
+   "laureates": [
+    {
+     "ko": "로버트 솔로",
+     "en": "Robert M. Solow",
+     "born": "1924",
+     "died": "2023",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Massachusetts Institute of Technology (MIT)"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "MIT 교수. 성장의 대부분이 기술진보에서 온다는 솔로 성장모형을 만들었다. 2023년 별세.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1987/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1988,
+   "field": "시장과 효율적 자원 이용 이론",
+   "cat": "B",
+   "motivation": "for his pioneering contributions to the theory of markets and efficient utilization of resources",
+   "laureates": [
+    {
+     "ko": "모리스 알레",
+     "en": "Maurice Allais",
+     "born": "1911",
+     "died": "2010",
+     "birthCountry": "프랑스",
+     "affiliation": [
+      "École Nationale Supérieur des Mines de Paris"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "파리 국립광업학교 교수. 기대효용이론의 모순을 보인 '알레의 역설'로 알려진 프랑스 첫 수상자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1988/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1989,
+   "field": "계량경제학의 확률론적 기초",
+   "cat": "C",
+   "motivation": "for his clarification of the probability theory foundations of econometrics and his analyses of simultaneous economic structures",
+   "laureates": [
+    {
+     "ko": "트뤼그베 하벨모",
+     "en": "Trygve Haavelmo",
+     "born": "1911",
+     "died": "1999",
+     "birthCountry": "노르웨이",
+     "affiliation": [
+      "University of Oslo"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "오슬로대 교수. 경제 데이터를 확률모형으로 다루는 현대 계량경제학의 토대를 놓았다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1989/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1990,
+   "field": "금융경제학(포트폴리오·CAPM·기업재무)",
+   "cat": "C",
+   "motivation": "for their pioneering work in the theory of financial economics",
+   "laureates": [
+    {
+     "ko": "해리 마코위츠",
+     "en": "Harry M. Markowitz",
+     "born": "1927",
+     "died": "2023",
+     "birthCountry": "미국",
+     "affiliation": [
+      "City University of New York"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "뉴욕시립대 교수. 분산투자를 수학으로 정리한 현대 포트폴리오 이론(1952)의 창시자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1990/summary/"
+    },
+    {
+     "ko": "머턴 밀러",
+     "en": "Merton H. Miller",
+     "born": "1923",
+     "died": "2000",
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "시카고대 교수. 모딜리아니와 함께 자본구조가 기업가치와 무관하다는 MM 정리를 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1990/summary/"
+    },
+    {
+     "ko": "윌리엄 샤프",
+     "en": "William F. Sharpe",
+     "born": "1934",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Stanford University"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "스탠퍼드대 교수. 자본자산가격결정모형(CAPM)과 샤프 비율을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1990/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1991,
+   "field": "거래비용과 재산권",
+   "cat": "B",
+   "motivation": "for his discovery and clarification of the significance of transaction costs and property rights for the institutional structure and functioning of the economy",
+   "laureates": [
+    {
+     "ko": "로널드 코스",
+     "en": "Ronald H. Coase",
+     "born": "1910",
+     "died": "2013",
+     "birthCountry": "영국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "시카고대 로스쿨 교수. 「기업의 본질」, 「사회적 비용의 문제」로 거래비용·재산권 이론을 열었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1991/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1992,
+   "field": "미시경제 분석의 인간 행동 전반 확장",
+   "cat": "B",
+   "motivation": "for having extended the domain of microeconomic analysis to a wide range of human behaviour and interaction, including nonmarket behaviour",
+   "laureates": [
+    {
+     "ko": "게리 베커",
+     "en": "Gary Becker",
+     "born": "1930",
+     "died": "2014",
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "시카고대 교수. 결혼·범죄·차별·교육까지 경제학으로 분석해 '경제학 제국주의'를 대표한다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1992/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1993,
+   "field": "계량경제사와 제도 연구",
+   "cat": "C",
+   "motivation": "for having renewed research in economic history by applying economic theory and quantitative methods in order to explain economic and institutional change",
+   "laureates": [
+    {
+     "ko": "로버트 포겔",
+     "en": "Robert W. Fogel",
+     "born": "1927",
+     "died": "2013",
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "시카고대 교수. 철도와 노예제를 계량 분석한 계량경제사(클리오메트릭스)의 개척자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1993/summary/"
+    },
+    {
+     "ko": "더글러스 노스",
+     "en": "Douglass C. North",
+     "born": "1920",
+     "died": "2015",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Washington University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "워싱턴대(세인트루이스) 교수. 제도가 장기 경제성과를 좌우한다는 신제도경제학을 이끌었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1993/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1994,
+   "field": "비협조 게임의 균형 분석",
+   "cat": "B",
+   "motivation": "for their pioneering analysis of equilibria in the theory of non-cooperative games",
+   "laureates": [
+    {
+     "ko": "존 하사니",
+     "en": "John C. Harsanyi",
+     "born": "1920",
+     "died": "2000",
+     "birthCountry": "헝가리",
+     "affiliation": [
+      "University of California"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "UC버클리 교수. 헝가리 출신으로 정보가 불완전한 게임(베이지안 게임) 분석 틀을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1994/summary/"
+    },
+    {
+     "ko": "존 내시",
+     "en": "John F. Nash Jr.",
+     "born": "1928",
+     "died": "2015",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Princeton University"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "프린스턴대 수학자. 21세 박사논문의 내시 균형으로 수상했다. 영화 '뷰티풀 마인드'의 주인공이다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1994/summary/"
+    },
+    {
+     "ko": "라인하르트 젤텐",
+     "en": "Reinhard Selten",
+     "born": "1930",
+     "died": "2016",
+     "birthCountry": "폴란드",
+     "affiliation": [
+      "Rheinische Friedrich-Wilhelms-Universität"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "본대 교수. 신빙성 없는 위협을 걸러내는 '부분게임 완전균형'을 만들었고 실험경제학도 개척했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1994/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1995,
+   "field": "합리적 기대 가설의 발전과 적용",
+   "cat": "A",
+   "motivation": "for having developed and applied the hypothesis of rational expectations, and thereby having transformed macroeconomic analysis and deepened our understanding of economic policy",
+   "laureates": [
+    {
+     "ko": "로버트 루카스",
+     "en": "Robert E. Lucas Jr.",
+     "born": "1937",
+     "died": "2023",
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "시카고대 교수. 합리적 기대 혁명과 '루카스 비판'으로 거시경제학 방법론을 바꿨다. 2023년 별세.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1995/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1996,
+   "field": "비대칭 정보하의 유인 이론",
+   "cat": "B",
+   "motivation": "for their fundamental contributions to the economic theory of incentives under asymmetric information",
+   "laureates": [
+    {
+     "ko": "제임스 멀리스",
+     "en": "James A. Mirrlees",
+     "born": "1936",
+     "died": "2018",
+     "birthCountry": "영국(스코틀랜드)",
+     "affiliation": [
+      "University of Cambridge"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "케임브리지대 교수. 정부가 개인 능력을 모를 때의 최적 소득세 이론을 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1996/summary/"
+    },
+    {
+     "ko": "윌리엄 비크리",
+     "en": "William Vickrey",
+     "born": "1914",
+     "died": "1996",
+     "birthCountry": "캐나다",
+     "affiliation": [
+      "Columbia University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "컬럼비아대 교수. 차순위 가격 경매(비크리 경매)를 고안했다. 수상 발표 사흘 뒤 별세했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1996/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1997,
+   "field": "파생상품 가치평가",
+   "cat": "C",
+   "motivation": "for a new method to determine the value of derivatives",
+   "laureates": [
+    {
+     "ko": "로버트 머턴",
+     "en": "Robert C. Merton",
+     "born": "1944",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Harvard University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "하버드대 교수. 블랙-숄스 옵션가격 모형을 연속시간 금융 수학으로 일반화했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1997/summary/"
+    },
+    {
+     "ko": "마이런 숄스",
+     "en": "Myron Scholes",
+     "born": "1941",
+     "died": null,
+     "birthCountry": "캐나다",
+     "affiliation": [
+      "Long Term Capital Management"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "스탠퍼드대 교수·LTCM 파트너. 피셔 블랙과 옵션가격 공식을 만들었다. 이듬해 LTCM이 파산했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1997/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1998,
+   "field": "후생경제학",
+   "cat": "B",
+   "motivation": "for his contributions to welfare economics",
+   "laureates": [
+    {
+     "ko": "아마르티아 센",
+     "en": "Amartya Sen",
+     "born": "1933",
+     "died": null,
+     "birthCountry": "인도",
+     "affiliation": [
+      "Trinity College"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "케임브리지대 트리니티칼리지 학장. 기근·빈곤 연구와 '역량 접근법'을 남긴 아시아 첫 수상자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1998/summary/"
+    }
+   ]
+  },
+  {
+   "year": 1999,
+   "field": "환율제도별 통화·재정정책, 최적통화지역",
+   "cat": "A",
+   "motivation": "for his analysis of monetary and fiscal policy under different exchange rate regimes and his analysis of optimum currency areas",
+   "laureates": [
+    {
+     "ko": "로버트 먼델",
+     "en": "Robert Mundell",
+     "born": "1932",
+     "died": "2021",
+     "birthCountry": "캐나다",
+     "affiliation": [
+      "Columbia University"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "컬럼비아대 교수. 먼델-플레밍 모형과 최적통화지역 이론으로 '유로의 아버지'로 불린다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/1999/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2000,
+   "field": "미시계량 방법론",
+   "cat": "C",
+   "motivation": "for his development of theory and methods for analyzing selective samples",
+   "laureates": [
+    {
+     "ko": "제임스 헤크먼",
+     "en": "James J. Heckman",
+     "born": "1944",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "시카고대 교수. 표본 선택 편의 교정법(헤크먼 2단계)을 만들었고 유아기 교육 투자 연구로도 유명하다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2000/summary/"
+    },
+    {
+     "ko": "대니얼 맥패든",
+     "en": "Daniel L. McFadden",
+     "born": "1937",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of California"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "UC버클리 교수. 교통수단·상품 선택 같은 이산선택 모형(로짓)을 정립했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2000/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2001,
+   "field": "비대칭 정보 시장 분석",
+   "cat": "B",
+   "motivation": "for their analyses of markets with asymmetric information",
+   "laureates": [
+    {
+     "ko": "조지 애커로프",
+     "en": "George A. Akerlof",
+     "born": "1940",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of California"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "UC버클리 교수. 중고차 시장을 다룬 「레몬 시장」(1970)으로 정보 비대칭 연구를 열었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2001/summary/"
+    },
+    {
+     "ko": "마이클 스펜스",
+     "en": "A. Michael Spence",
+     "born": "1943",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Stanford University"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "스탠퍼드대 교수. 학력이 능력을 알리는 신호가 된다는 신호이론(signaling)을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2001/summary/"
+    },
+    {
+     "ko": "조지프 스티글리츠",
+     "en": "Joseph E. Stiglitz",
+     "born": "1943",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Columbia University"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "컬럼비아대 교수·전 세계은행 수석 이코노미스트. 정보 비대칭과 시장 실패, 세계화 비판으로 유명하다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2001/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2002,
+   "field": "행동경제학·실험경제학",
+   "cat": "C",
+   "motivation": "for having integrated insights from psychological research into economic science, especially concerning human judgment and decision-making under uncertainty",
+   "laureates": [
+    {
+     "ko": "대니얼 카너먼",
+     "en": "Daniel Kahneman",
+     "born": "1934",
+     "died": "2024",
+     "birthCountry": "이스라엘",
+     "affiliation": [
+      "Princeton University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "프린스턴대 심리학자. 트버스키와 전망이론을 세워 행동경제학을 열었다. 2024년 별세.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2002/summary/"
+    },
+    {
+     "ko": "버넌 스미스",
+     "en": "Vernon L. Smith",
+     "born": "1927",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "George Mason University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "조지메이슨대 교수. 실험실에서 시장을 재현하는 실험경제학을 개척했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2002/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2003,
+   "field": "경제 시계열 분석(ARCH·공적분)",
+   "cat": "C",
+   "motivation": "for methods of analyzing economic time series with time-varying volatility (ARCH)",
+   "laureates": [
+    {
+     "ko": "로버트 엥글",
+     "en": "Robert F. Engle III",
+     "born": "1942",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "New York University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "뉴욕대 교수. 변동성이 시기마다 달라지는 ARCH 모형으로 금융 리스크 측정을 바꿨다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2003/summary/"
+    },
+    {
+     "ko": "클라이브 그레인저",
+     "en": "Clive W.J. Granger",
+     "born": "1934",
+     "died": "2009",
+     "birthCountry": "영국",
+     "affiliation": [
+      "University of California"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "UC샌디에이고 교수. 공적분과 '그레인저 인과성' 검정을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2003/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2004,
+   "field": "정책의 시간 일관성과 경기변동의 동인(RBC)",
+   "cat": "A",
+   "motivation": "for their contributions to dynamic macroeconomics: the time consistency of economic policy and the driving forces behind business cycles",
+   "laureates": [
+    {
+     "ko": "핀 키들랜드",
+     "en": "Finn E. Kydland",
+     "born": "1943",
+     "died": null,
+     "birthCountry": "노르웨이",
+     "affiliation": [
+      "Carnegie Mellon University",
+      "University of California"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "카네기멜런대·UC샌타바버라 교수. 정책의 시간 불일치성과 실물경기변동(RBC) 모형을 제시했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2004/summary/"
+    },
+    {
+     "ko": "에드워드 프레스콧",
+     "en": "Edward C. Prescott",
+     "born": "1940",
+     "died": "2022",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Arizona State University",
+      "Federal Reserve Bank of Minneapolis"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "애리조나주립대 교수·미니애폴리스 연준 자문. 키들랜드와 RBC 모형을 만들었다. 2022년 별세.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2004/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2005,
+   "field": "게임이론으로 본 갈등과 협력",
+   "cat": "B",
+   "motivation": "for having enhanced our understanding of conflict and cooperation through game-theory analysis",
+   "laureates": [
+    {
+     "ko": "로버트 오먼",
+     "en": "Robert J. Aumann",
+     "born": "1930",
+     "died": null,
+     "birthCountry": "독일",
+     "affiliation": [
+      "University of Jerusalem, Center for RationalityHebrew"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "히브리대 교수. 반복게임에서 협력이 생기는 조건을 증명했다. 독일 태생 이스라엘 수학자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2005/summary/"
+    },
+    {
+     "ko": "토머스 셸링",
+     "en": "Thomas C. Schelling",
+     "born": "1921",
+     "died": "2016",
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Maryland, Department of Economics and School of Public Policy"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "메릴랜드대 교수. 핵 억지 전략과 『미시동기와 거시행동』의 분리 모형으로 유명하다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2005/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2006,
+   "field": "거시정책의 시점 간 상충관계",
+   "cat": "A",
+   "motivation": "for his analysis of intertemporal tradeoffs in macroeconomic policy",
+   "laureates": [
+    {
+     "ko": "에드먼드 펠프스",
+     "en": "Edmund S. Phelps",
+     "born": "1933",
+     "died": "2026",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Columbia University"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "컬럼비아대 교수. 기대 부가 필립스곡선과 자연실업률 가설을 세웠다. 2026년 5월 별세.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2006/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2007,
+   "field": "메커니즘 디자인 이론",
+   "cat": "B",
+   "motivation": "for having laid the foundations of mechanism design theory",
+   "laureates": [
+    {
+     "ko": "레오니트 후르비치",
+     "en": "Leonid Hurwicz",
+     "born": "1917",
+     "died": "2008",
+     "birthCountry": "러시아",
+     "affiliation": [
+      "University of Minnesota"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "미네소타대 교수. 메커니즘 디자인 이론을 처음 세웠고, 90세 수상으로 역대 최고령 수상자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2007/summary/"
+    },
+    {
+     "ko": "에릭 매스킨",
+     "en": "Eric S. Maskin",
+     "born": "1950",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Institute for Advanced Study"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "프린스턴 고등연구소 교수. 원하는 결과를 내는 규칙이 언제 존재하는지(매스킨 단조성)를 밝혔다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2007/summary/"
+    },
+    {
+     "ko": "로저 마이어슨",
+     "en": "Roger B. Myerson",
+     "born": "1951",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "시카고대 교수. 계시 원리를 정리해 경매·계약 설계에 쓰이는 메커니즘 디자인을 완성했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2007/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2008,
+   "field": "무역 패턴과 경제활동의 입지",
+   "cat": "A",
+   "motivation": "for his analysis of trade patterns and location of economic activity",
+   "laureates": [
+    {
+     "ko": "폴 크루그먼",
+     "en": "Paul Krugman",
+     "born": "1953",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Princeton University"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "프린스턴대 교수·뉴욕타임스 칼럼니스트. 규모의 경제로 설명하는 신무역이론과 신경제지리학을 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2008/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2009,
+   "field": "경제적 거버넌스",
+   "cat": "B",
+   "motivation": "for her analysis of economic governance, especially the commons",
+   "laureates": [
+    {
+     "ko": "엘리너 오스트롬",
+     "en": "Elinor Ostrom",
+     "born": "1933",
+     "died": "2012",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Indiana University",
+      "Arizona State University"
+     ],
+     "portion": "1/2",
+     "female": true,
+     "bio": "인디애나대 정치학자. 공동체가 공유자원을 스스로 관리할 수 있음을 보인 첫 여성 수상자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2009/summary/"
+    },
+    {
+     "ko": "올리버 윌리엄슨",
+     "en": "Oliver E. Williamson",
+     "born": "1932",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of California"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "UC버클리 교수. 거래비용으로 기업의 경계(내부화할지 시장에 맡길지)를 설명했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2009/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2010,
+   "field": "탐색 마찰이 있는 시장(실업)",
+   "cat": "A",
+   "motivation": "for their analysis of markets with search frictions",
+   "laureates": [
+    {
+     "ko": "피터 다이아몬드",
+     "en": "Peter A. Diamond",
+     "born": "1940",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Massachusetts Institute of Technology (MIT)"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "MIT 교수. 탐색 마찰 이론과 연금·사회보장 연구로 알려져 있다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2010/summary/"
+    },
+    {
+     "ko": "데일 모텐슨",
+     "en": "Dale T. Mortensen",
+     "born": "1939",
+     "died": "2014",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Northwestern University",
+      "Aarhus University"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "노스웨스턴대 교수. 일자리 탐색과 매칭으로 실업을 설명하는 DMP 모형을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2010/summary/"
+    },
+    {
+     "ko": "크리스토퍼 피사리데스",
+     "en": "Christopher A. Pissarides",
+     "born": "1948",
+     "died": null,
+     "birthCountry": "키프로스",
+     "affiliation": [
+      "London School of Economics and Political Science"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "LSE 교수. 키프로스 출신으로 DMP 모형의 노동시장 매칭 함수를 정립했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2010/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2011,
+   "field": "거시경제 인과관계 실증",
+   "cat": "A",
+   "motivation": "for their empirical research on cause and effect in the macroeconomy",
+   "laureates": [
+    {
+     "ko": "토머스 사전트",
+     "en": "Thomas J. Sargent",
+     "born": "1943",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "New York University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "뉴욕대 교수. 합리적 기대를 실증에 적용하고 정책 체제 변화의 효과를 분석했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2011/summary/"
+    },
+    {
+     "ko": "크리스토퍼 심스",
+     "en": "Christopher A. Sims",
+     "born": "1942",
+     "died": "2026",
+     "birthCountry": "미국",
+     "affiliation": [
+      "Princeton University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "프린스턴대 교수. 벡터자기회귀(VAR) 모형으로 통화정책 충격의 효과를 측정했다. 2026년 3월 별세.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2011/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2012,
+   "field": "안정적 배분 이론과 시장 설계",
+   "cat": "B",
+   "motivation": "for the theory of stable allocations and the practice of market design",
+   "laureates": [
+    {
+     "ko": "앨빈 로스",
+     "en": "Alvin E. Roth",
+     "born": "1951",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Harvard University",
+      "Harvard Business School"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "하버드대 교수. 의사 수련병원 배정·신장 교환 프로그램을 실제로 설계한 시장 설계의 대표 학자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2012/summary/"
+    },
+    {
+     "ko": "로이드 섀플리",
+     "en": "Lloyd S. Shapley",
+     "born": "1923",
+     "died": "2016",
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of California"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "UCLA 수학자. 게일과 '안정적 결혼 문제' 알고리즘(1962)과 섀플리 값을 남겼다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2012/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2013,
+   "field": "자산가격 실증 분석",
+   "cat": "C",
+   "motivation": "for their empirical analysis of asset prices",
+   "laureates": [
+    {
+     "ko": "유진 파마",
+     "en": "Eugene F. Fama",
+     "born": "1939",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "시카고대 교수. 효율적 시장 가설과 3요인 모형을 만들어 인덱스 펀드의 이론적 근거를 놓았다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2013/summary/"
+    },
+    {
+     "ko": "라스 피터 핸슨",
+     "en": "Lars Peter Hansen",
+     "born": "1952",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "시카고대 교수. 일반화적률법(GMM)을 개발해 자산가격 모형 검정 방법을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2013/summary/"
+    },
+    {
+     "ko": "로버트 실러",
+     "en": "Robert J. Shiller",
+     "born": "1946",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Yale University"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "예일대 교수. 『비이성적 과열』로 닷컴·주택 버블을 경고했고 케이스-실러 주택가격지수를 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2013/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2014,
+   "field": "시장지배력과 규제",
+   "cat": "B",
+   "motivation": "for his analysis of market power and regulation",
+   "laureates": [
+    {
+     "ko": "장 티롤",
+     "en": "Jean Tirole",
+     "born": "1953",
+     "died": null,
+     "birthCountry": "프랑스",
+     "affiliation": [
+      "Toulouse School of Economics (TSE)"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "툴루즈경제대 교수. 통신·플랫폼 등 소수 기업이 지배하는 산업의 규제 이론을 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2014/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2015,
+   "field": "소비·빈곤·후생",
+   "cat": "C",
+   "motivation": "for his analysis of consumption, poverty, and welfare",
+   "laureates": [
+    {
+     "ko": "앵거스 디턴",
+     "en": "Angus Deaton",
+     "born": "1945",
+     "died": null,
+     "birthCountry": "영국(스코틀랜드)",
+     "affiliation": [
+      "Princeton University"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "프린스턴대 교수. 가구 소비 자료로 빈곤과 후생을 측정했고 『위대한 탈출』을 썼다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2015/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2016,
+   "field": "계약이론",
+   "cat": "B",
+   "motivation": "for their contributions to contract theory",
+   "laureates": [
+    {
+     "ko": "올리버 하트",
+     "en": "Oliver Hart",
+     "born": "1948",
+     "died": null,
+     "birthCountry": "영국",
+     "affiliation": [
+      "Harvard University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "하버드대 교수. 미리 다 정할 수 없는 '불완전 계약'과 소유권 이론을 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2016/summary/"
+    },
+    {
+     "ko": "벵트 홀름스트룀",
+     "en": "Bengt Holmström",
+     "born": "1949",
+     "died": null,
+     "birthCountry": "핀란드",
+     "affiliation": [
+      "Massachusetts Institute of Technology (MIT)"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "MIT 교수. 핀란드 출신으로 성과급·경영자 보상 설계의 주인-대리인 이론을 정립했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2016/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2017,
+   "field": "행동경제학",
+   "cat": "C",
+   "motivation": "for his contributions to behavioural economics",
+   "laureates": [
+    {
+     "ko": "리처드 탈러",
+     "en": "Richard H. Thaler",
+     "born": "1945",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1",
+     "female": false,
+     "bio": "시카고대 교수. 『넛지』로 행동경제학을 정책에 옮겼다. 영화 '빅쇼트'에 카메오로 나왔다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2017/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2018,
+   "field": "기후변화·기술혁신의 장기 거시 분석",
+   "cat": "A",
+   "motivation": "for integrating climate change into long-run macroeconomic analysis",
+   "laureates": [
+    {
+     "ko": "윌리엄 노드하우스",
+     "en": "William D. Nordhaus",
+     "born": "1941",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Yale University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "예일대 교수. 기후와 경제를 결합한 DICE 모형으로 탄소세 논의의 기준을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2018/summary/"
+    },
+    {
+     "ko": "폴 로머",
+     "en": "Paul M. Romer",
+     "born": "1955",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "NYU Stern School of Business"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "뉴욕대 교수·전 세계은행 수석 이코노미스트. 아이디어가 성장의 엔진이라는 내생적 성장이론을 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2018/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2019,
+   "field": "빈곤 감축의 실험적 접근",
+   "cat": "C",
+   "motivation": "for their experimental approach to alleviating global poverty",
+   "laureates": [
+    {
+     "ko": "아브히지트 바네르지",
+     "en": "Abhijit Banerjee",
+     "born": "1961",
+     "died": null,
+     "birthCountry": "인도",
+     "affiliation": [
+      "Massachusetts Institute of Technology (MIT)"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "MIT 교수. 뒤플로와 빈곤 연구소 J-PAL을 세우고 무작위 대조실험(RCT)을 개발경제학에 들였다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2019/summary/"
+    },
+    {
+     "ko": "에스테르 뒤플로",
+     "en": "Esther Duflo",
+     "born": "1972",
+     "died": null,
+     "birthCountry": "프랑스",
+     "affiliation": [
+      "Massachusetts Institute of Technology (MIT)"
+     ],
+     "portion": "1/3",
+     "female": true,
+     "bio": "MIT 교수. 46세로 역대 최연소이자 두 번째 여성 수상자다. 바네르지와 『가난한 사람이 더 합리적이다』를 썼다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2019/summary/"
+    },
+    {
+     "ko": "마이클 크레머",
+     "en": "Michael Kremer",
+     "born": "1964",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Harvard University"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "하버드대 교수. 케냐 학교 구충제 실험 등 현장 실험으로 개발 정책 효과를 검증했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2019/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2020,
+   "field": "경매이론과 새 경매방식",
+   "cat": "B",
+   "motivation": "for improvements to auction theory and inventions of new auction formats",
+   "laureates": [
+    {
+     "ko": "폴 밀그럼",
+     "en": "Paul R. Milgrom",
+     "born": "1948",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Stanford University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "스탠퍼드대 교수. 주파수 경매 등 새 경매 방식을 설계했다. 윌슨의 제자이자 이웃이다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2020/summary/"
+    },
+    {
+     "ko": "로버트 윌슨",
+     "en": "Robert B. Wilson",
+     "born": "1937",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Stanford University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "스탠퍼드대 교수. 공통가치 경매와 '승자의 저주'를 이론화했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2020/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2021,
+   "field": "노동경제 실증·인과추론 방법론",
+   "cat": "C",
+   "motivation": "for his empirical contributions to labour economics",
+   "laureates": [
+    {
+     "ko": "데이비드 카드",
+     "en": "David Card",
+     "born": "1956",
+     "died": null,
+     "birthCountry": "캐나다",
+     "affiliation": [
+      "University of California"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "UC버클리 교수. 최저임금 인상이 고용을 줄이지 않은 사례 등 자연실험으로 노동시장을 분석했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2021/summary/"
+    },
+    {
+     "ko": "조슈아 앵그리스트",
+     "en": "Joshua D. Angrist",
+     "born": "1960",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Massachusetts Institute of Technology (MIT)"
+     ],
+     "portion": "1/4",
+     "female": false,
+     "bio": "MIT 교수. 도구변수 등 자연실험에서 인과를 읽는 방법을 정립했다(『대체로 무해한 계량경제학』).",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2021/summary/"
+    },
+    {
+     "ko": "휘도 임번스",
+     "en": "Guido W. Imbens",
+     "born": "1963",
+     "died": null,
+     "birthCountry": "네덜란드",
+     "affiliation": [
+      "Stanford University"
+     ],
+     "portion": "1/4",
+     "female": false,
+     "bio": "스탠퍼드대 교수. 네덜란드 출신으로 앵그리스트와 국소평균처치효과(LATE) 개념을 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2021/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2022,
+   "field": "은행과 금융위기",
+   "cat": "A",
+   "motivation": "for research on banks and financial crises",
+   "laureates": [
+    {
+     "ko": "벤 버냉키",
+     "en": "Ben Bernanke",
+     "born": "1953",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "The Brookings Institution"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "브루킹스연구소·전 연준 의장. 대공황기 은행 파산이 불황을 키웠다는 연구를 2008년 위기 대응에 적용했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2022/summary/"
+    },
+    {
+     "ko": "더글러스 다이아몬드",
+     "en": "Douglas Diamond",
+     "born": "1953",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "시카고대 교수. 디비그와 뱅크런 모형(1983)을 만들어 예금보험의 근거를 제시했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2022/summary/"
+    },
+    {
+     "ko": "필립 디비그",
+     "en": "Philip Dybvig",
+     "born": "1955",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Washington University"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "워싱턴대(세인트루이스) 교수. 다이아몬드-디비그 뱅크런 모형의 공동 저자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2022/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2023,
+   "field": "여성 노동시장 성과",
+   "cat": "C",
+   "motivation": "for having advanced our understanding of women’s labour market outcomes",
+   "laureates": [
+    {
+     "ko": "클로디아 골딘",
+     "en": "Claudia Goldin",
+     "born": "1946",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Harvard University"
+     ],
+     "portion": "1",
+     "female": true,
+     "bio": "하버드대 교수. 200년 미국 자료로 성별 임금격차의 원인을 밝혔다. 단독 수상한 첫 여성이다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2023/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "field": "제도의 형성과 번영",
+   "cat": "B",
+   "motivation": "for studies of how institutions are formed and affect prosperity",
+   "laureates": [
+    {
+     "ko": "대런 아세모글루",
+     "en": "Daron Acemoglu",
+     "born": "1967",
+     "died": null,
+     "birthCountry": "튀르키예",
+     "affiliation": [
+      "Massachusetts Institute of Technology (MIT)"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "MIT 교수. 튀르키예 출신으로 『국가는 왜 실패하는가』, 『권력과 진보』를 썼다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2024/summary/"
+    },
+    {
+     "ko": "사이먼 존슨",
+     "en": "Simon Johnson",
+     "born": "1963",
+     "died": null,
+     "birthCountry": "영국",
+     "affiliation": [
+      "Massachusetts Institute of Technology (MIT)"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "MIT 교수·전 IMF 수석 이코노미스트. 식민지 제도와 번영의 관계를 실증했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2024/summary/"
+    },
+    {
+     "ko": "제임스 로빈슨",
+     "en": "James A. Robinson",
+     "born": "1960",
+     "died": null,
+     "birthCountry": "영국",
+     "affiliation": [
+      "University of Chicago"
+     ],
+     "portion": "1/3",
+     "female": false,
+     "bio": "시카고대 교수. 아세모글루와 포용적·착취적 제도 이론을 함께 세운 정치경제학자다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2024/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2025,
+   "field": "혁신 주도 경제성장",
+   "cat": "A",
+   "motivation": "for having identified the prerequisites for sustained growth through technological progress",
+   "laureates": [
+    {
+     "ko": "조엘 모키르",
+     "en": "Joel Mokyr",
+     "born": "1946",
+     "died": null,
+     "birthCountry": "네덜란드",
+     "affiliation": [
+      "Northwestern University",
+      "Eitan Berglas School of Economics, Tel Aviv University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "노스웨스턴대 교수. 경제사학자로 산업혁명 이후 지속 성장의 조건을 '유용한 지식'에서 찾았다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2025/summary/"
+    },
+    {
+     "ko": "필리프 아기옹",
+     "en": "Philippe Aghion",
+     "born": "1956",
+     "died": null,
+     "birthCountry": "프랑스",
+     "affiliation": [
+      "Collège de France",
+      "INSEAD",
+      "London School of Economics and Political Science"
+     ],
+     "portion": "1/4",
+     "female": false,
+     "bio": "콜레주드프랑스·INSEAD·LSE 교수. 하윗과 창조적 파괴의 슘페터식 성장 모형을 만들었다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2025/summary/"
+    },
+    {
+     "ko": "피터 하윗",
+     "en": "Peter Howitt",
+     "born": "1946",
+     "died": null,
+     "birthCountry": "캐나다",
+     "affiliation": [
+      "Brown University"
+     ],
+     "portion": "1/4",
+     "female": false,
+     "bio": "브라운대 교수. 캐나다 출신으로 아기옹과 슘페터식 내생적 성장 모형(1992)을 함께 세웠다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2025/summary/"
+    }
+   ]
+  },
+  {
+   "year": 2026,
+   "field": "거시 안정화 정책의 미시적 기초",
+   "cat": "A",
+   "motivation": "for microeconomic foundations of macroeconomic stabilisation",
+   "laureates": [
+    {
+     "ko": "로버트 홀",
+     "en": "Robert E. Hall",
+     "born": "1943",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Stanford University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "스탠퍼드대 교수. 소비의 랜덤워크 가설(1978)을 세웠고 NBER 경기순환 판정위원장을 오래 맡았다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2026/summary/"
+    },
+    {
+     "ko": "마이클 우드퍼드",
+     "en": "Michael Woodford",
+     "born": "1955",
+     "died": null,
+     "birthCountry": "미국",
+     "affiliation": [
+      "Columbia University"
+     ],
+     "portion": "1/2",
+     "female": false,
+     "bio": "컬럼비아대 교수. 『Interest and Prices』(2003)로 중앙은행이 쓰는 뉴케인지언 모형을 완성했다.",
+     "url": "https://www.nobelprize.org/prizes/economic-sciences/2026/summary/"
+    }
+   ]
+  }
+ ],
+ "lag": {
+  "title": "핵심 연구 발표에서 수상까지 걸린 시간: 홀 48년",
+  "cats": [
+   "홀(1978→2026)",
+   "내시(1950→1994)",
+   "파마(1970→2013)",
+   "버냉키(1983→2022)",
+   "골딘(1990→2023)",
+   "아기옹·하윗(1992→2025)",
+   "솔로(1956→1987)",
+   "애커로프(1970→2001)",
+   "로머(1990→2018)",
+   "카드(1994→2021)",
+   "키들랜드·프레스콧(1977→2004)",
+   "루카스(1972→1995)",
+   "우드퍼드(2003→2026)",
+   "아세모글루 외(2001→2024)"
+  ],
+  "values": [
+   48,
+   44,
+   43,
+   39,
+   33,
+   33,
+   31,
+   31,
+   28,
+   27,
+   27,
+   23,
+   23,
+   23
+  ]
+ },
+ "decades": {
+  "title": "시대별 수상 분야 구성: 1990년대 미시이론, 2020년대 거시 복귀",
+  "cats": [
+   "1969~79",
+   "1980년대",
+   "1990년대",
+   "2000년대",
+   "2010년대",
+   "2020~26"
+  ],
+  "series": [
+   {
+    "id": "A",
+    "name": "거시·통화·성장",
+    "values": [
+     5,
+     4,
+     2,
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "id": "B",
+    "name": "미시이론·제도",
+    "values": [
+     3,
+     4,
+     5,
+     4,
+     3,
+     2
+    ]
+   },
+   {
+    "id": "C",
+    "name": "실증·행동·금융",
+    "values": [
+     3,
+     2,
+     3,
+     3,
+     4,
+     2
+    ]
+   }
+  ]
+ }
+}
