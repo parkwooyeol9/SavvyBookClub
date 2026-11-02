@@ -36,6 +36,11 @@ export function SiteFooter() {
       <div className="site-footer__inner">
         <p className="site-footer__brand">SavvyBookClub</p>
         <p className="site-footer__note">
+          <Link href="/trends">올해의 트렌드 (2026년)</Link>
+          {" · "}
+          미국·한국 도서와 영화에서 읽는 문화 신호.
+        </p>
+        <p className="site-footer__note">
           <Link href="/#yeoidoMyongDang">여의도 명당</Link>
           {" · "}
           맛집·산책·로또 판매점. 책 추천과는 따로 두었습니다.
