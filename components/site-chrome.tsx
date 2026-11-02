@@ -46,6 +46,11 @@ export function SiteFooter() {
           맛집·산책·로또 판매점. 책 추천과는 따로 두었습니다.
         </p>
         <p className="site-footer__note">
+          <Link href="/arcnbook">아크앤북</Link>
+          {" · "}
+          여의도 아크앤북을 3D로 옮긴 서점 지도.
+        </p>
+        <p className="site-footer__note">
           경제·경영 서평 원문:{" "}
           <a
             href="https://brunch.co.kr/@econbook"

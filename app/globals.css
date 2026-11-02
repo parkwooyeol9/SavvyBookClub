@@ -3523,3 +3523,111 @@ img {
     display: none;
   }
 }
+
+/* 아크앤북: 3D 서점 지도(iframe 임베드) */
+.arcnbook-page {
+  padding-bottom: 4rem;
+}
+
+.arcnbook-page__lede {
+  max-width: 46rem;
+}
+
+.arcnbook-page__kpis {
+  margin-top: 1.5rem;
+}
+
+.arcnbook-frame {
+  margin-top: 1.5rem;
+  height: clamp(560px, 78svh, 860px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.arcnbook-frame__iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.arcnbook-page__hint,
+.arcnbook-page__note {
+  margin: 0.75rem 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.arcnbook-page__hint a,
+.arcnbook-page__note a {
+  color: var(--olive);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.arcnbook-page__section {
+  margin-top: 2.5rem;
+}
+
+.arcnbook-page__h2 {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-literata), Georgia, serif;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.arcnbook-shelves {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arcnbook-shelves__item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 0.92rem;
+}
+
+.arcnbook-shelves__id {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--olive);
+}
+
+.arcnbook-shelves__count {
+  margin-left: auto;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.arcnbook-page__list {
+  margin: 0;
+  padding-left: 1.2rem;
+  max-width: 46rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .arcnbook-page__kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .arcnbook-frame {
+    height: 82svh;
+    border-radius: 14px;
+  }
+}

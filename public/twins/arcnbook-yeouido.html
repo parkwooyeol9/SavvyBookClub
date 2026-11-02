@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="ko" class="embed">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>아크앤북 여의도 트윈 시안</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+/* Layout: 상단 정보 바 + 좌측 3D 스테이지(오버레이 도구) + 우측 상세 패널. 폰에서는 패널이 하단 시트로 내려감 */
+:root{
+  --bg:#eceee9; --surface:#fafaf7; --surface-2:#f0f2ed; --fg:#1b2220; --muted:#5a6560; --line:#d2d8d2;
+  --accent:#1d6b58; --accent-ink:#ffffff; --warn:#b7791f;
+  --scene:#e2e6e0; --floor:#d9d2c4; --corridor:#a9adab; --wall:#efede6; --wood:#b48c62; --staff:#c9ccc6;
+  --font-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111513; --surface:#181d1b; --surface-2:#1f2522; --fg:#e3e8e5; --muted:#93a19a; --line:#2c3531;
+  --accent:#5cc0a2; --accent-ink:#0c1a15; --warn:#e0a84a;
+  --scene:#0e1210; --floor:#2e2a24; --corridor:#3b3f3e; --wall:#363c38; --wood:#80603f; --staff:#2a2f2c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111513; --surface:#181d1b; --surface-2:#1f2522; --fg:#e3e8e5; --muted:#93a19a; --line:#2c3531;
+  --accent:#5cc0a2; --accent-ink:#0c1a15; --warn:#e0a84a;
+  --scene:#0e1210; --floor:#2e2a24; --corridor:#3b3f3e; --wall:#363c38; --wood:#80603f; --staff:#2a2f2c; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);overflow:hidden}
+.app{display:grid;grid-template-rows:auto minmax(0,1fr);height:100%}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;padding-block:10px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  background:var(--surface);border-bottom:1px solid var(--line)}
+h1{font-size:17px;font-weight:600;margin:0;letter-spacing:-.01em}
+h1 small{font-family:var(--font-mono);font-size:11px;color:var(--muted);font-weight:500;margin-left:6px}
+.meta{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.badge{margin-left:auto;font-size:11.5px;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:3px 10px;white-space:nowrap}
+main{display:grid;grid-template-columns:minmax(0,1fr) 360px;min-height:0}
+#stage{position:relative;min-width:0;min-height:0;background:var(--scene);overflow:hidden}
+#stage canvas{display:block;width:100%;height:100%;touch-action:none}
+aside{background:var(--surface);border-left:1px solid var(--line);overflow:auto;padding:18px 18px 28px;min-width:0}
+@media (max-width:820px){
+  main{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) minmax(0,44%)}
+  aside{border-left:0;border-top:1px solid var(--line)}
+  .hint{display:none}
+}
+.tools{position:absolute;top:12px;left:12px;right:12px;display:flex;flex-wrap:wrap;gap:8px;pointer-events:none;align-items:flex-start}
+.tools>*{pointer-events:auto}
+.seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:2px;gap:2px}
+.seg button,.btn{border:0;background:transparent;color:var(--muted);font:inherit;font-size:12.5px;padding:6px 10px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.seg button:hover,.btn:hover{color:var(--fg);background:var(--surface-2)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.search{position:relative}
+.search input{width:230px;max-width:calc(100vw - 48px);font:inherit;font-size:13px;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+.results{position:absolute;top:calc(100% + 4px);left:0;min-width:100%;width:max-content;max-width:min(360px,calc(100vw - 48px));background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px;margin:0;list-style:none;z-index:5}
+.results button{display:flex;justify-content:space-between;gap:12px;width:100%;text-align:left;border:0;background:transparent;color:var(--fg);font:inherit;font-size:12.5px;padding:6px 8px;border-radius:6px;cursor:pointer}
+.results button:hover,.results button:focus-visible{background:var(--surface-2)}
+.results span{color:var(--muted);white-space:nowrap}
+.legend{position:absolute;left:12px;bottom:12px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12px;max-width:calc(100% - 24px);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
+.legend .k{display:inline-flex;align-items:center;gap:5px;color:var(--fg)}
+.dot{width:10px;height:10px;border-radius:2px;display:inline-block;flex:none}
+.legend .mut{color:var(--muted)}
+.hint{position:absolute;right:12px;bottom:12px;font-size:11.5px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12px;padding:4px 8px;border-radius:6px;white-space:nowrap;transform:translate(12px,12px);max-width:320px;overflow:hidden;text-overflow:ellipsis}
+aside h2{font-size:16px;margin:0 0 10px;font-weight:600;text-wrap:balance}
+aside h3{font-size:11.5px;letter-spacing:.06em;color:var(--muted);font-weight:600;margin:22px 0 8px;text-transform:uppercase}
+.eyebrow{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-bottom:4px}
+.sid{font-family:var(--font-mono);font-size:26px;letter-spacing:-.01em;margin:0 0 2px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:13px}
+dt{color:var(--muted)} dd{margin:0;font-variant-numeric:tabular-nums}
+ul.plain{margin:0;padding-left:18px;font-size:13px;line-height:1.6}
+.zl{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.zl button{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;width:100%;border:0;background:transparent;color:var(--fg);font:inherit;font-size:13px;padding:6px;border-radius:6px;cursor:pointer;text-align:left}
+.zl button:hover{background:var(--surface-2)}
+.zl .n{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px}
+.zl .id{font-family:var(--font-mono);font-size:12px}
+.books{list-style:none;margin:0;padding:0;font-size:13px}
+.books li{display:flex;gap:8px;align-items:baseline;padding:5px 4px;border-bottom:1px solid var(--line)}
+.books li.hl{background:var(--surface-2)}
+.books .no{font-family:var(--font-mono);font-size:11px;color:var(--muted);width:18px;flex:none;text-align:right}
+.books .t{flex:1;min-width:0}
+.books .y{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{font-size:10.5px;color:var(--warn);border:1px solid var(--warn);border-radius:4px;padding:0 4px;margin-left:4px;white-space:nowrap}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{border:1px solid var(--line);color:var(--fg)}
+.note{font-size:12px;color:var(--muted);line-height:1.55;margin-top:10px}
+.loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:13px}
+/* SavvyBookClub 임베드(html.embed): 사이트 헤더가 대신하고, 사이트 팔레트(라이트 전용)를 따른다 */
+:root.embed{
+  --bg:#f3eee4; --surface:#faf7f0; --surface-2:#ece6da; --fg:#0f1c2e; --muted:#4d5a68; --line:#d9d2c4;
+  --accent:#5c6b4a; --accent-ink:#ffffff; --warn:#a8641e;
+  --scene:#e8e2d6; --floor:#d6cfc0; --corridor:#a9a69e; --wall:#efe9dd; --wood:#a9845a; --staff:#cfc8ba; color-scheme:light}
+:root.embed header{display:none}
+</style>
+
+<div class="app">
+  <header>
+    <h1>아크앤북 여의도 트윈<small>시안 v0.2</small></h1>
+    <div class="meta" id="meta">TP타워 B2</div>
+    <span class="badge">비공식 검토용 · 평면은 피난안내도 기준 · 서가 배치 일부 추정</span>
+  </header>
+  <main>
+    <div id="stage">
+      <div class="loading" id="loading">3D 모델을 불러오는 중…</div>
+      <div class="tools">
+        <div class="seg" role="group" aria-label="시점">
+          <button id="v-iso" aria-pressed="true">전체</button>
+          <button id="v-top" aria-pressed="false">평면</button>
+          <button id="v-tunnel" aria-pressed="false">북터널</button>
+          <button id="v-daily" aria-pressed="false">DAILY 서가</button>
+          <button id="v-insp" aria-pressed="false">INSPIRATION 서가</button>
+        </div>
+        <div class="seg" role="group" aria-label="책 색상">
+          <button id="c-read" aria-pressed="true">판독 현황</button>
+          <button id="c-zone" aria-pressed="false">존별</button>
+          <button id="c-real" aria-pressed="false">실물색</button>
+        </div>
+        <div class="seg"><button id="t-label" aria-pressed="true">라벨</button></div>
+        <div class="search">
+          <input id="q" type="search" placeholder="책 제목, 서가 ID(D-02), 존 검색" autocomplete="off" aria-label="검색">
+          <ul class="results" id="results" hidden></ul>
+        </div>
+      </div>
+      <div class="legend" id="legend"></div>
+      <div class="hint">드래그 회전 · 우클릭/두 손가락 이동 · 휠 확대 · WASD 걷기</div>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <aside id="panel"></aside>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const DATA = {"tierNames": {"F1": "상단 페이스아웃", "F2": "중단 페이스아웃", "SP": "하단 책등", "TB": "평대"}, "shelves": [{"id": "I-01", "cat": "철학", "photo": 1, "tiers": {"F1": [{"t": "오십에 읽는 손자병법", "c": "H", "y": "", "p": "", "a": ""}, {"t": "자기 결정", "c": "H", "y": "", "p": "", "a": ""}, {"t": "초역 니체의 말", "c": "H", "y": "", "p": "", "a": ""}, {"t": "니체 초인 수업", "c": "H", "y": "", "p": "", "a": ""}, {"t": "화내며 살기엔 인생이 너무 짧다", "c": "H", "y": "", "p": "", "a": ""}], "F2": [{"t": "마흔에 읽는 쇼펜하우어", "c": "H", "y": "", "p": "", "a": ""}, {"t": "명상록", "c": "H", "y": "", "p": "", "a": ""}, {"t": "두려움 없는 삶에 대하여", "c": "H", "y": "", "p": "", "a": ""}, {"t": "그라시안의 사람을 읽는 눈", "c": "M", "y": "", "p": "", "a": ""}, {"t": "사소한 불행에 인생을 내어주지 마라", "c": "H", "y": "", "p": "", "a": ""}], "SP": [{"t": "당신의 인생이 왜 힘들지 않아야 한다고 생각하십니까", "c": "M", "y": "", "p": "", "a": ""}, {"t": "최소한의 철학 수업", "c": "M", "y": "", "p": "", "a": ""}, {"t": "게으름에 대한 찬양", "c": "H", "y": "", "p": "", "a": ""}, {"t": "행복의 정복", "c": "H", "y": "", "p": "", "a": ""}, {"t": "배움의 기쁨", "c": "M", "y": "", "p": "", "a": ""}, {"t": "초역 괴테의 말", "c": "H", "y": "", "p": "", "a": ""}, {"t": "초역 니체의 말 II", "c": "H", "y": "", "p": "", "a": ""}, {"t": "리얼리티+", "c": "H", "y": "", "p": "", "a": ""}, {"t": "조용헌의 내공", "c": "M", "y": "", "p": "", "a": ""}, {"t": "지각의 현상학", "c": "H", "y": "", "p": "", "a": ""}, {"t": "세계 철학 필독서 50", "c": "H", "y": "", "p": "", "a": ""}, {"t": "5분 뚝딱 철학", "c": "M", "y": "", "p": "", "a": ""}, {"t": "철학 교과서", "c": "M", "y": "", "p": "", "a": ""}, {"t": "불안을 철학하다", "c": "M", "y": "", "p": "", "a": ""}, {"t": "소크라테스 익스프레스", "c": "H", "y": "", "p": "", "a": ""}, {"t": "삶의 실력, 장자", "c": "H", "y": "", "p": "", "a": ""}, {"t": "중요한 몸", "c": "M", "y": "", "p": "", "a": ""}], "TB": [{"t": "명상록(마르쿠스 아우렐리우스)", "c": "M", "y": "", "p": "", "a": ""}, {"t": "있다고 다 보여주지 말고 안다고 다 말하지 마라", "c": "M", "y": "", "p": "", "a": ""}, {"t": "니체의 초월자", "c": "M", "y": "", "p": "", "a": ""}, {"t": "단단히, 휘둘리지 않고 살아간다는 것", "c": "M", "y": "", "p": "", "a": ""}, {"t": "처음 만나는 철학의 세계", "c": "H", "y": "", "p": "", "a": ""}, {"t": "마흔에 읽는 니체", "c": "H", "y": "", "p": "", "a": ""}, {"t": "니체와 함께 지적 대화를", "c": "H", "y": "", "p": "", "a": ""}]}}, {"id": "I-02", "cat": "역사·지리", "photo": 7, "tiers": {"F1": [{"t": "지도로 보아야 보인다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "지도는 답을 알고 있다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "지리의 기원", "c": "H", "y": "", "p": "", "a": ""}, {"t": "서양의 탄생", "c": "H", "y": "", "p": "", "a": ""}], "F2": [{"t": "눈에 보이지 않는 국경의 지도책", "c": "H", "y": "", "p": "", "a": ""}, {"t": "시간 여행자를 위한 중세 사전", "c": "H", "y": "", "p": "", "a": ""}, {"t": "구룡성채, 검은 성의 비밀", "c": "H", "y": "", "p": "", "a": ""}, {"t": "일본의 탄생", "c": "H", "y": "", "p": "", "a": ""}], "SP": [{"t": "30개 도시로 읽는 세계사", "c": "H", "y": "", "p": "", "a": ""}, {"t": "거꾸로 읽는 세계사", "c": "H", "y": "", "p": "", "a": ""}, {"t": "약국 안의 세계사", "c": "H", "y": "", "p": "", "a": ""}, {"t": "식탁 위의 일본사", "c": "M", "y": "", "p": "", "a": ""}, {"t": "제국의 황혼", "c": "M", "y": "", "p": "", "a": ""}, {"t": "메트로폴리스", "c": "H", "y": "", "p": "", "a": ""}, {"t": "청소년을 위한 친절한 세계사", "c": "M", "y": "", "p": "", "a": ""}, {"t": "위대한 반항자들", "c": "M", "y": "", "p": "", "a": ""}, {"t": "이주하는 인류", "c": "M", "y": "", "p": "", "a": ""}, {"t": "역사를 보다", "c": "M", "y": "", "p": "", "a": ""}, {"t": "그날의 세계사", "c": "M", "y": "", "p": "", "a": ""}, {"t": "최소한의 세계사", "c": "M", "y": "", "p": "", "a": ""}, {"t": "1페이지 세계사 365", "c": "H", "y": "", "p": "", "a": ""}], "TB": [{"t": "만화로 배우는 의학의 역사", "c": "H", "y": "", "p": "", "a": ""}]}}, {"id": "I-03", "cat": "인문교양", "photo": 9, "tiers": {"F1": [{"t": "경험의 멸종", "c": "H", "y": "", "p": "", "a": ""}, {"t": "편안함의 습격", "c": "H", "y": "", "p": "", "a": ""}, {"t": "위버멘쉬", "c": "M", "y": "", "p": "", "a": ""}, {"t": "생각을 바꾸는 생각들", "c": "H", "y": "", "p": "", "a": ""}, {"t": "팩트풀니스", "c": "H", "y": "", "p": "", "a": ""}], "F2": [{"t": "소설 그렇게 쓰는 거 아닌데", "c": "H", "y": "", "p": "", "a": ""}, {"t": "창작자의 프롬프트 노트", "c": "H", "y": "", "p": "", "a": ""}, {"t": "오래 곁에 두어 좋은 말", "c": "M", "y": "", "p": "", "a": ""}, {"t": "품격 있는 대화를 위한 지식 브리핑", "c": "M", "y": "", "p": "", "a": ""}, {"t": "문해내공", "c": "H", "y": "", "p": "", "a": ""}], "SP": [{"t": "사랑의 기술", "c": "M", "y": "", "p": "", "a": ""}, {"t": "사람, 장소, 환대", "c": "H", "y": "", "p": "", "a": ""}, {"t": "도시 인문학 수업", "c": "M", "y": "", "p": "", "a": ""}, {"t": "죽음의 부정", "c": "H", "y": "", "p": "", "a": ""}, {"t": "비전공자도 이해할 수 있는 LLM 수업", "c": "M", "y": "", "p": "", "a": ""}, {"t": "옥스브리지의 철학 수업", "c": "M", "y": "", "p": "", "a": ""}, {"t": "공간과 장소", "c": "H", "y": "", "p": "", "a": ""}, {"t": "감정 어휘", "c": "M", "y": "", "p": "", "a": ""}], "TB": [{"t": "사피엔스", "c": "H", "y": "", "p": "", "a": ""}, {"t": "동사의 힘", "c": "M", "y": "", "p": "", "a": ""}, {"t": "사랑과 안정", "c": "M", "y": "", "p": "", "a": ""}]}}, {"id": "I-04", "cat": "심리", "photo": 8, "tiers": {"F1": [{"t": "지치지 않는 사람들의 생각법", "c": "H", "y": "", "p": "", "a": ""}, {"t": "혹시 나한테 화났나", "c": "M", "y": "", "p": "", "a": ""}, {"t": "생각에도 산책이 필요하다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "나는 왜 아무것도 하기 싫을까", "c": "H", "y": "", "p": "", "a": ""}, {"t": "죽음의 수용소에서", "c": "H", "y": "", "p": "", "a": ""}], "F2": [{"t": "대체 ADHD가 뭐길래", "c": "H", "y": "", "p": "", "a": ""}, {"t": "우리는 모두 내 안의 누군가와 싸우고 있다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "혼자 살기 워크숍", "c": "M", "y": "", "p": "", "a": ""}, {"t": "칼 융의 내면수업", "c": "M", "y": "", "p": "", "a": ""}, {"t": "우리가 스스로에게 하는 거짓말", "c": "H", "y": "", "p": "", "a": ""}], "SP": [{"t": "빌런의 심리학", "c": "M", "y": "", "p": "", "a": ""}, {"t": "긍정적 사고방식", "c": "M", "y": "", "p": "", "a": ""}, {"t": "다크 심리학", "c": "M", "y": "", "p": "", "a": ""}, {"t": "어른의 감정 수업", "c": "M", "y": "", "p": "", "a": ""}, {"t": "비교 해방", "c": "M", "y": "", "p": "", "a": ""}, {"t": "돈으로 살 수 없는 것들", "c": "H", "y": "", "p": "", "a": ""}], "TB": [{"t": "모두가 그렇게 흔들리며 살아갑니다", "c": "M", "y": "", "p": "", "a": ""}, {"t": "참 괜찮은 태도", "c": "H", "y": "", "p": "", "a": ""}, {"t": "나는 왜 내 말이 힘들까", "c": "M", "y": "", "p": "", "a": ""}, {"t": "자꾸 불안해지는 데는 이유가 있다", "c": "M", "y": "", "p": "", "a": ""}, {"t": "캐릭터 심리 사전", "c": "H", "y": "", "p": "", "a": ""}]}}, {"id": "I-05", "cat": "정치·사회", "photo": 10, "tiers": {"F1": [{"t": "자유민주주의에 무슨 일이 일어났는가", "c": "M", "y": "", "p": "", "a": ""}, {"t": "탈주자들", "c": "H", "y": "", "p": "", "a": ""}, {"t": "필연적 혼자의 시대", "c": "H", "y": "", "p": "", "a": ""}, {"t": "AI 시대, 전쟁의 미래", "c": "H", "y": "", "p": "", "a": ""}], "F2": [{"t": "사회를 사고하는 법", "c": "M", "y": "", "p": "", "a": ""}, {"t": "가자로부터 멀리 떨어져", "c": "M", "y": "", "p": "", "a": ""}, {"t": "돈 때문에 불안하다는 착각", "c": "H", "y": "", "p": "", "a": ""}, {"t": "불온한 열대", "c": "M", "y": "", "p": "", "a": ""}], "SP": [{"t": "내전은 어떻게 일어나는가", "c": "M", "y": "", "p": "", "a": ""}, {"t": "대한민국 대통령 실록", "c": "M", "y": "", "p": "", "a": ""}, {"t": "트럼프의 귀환", "c": "M", "y": "", "p": "", "a": ""}, {"t": "노무현 평전", "c": "H", "y": "", "p": "", "a": ""}, {"t": "좌파 생활", "c": "M", "y": "", "p": "", "a": ""}, {"t": "이준석의 거부할 수 없는 미래", "c": "M", "y": "", "p": "", "a": ""}, {"t": "나는 대한민국 검사였다", "c": "M", "y": "", "p": "", "a": ""}, {"t": "승리의 비결", "c": "M", "y": "", "p": "", "a": ""}, {"t": "주인의 눈", "c": "M", "y": "", "p": "", "a": ""}], "TB": [{"t": "커뮤니티에 입장하셨습니다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "대한민국에서 가장 쉽게 쓴 민법책", "c": "H", "y": "", "p": "", "a": ""}, {"t": "어떻게 극단적 소수가 다수를 지배하는가", "c": "H", "y": "", "p": "", "a": ""}]}}, {"id": "W-05", "cat": "에세이", "photo": 2, "tiers": {"F1": [{"t": "결국, 마음에 닿는 건 예쁜 말이다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "단 한 번의 삶", "c": "H", "y": "", "p": "", "a": ""}, {"t": "외롭다면 잘 살고 있는 것이다", "c": "M", "y": "", "p": "", "a": ""}, {"t": "오늘도 잘 살았네", "c": "M", "y": "", "p": "", "a": ""}, {"t": "나는 너랑 노는 게 제일 좋아", "c": "H", "y": "", "p": "", "a": ""}], "F2": [{"t": "햇볕, 공원, 농구하는 소녀", "c": "M", "y": "", "p": "", "a": ""}, {"t": "그랬다고 적었다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "서울 밤 감정", "c": "M", "y": "", "p": "", "a": ""}, {"t": "유한한 삶을 사랑하는 법", "c": "H", "y": "", "p": "", "a": ""}, {"t": "슬픔을 방어하기엔 방어가 최고", "c": "M", "y": "", "p": "", "a": ""}], "SP": [{"t": "보통의 존재", "c": "H", "y": "", "p": "", "a": ""}, {"t": "마음의 장소", "c": "M", "y": "", "p": "", "a": ""}, {"t": "정확한 사랑의 실험", "c": "H", "y": "", "p": "", "a": ""}], "TB": [{"t": "나태주의 꿀꽃 인생수업", "c": "M", "y": "", "p": "", "a": ""}, {"t": "너를 아끼며 살아라", "c": "M", "y": "", "p": "", "a": ""}]}}, {"id": "W-06", "cat": "소설", "photo": 3, "tiers": {"F1": [{"t": "이상한 지도", "c": "H", "y": "", "p": "", "a": ""}, {"t": "메가처치", "c": "M", "y": "", "p": "", "a": ""}, {"t": "폴터가이스트의 죄수", "c": "M", "y": "", "p": "", "a": ""}, {"t": "투명한 나선", "c": "H", "y": "", "p": "", "a": ""}, {"t": "노르웨이의 숲", "c": "H", "y": "", "p": "", "a": ""}], "F2": [{"t": "어떻게든 해야 해", "c": "M", "y": "", "p": "", "a": ""}, {"t": "파라오의 밀실", "c": "H", "y": "", "p": "", "a": ""}, {"t": "가호", "c": "M", "y": "", "p": "", "a": ""}, {"t": "그 살인, 본격 미스터리로 만들어 드리겠습니다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "하늘 너머 반짝이는 일곱 개의 별", "c": "M", "y": "", "p": "", "a": ""}], "SP": [{"t": "바다가 들리는 편의점", "c": "M", "y": "", "p": "", "a": ""}, {"t": "지지 않는 벚꽃", "c": "M", "y": "", "p": "", "a": ""}, {"t": "책갈피와 거짓말의 계절", "c": "H", "y": "", "p": "", "a": ""}, {"t": "책과 열쇠의 계절", "c": "H", "y": "", "p": "", "a": ""}, {"t": "언더그라운드", "c": "H", "y": "", "p": "", "a": ""}, {"t": "1Q84 BOOK 1", "c": "H", "y": "", "p": "", "a": ""}, {"t": "해변의 카프카", "c": "H", "y": "", "p": "", "a": ""}, {"t": "도시와 그 불확실한 벽", "c": "H", "y": "", "p": "", "a": ""}, {"t": "상실의 시대", "c": "H", "y": "", "p": "", "a": ""}, {"t": "여자 없는 남자들", "c": "M", "y": "", "p": "", "a": ""}, {"t": "학살기관", "c": "M", "y": "", "p": "", "a": ""}], "TB": []}}, {"id": "D-01", "cat": "경제경영", "photo": 11, "tiers": {"F1": [{"t": "AI 신의 탄생 인간의 종말", "c": "M", "y": "", "p": "", "a": ""}, {"t": "환율의 대전환", "c": "H", "y": "", "p": "", "a": ""}, {"t": "시대예보: 수고인류의 시간", "c": "M", "y": "", "p": "", "a": ""}, {"t": "딥테크 오디세이", "c": "H", "y": "", "p": "", "a": ""}, {"t": "판매의 법칙", "c": "H", "y": "", "p": "", "a": ""}], "F2": [{"t": "제로 투 원", "c": "H", "y": "", "p": "", "a": ""}, {"t": "2027 한국경제 대전망", "c": "H", "y": "", "p": "", "a": ""}, {"t": "세계미래보고서 2027-2037", "c": "H", "y": "", "p": "", "a": ""}, {"t": "클로드 자서전", "c": "M", "y": "", "p": "", "a": ""}, {"t": "매스니치 서바이벌", "c": "H", "y": "", "p": "", "a": ""}], "SP": [{"t": "OKR", "c": "M", "y": "", "p": "", "a": ""}, {"t": "인피니트 게임", "c": "H", "y": "", "p": "", "a": ""}, {"t": "엔비디아 레볼루션", "c": "H", "y": "", "p": "", "a": ""}, {"t": "AI 에이전트", "c": "M", "y": "", "p": "", "a": ""}, {"t": "경영의 본질", "c": "M", "y": "", "p": "", "a": ""}, {"t": "규칙 없음", "c": "H", "y": "", "p": "", "a": ""}, {"t": "로켓 드림", "c": "M", "y": "", "p": "", "a": ""}, {"t": "빌 게이츠 소스 코드", "c": "H", "y": "", "p": "", "a": ""}, {"t": "기버 1·2", "c": "M", "y": "", "p": "", "a": ""}, {"t": "달러 이후의 질서", "c": "M", "y": "", "p": "", "a": ""}, {"t": "AI 나를 위해 일하게 하라", "c": "M", "y": "", "p": "", "a": ""}, {"t": "달러 전쟁", "c": "M", "y": "", "p": "", "a": ""}, {"t": "서사경영", "c": "M", "y": "", "p": "", "a": ""}, {"t": "킹 달러", "c": "H", "y": "", "p": "", "a": ""}, {"t": "법인 운영의 기술", "c": "M", "y": "", "p": "", "a": ""}, {"t": "기술공화국 선언", "c": "M", "y": "", "p": "", "a": ""}, {"t": "하이 아웃풋 매니지먼트", "c": "H", "y": "", "p": "", "a": ""}, {"t": "한국의 미래", "c": "M", "y": "", "p": "", "a": ""}, {"t": "AI 반도체 혁명", "c": "M", "y": "", "p": "", "a": ""}, {"t": "슈퍼 모멘텀", "c": "H", "y": "", "p": "", "a": ""}], "TB": [{"t": "MBA 마케팅 필독서 45", "c": "H", "y": "", "p": "", "a": ""}, {"t": "트렌드 코리아 2027", "c": "H", "y": "", "p": "", "a": ""}, {"t": "AI 시대를 살아가기 위한 최소한의 리더 수업", "c": "M", "y": "", "p": "", "a": ""}, {"t": "클릭 히어", "c": "M", "y": "", "p": "", "a": ""}, {"t": "돈의 얼굴", "c": "M", "y": "", "p": "", "a": ""}]}}, {"id": "D-02", "cat": "경제경영", "photo": 5, "tiers": {"F1": [{"t": "하마터면 또 회계를 모르고 일할 뻔했다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "금지된 거래의 경제학", "c": "H", "y": "", "p": "", "a": ""}, {"t": "솔직히 회계 1도 모르겠습니다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "왜 일하는가", "c": "H", "y": "", "p": "", "a": ""}, {"t": "포트폴리오 설계 수업", "c": "H", "y": "", "p": "", "a": ""}], "F2": [{"t": "생각에 관한 생각", "c": "H", "y": "", "p": "", "a": ""}, {"t": "결핍은 우리를 어떻게 변화시키는가", "c": "H", "y": "", "p": "", "a": ""}, {"t": "금융이 쉬워지는 최소한의 세계사", "c": "H", "y": "", "p": "", "a": ""}, {"t": "최소한의 경영학", "c": "H", "y": "", "p": "", "a": ""}, {"t": "교양을 위한 최소한의 경제지식", "c": "H", "y": "", "p": "", "a": ""}], "SP": [{"t": "EBS 다큐프라임 자본주의", "c": "H", "y": "", "p": "", "a": ""}, {"t": "구글은 어떻게 일하는가", "c": "H", "y": "", "p": "", "a": ""}, {"t": "사업의 철학", "c": "M", "y": "", "p": "", "a": ""}, {"t": "뉴맵", "c": "M", "y": "", "p": "", "a": ""}, {"t": "넛지", "c": "H", "y": "", "p": "", "a": ""}, {"t": "최소한의 경제공부", "c": "M", "y": "", "p": "", "a": ""}, {"t": "최소한의 환율 공부", "c": "M", "y": "", "p": "", "a": ""}, {"t": "일론 머스크", "c": "H", "y": "", "p": "", "a": ""}, {"t": "왜 그들만 부자가 되는가", "c": "M", "y": "", "p": "", "a": ""}, {"t": "THE MONEY BOOK", "c": "H", "y": "", "p": "", "a": ""}, {"t": "신 로지컬 씽킹", "c": "M", "y": "", "p": "", "a": ""}, {"t": "혁신의 지리학", "c": "H", "y": "", "p": "", "a": ""}, {"t": "대한민국 돈의 역사", "c": "M", "y": "", "p": "", "a": ""}, {"t": "패러독스 마인드", "c": "M", "y": "", "p": "", "a": ""}, {"t": "왜 좋은 일자리는 늘 부족한가", "c": "M", "y": "", "p": "", "a": ""}], "TB": [{"t": "7일 완성 재무제표 읽기", "c": "H", "y": "", "p": "", "a": ""}, {"t": "매크로 씽킹", "c": "H", "y": "", "p": "", "a": ""}, {"t": "반도체 패권지도", "c": "H", "y": "", "p": "", "a": ""}, {"t": "모두를 위한 반도체", "c": "M", "y": "", "p": "", "a": ""}, {"t": "찰리 멍거 바이블", "c": "H", "y": "", "p": "", "a": ""}]}}, {"id": "D-03", "cat": "재테크·투자", "photo": 4, "tiers": {"F1": [{"t": "궤도에 투자하라", "c": "H", "y": "", "p": "", "a": ""}, {"t": "넥스트 엔비디아, 투자의 미래", "c": "H", "y": "", "p": "", "a": ""}, {"t": "부의 곡선", "c": "H", "y": "", "p": "", "a": ""}, {"t": "종목을 이기는 계좌의 기술", "c": "H", "y": "", "p": "", "a": ""}, {"t": "박곰희 연금 부자 수업", "c": "H", "y": "", "p": "", "a": ""}], "F2": [{"t": "BUY SELL HOLD 살 것인가 팔 것인가 버틸 것인가", "c": "H", "y": "", "p": "", "a": ""}, {"t": "재야의 고수들", "c": "H", "y": "", "p": "", "a": ""}, {"t": "50부터 시작하는 부동산", "c": "H", "y": "", "p": "", "a": ""}, {"t": "이제부터는 오를 곳만 오른다", "c": "H", "y": "", "p": "", "a": ""}, {"t": "이효석의 21세기 투자법", "c": "H", "y": "", "p": "", "a": ""}], "SP": [{"t": "규칙 파괴자", "c": "M", "y": "", "p": "", "a": ""}, {"t": "ETF 투자의 정석", "c": "H", "y": "", "p": "", "a": ""}, {"t": "주도주 추세 추종 투자 전략", "c": "M", "y": "", "p": "", "a": ""}, {"t": "달러 투자", "c": "M", "y": "", "p": "", "a": ""}, {"t": "현명한 투자자", "c": "H", "y": "", "p": "", "a": ""}, {"t": "월배당 ETF", "c": "M", "y": "", "p": "", "a": ""}, {"t": "반도체 밸류체인 투자", "c": "M", "y": "", "p": "", "a": ""}, {"t": "가난한 찰리의 연감", "c": "H", "y": "", "p": "", "a": ""}, {"t": "주식 투자의 기쁨", "c": "M", "y": "", "p": "", "a": ""}, {"t": "ETF 투자 5일 완성", "c": "M", "y": "", "p": "", "a": ""}, {"t": "주식시장을 이기는 작은 책", "c": "H", "y": "", "p": "", "a": ""}, {"t": "ETF 투자의 모든 것", "c": "M", "y": "", "p": "", "a": ""}, {"t": "최소한의 주식공부", "c": "M", "y": "", "p": "", "a": ""}, {"t": "한국 주식 슈퍼사이클", "c": "M", "y": "", "p": "", "a": ""}, {"t": "주식시장의 심리학", "c": "M", "y": "", "p": "", "a": ""}, {"t": "주식의 코드", "c": "M", "y": "", "p": "", "a": ""}, {"t": "미국 주식 투자법", "c": "M", "y": "", "p": "", "a": ""}, {"t": "부자의 영수증", "c": "H", "y": "", "p": "", "a": ""}, {"t": "시장을 이기는 투자", "c": "M", "y": "", "p": "", "a": ""}], "TB": [{"t": "돈의 심리학", "c": "H", "y": "", "p": "", "a": ""}, {"t": "부의 인문학", "c": "H", "y": "", "p": "", "a": ""}, {"t": "부자 아빠 가난한 아빠 (20주년 특별 기념판)", "c": "H", "y": "", "p": "", "a": ""}, {"t": "돈으로 자유를 사라", "c": "H", "y": "", "p": "", "a": ""}, {"t": "The Simple Path to Wealth", "c": "H", "y": "", "p": "", "a": ""}, {"t": "우리 아이 부자 세팅법", "c": "M", "y": "", "p": "", "a": ""}]}}]};
+(function(){
+const $=s=>document.querySelector(s);
+if(!window.THREE){ $('#loading').textContent='3D 라이브러리를 불러오지 못했습니다. 네트워크를 확인한 뒤 새로고침하세요.'; return; }
+
+// ---------- 평면(피난안내도 픽셀 → m, 1px = 0.035m, 도면 위쪽 = 화면 -z) ----------
+const WALL_H=3.0, SHELF={w:1.2,h:2.1,d:0.4,tiers:6};
+const OUTLINE=(()=>{const p=[[-4.66,-14.77],[19.5,-14.77],[19.5,-2.8],[19.5,1.33],[18.45,1.33],[18.45,14.8],[-19.1,14.8],[-19.1,9.2],[-19.1,-4.27]];
+  for(let i=1;i<=8;i++){const a=i/8*Math.PI/2;p.push([-12-7.1*Math.cos(a),-4.27-4.13*Math.sin(a)]);}
+  p.push([-4.66,-8.4]); return p;})();
+// 개구부(벽을 세우지 않는 변): 북쪽 공용복도, 동쪽 비상구 통로, 서쪽 매장 전면
+const OPEN=[[-4.66,-2.4,'N'],['E',-2.8,1.33],['W',-4.27,9.2]];
+const ZONES=[
+  {id:'I',name:'INSPIRATION',ko:'인문·철학·역사·심리',color:'#3d6fb0',rect:[0.25,8.4,-14.77,-7.84],runs:[{x0:0.25,x1:8.0,z:-14.77,dir:'N'}],island:[0.6,8.2,-11.9,-7.9]},
+  {id:'S',name:'STYLE',ko:'미판독',color:'#a0569a',rect:[8.75,14.07,-14.77,-2.87],runs:[{x0:8.75,x1:14.07,z:-14.77,dir:'N'}],island:[9.0,13.9,-12.9,-3.4]},
+  {id:'W',name:'WEEKEND',ko:'에세이·소설',color:'#c0603d',rect:[14.25,19.5,-14.77,-2.8],runs:[{x0:14.25,x1:19.05,z:-14.77,dir:'N'},{z0:-14.2,z1:-3.0,x:19.5,dir:'E'}],island:[14.3,17.3,-12.4,-3.4]},
+  {id:'D',name:'DAILY',ko:'경제경영·재테크',color:'#2f8a63',rect:[10.6,18.45,1.33,11.1],runs:[{z0:1.6,z1:10.9,x:18.45,dir:'E'}],island:[10.9,15.4,2.0,10.6]},
+];
+const FAC=[
+  {id:'tunnel',name:'BOOK TUNNEL',ko:'북터널',rect:[-11.4,-4.3,-2.87,1.05],desc:'공용복도 위에 걸친 원서 아치. 기사에 따르면 해외 원서 약 12,000권으로 만들었습니다. 모델은 약 5,000권으로 단순화했습니다.'},
+  {id:'popup',name:'POP-UP ZONE',ko:'팝업존',rect:[-11.55,-4.4,-7.4,-3.05],desc:'기획전·신간 평대 구역. 평대 배치는 가정입니다.'},
+  {id:'lounge',name:'BOOK LOUNGE',ko:'북라운지',rect:[0.25,8.3,-7.6,-2.87],desc:'열람·작업 좌석 구역. 좌석 배치는 가정입니다.'},
+  {id:'counter',name:'COUNTER',ko:'북·카페 계산대',rect:[-19.0,-10.25,5.8,9.2],desc:'매장 전면 오른쪽의 BOOK CASHIER와 CAFE CASHIER. 현장 사진과 피난안내도 위치가 일치합니다.'},
+  {id:'cafe',name:'CAFE & WINE ZONE',ko:"카페 '적당'·와인",rect:[-9.1,-0.63,2.73,9.73],desc:"카페 '적당'과 와인숍 '마이페이보릿보틀', 맥주·와인 셀프 디스펜서가 있는 구역."},
+  {id:'terrace',name:'BOOK & CAFE TERRACE',ko:'북&카페 테라스',rect:[-0.5,10.4,1.26,9.55],desc:'낮은 평대와 유리 칸막이로 둘러싼 좌석 구역. 현장 사진의 유리 칸막이 평대가 이 구역 외곽입니다.'},
+  {id:'booth',name:'BOOTH ×5',ko:'부스 5실',rect:[1.4,10.0,12.2,14.7],desc:'도면에 칸 5개로 그려진 소형 룸. 기사에 나온 미팅룸·프린트룸·스타일러 공간으로 추정합니다.'},
+  {id:'jjogjam',name:'PRIVATE ZONE',ko:'쪽잠존',rect:[10.0,18.3,12.35,14.7],desc:'도면 표기 PRIVATE ZONE [JJOG JAM]. 안마의자가 있는 휴식 공간입니다.'},
+  {id:'staff1',name:'STAFF',ko:'직원 공간',rect:[-2.38,-0.28,-14.6,-8.9],desc:'직원 전용 공간.',staff:true},
+  {id:'staff2',name:'STAFF ONLY',ko:'직원 공간',rect:[-18.7,-10.95,9.2,14.7],desc:'직원 전용 공간.',staff:true},
+  {id:'staff3',name:'STAFF ONLY',ko:'직원 공간',rect:[-9.2,1.4,11.5,14.7],desc:'직원 전용 공간.',staff:true},
+];
+const COLUMNS=[[-0.88,-3.92],[9.8,-3.92],[0,8.5],[9.7,8.5]];
+
+// ---------- 유틸 ----------
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const rng=mulberry32(20240723), R=(a,b)=>a+rng()*(b-a);
+const hash=s=>{let h=2166136261;for(const ch of s){h^=ch.codePointAt(0);h=Math.imul(h,16777619);}return h>>>0;};
+let tok={};
+function readTok(){const s=getComputedStyle(document.documentElement);['scene','floor','corridor','wall','wood','staff','accent','warn','fg','muted'].forEach(k=>tok[k]=s.getPropertyValue('--'+k).trim()||'#888');}
+readTok();
+const fmt=n=>n.toLocaleString('ko-KR');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function inPoly(x,z){let c=false;for(let i=0,j=OUTLINE.length-1;i<OUTLINE.length;j=i++){const[xi,zi]=OUTLINE[i],[xj,zj]=OUTLINE[j];if((zi>z)!==(zj>z)&&x<(xj-xi)*(z-zi)/(zj-zi)+xi)c=!c;}return c;}
+
+// ---------- 렌더러 ----------
+const stage=$('#stage');
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+stage.prepend(renderer.domElement);
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(50,1,0.1,300);
+camera.position.set(24,32,36);
+const controls=new THREE.OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true; controls.dampingFactor=0.08;
+controls.maxPolarAngle=Math.PI/2-0.02; controls.minDistance=0.6; controls.maxDistance=110;
+controls.screenSpacePanning=false;
+scene.add(new THREE.HemisphereLight(0xffffff,0x8a8a80,0.75));
+const d1=new THREE.DirectionalLight(0xffffff,0.55); d1.position.set(20,30,15); scene.add(d1);
+const d2=new THREE.DirectionalLight(0xffffff,0.25); d2.position.set(-15,20,-20); scene.add(d2);
+
+const mats={
+  floor:new THREE.MeshLambertMaterial(), corridor:new THREE.MeshLambertMaterial(),
+  wall:new THREE.MeshLambertMaterial(), staff:new THREE.MeshLambertMaterial(),
+  plain:new THREE.MeshLambertMaterial({color:0xffffff}),
+  dark:new THREE.MeshLambertMaterial({color:0x3a3530}), table:new THREE.MeshLambertMaterial({color:0xd9cbb4}),
+  woodTable:new THREE.MeshLambertMaterial({color:0xb08a5c}), chair:new THREE.MeshLambertMaterial({color:0x6f6a62}),
+  green:new THREE.MeshLambertMaterial({color:0x2f5a46}),
+  glass:new THREE.MeshLambertMaterial({color:0x8fc7b8,transparent:true,opacity:0.22,depthWrite:false}),
+  column:new THREE.MeshLambertMaterial({color:0x2f5a46}), pod:new THREE.MeshLambertMaterial({color:0x4a5560}),
+  rack:new THREE.MeshLambertMaterial({color:0x4b2f24}), wine:new THREE.MeshLambertMaterial({color:0x6e1f2a}),
+  pick:new THREE.MeshBasicMaterial({visible:false}),
+};
+const boxGeo=new THREE.BoxGeometry(1,1,1);
+function box(x,y,z,w,h,d,mat){const m=new THREE.Mesh(boxGeo,mat);m.position.set(x,y,z);m.scale.set(w,h,d);scene.add(m);return m;}
+function rectFloor(r,mat,y){const m=new THREE.Mesh(new THREE.PlaneGeometry(r[1]-r[0],r[3]-r[2]),mat);m.rotation.x=-Math.PI/2;m.position.set((r[0]+r[1])/2,y,(r[2]+r[3])/2);scene.add(m);return m;}
+
+// 바닥·공용복도·벽
+const shape=new THREE.Shape(OUTLINE.map(([x,z])=>new THREE.Vector2(x,-z)));
+const floor=new THREE.Mesh(new THREE.ShapeGeometry(shape),mats.floor); floor.rotation.x=-Math.PI/2; scene.add(floor);
+rectFloor([-22.5,19.5,-2.87,1.15],mats.corridor,0.004);      // 동서 공용복도(매장 밖 전면까지)
+rectFloor([-4.3,-2.4,-14.77,-2.87],mats.corridor,0.004);     // 북쪽 공용복도
+function isOpen(a,b){
+  return OPEN.some(o=>{
+    if(o[2]==='N') return Math.abs(a[1]+14.77)<.01&&Math.abs(b[1]+14.77)<.01&&Math.min(a[0],b[0])>=o[0]-.01&&Math.max(a[0],b[0])<=o[1]+.01;
+    const x=o[0]==='E'?19.5:-19.1; return Math.abs(a[0]-x)<.01&&Math.abs(b[0]-x)<.01&&Math.min(a[1],b[1])>=o[1]-.01&&Math.max(a[1],b[1])<=o[2]+.01;});
+}
+function wallSeg(a,b){const dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz);if(len<0.05)return;
+  let nx=-dz/len,nz=dx/len; const mx=(a[0]+b[0])/2,mz=(a[1]+b[1])/2; if(!inPoly(mx+nx*0.3,mz+nz*0.3)){nx=-nx;nz=-nz;}
+  const p=new THREE.Mesh(new THREE.PlaneGeometry(len,WALL_H),mats.wall);p.position.set(mx,WALL_H/2,mz);p.rotation.y=Math.atan2(nx,nz);scene.add(p);}
+// 북쪽 벽은 공용복도 구간을 잘라서 세움
+OUTLINE.forEach((a,i)=>{const b=OUTLINE[(i+1)%OUTLINE.length];
+  if(i===0){wallSeg([-2.4,-14.77],b);return;}
+  if(!isOpen(a,b)) wallSeg(a,b);});
+// 치수선
+const dimMat=new THREE.LineBasicMaterial({transparent:true,opacity:0.8});
+const dimGeo=new THREE.BufferGeometry(); dimGeo.setAttribute('position',new THREE.Float32BufferAttribute([
+  -19.1,0.02,18.6, 19.5,0.02,18.6, -19.1,0.02,18.2,-19.1,0.02,19.0, 19.5,0.02,18.2,19.5,0.02,19.0,
+  22.6,0.02,-14.77, 22.6,0.02,14.8, 22.2,0.02,-14.77,23.0,0.02,-14.77, 22.2,0.02,14.8,23.0,0.02,14.8],3));
+scene.add(new THREE.LineSegments(dimGeo,dimMat));
+COLUMNS.forEach(([x,z])=>box(x,WALL_H/2,z,1.0,WALL_H,1.0,mats.column));
+
+// ---------- 서가 면 ----------
+const shelfData=Object.fromEntries(DATA.shelves.map(s=>[s.id,s]));
+const faces=[];
+ZONES.forEach(zn=>{
+  let n=0; const add=(x,z,rot,wall)=>{const id=zn.id+'-'+String(++n).padStart(2,'0');faces.push({zone:zn,id,x,z,rot,wall,real:shelfData[id]||null});};
+  zn.runs.forEach(r=>{
+    if(r.dir==='N'){const k=Math.floor((r.x1-r.x0)/1.2);const s=r.x0+(r.x1-r.x0-k*1.2)/2+0.6;for(let i=0;i<k;i++)add(s+i*1.2,r.z+0.22,0,true);}
+    else{const k=Math.floor((r.z1-r.z0)/1.2);const s=r.z0+(r.z1-r.z0-k*1.2)/2+0.6;for(let i=0;i<k;i++)add(r.x-0.22,s+i*1.2,-Math.PI/2,true);}
+  });
+  const [x0,x1,z0,z1]=zn.island;
+  const nRows=Math.floor((z1-z0-0.8)/2.4)+1, span=0.8+(nRows-1)*2.4, zs=z0+(z1-z0-span)/2+0.4;
+  const nU=Math.floor((x1-x0-0.6)/1.2), xs=x0+(x1-x0-nU*1.2)/2+0.6;
+  for(let r=0;r<nRows;r++){const zc=zs+r*2.4;for(let u=0;u<nU;u++){const x=xs+u*1.2;add(x,zc-0.2,Math.PI,false);add(x,zc+0.2,0,false);}}
+});
+const dummy=new THREE.Object3D();
+function place(f,lx,ly,lz,sx,sy,sz,rx){const c=Math.cos(f.rot),s=Math.sin(f.rot);
+  dummy.position.set(f.x+lx*c+lz*s,ly,f.z-lx*s+lz*c);dummy.rotation.set(rx||0,f.rot,0,'YXZ');dummy.scale.set(sx,sy,sz);dummy.updateMatrix();return dummy.matrix;}
+
+const boardY=[...Array(7)].map((_,i)=>0.08+i*0.335);
+const woodParts=[[0,1.05,-0.19,1.2,2.1,0.02],[-0.5875,1.05,0,0.025,2.1,0.4],[0.5875,1.05,0,0.025,2.1,0.4],[0,0.04,0.17,1.15,0.08,0.02],
+  ...boardY.map(y=>[0,y,0,1.15,0.025,0.38])];
+const WOODN=woodParts.length, TABLEPART=[0,0.42,0.62,1.15,0.84,0.55];
+const woodMesh=new THREE.InstancedMesh(boxGeo,mats.plain.clone(),faces.length*(WOODN+1));
+const pickMesh=new THREE.InstancedMesh(boxGeo,mats.pick,faces.length);
+const hidden=new THREE.Matrix4().makeScale(0,0,0);
+faces.forEach((f,i)=>{f.w0=i*(WOODN+1);woodParts.forEach((p,k)=>woodMesh.setMatrixAt(f.w0+k,place(f,...p)));
+  woodMesh.setMatrixAt(f.w0+WOODN,f.real?place(f,...TABLEPART):hidden);   // 사진 서가 앞 평대
+  pickMesh.setMatrixAt(i,place(f,0,1.05,f.real?0.3:0,1.2,2.1,f.real?1.0:0.4));});
+scene.add(woodMesh,pickMesh);
+
+// ---------- 책 ----------
+const REAL=['#7b2d26','#2d4a6b','#c9b79c','#1f3d2f','#e0d6c2','#8f5a3c','#3b3b3b','#b5452f','#d9a441','#5c6f7d','#efe9dc','#6d4c6f','#2f5d50','#a33a3a','#c7c1b4','#24323f'].map(h=>new THREE.Color(h));
+const GREY=new THREE.Color('#9aa09c');
+const sample=[];  // 미판독 샘플 책
+const reads=[];   // 판독된 책 {m,face,tier,idx,book}
+faces.forEach((f,fi)=>{
+  const base=new THREE.Color(f.zone.color);
+  const fill=(t)=>{const yb=boardY[t]+0.0125;let x=-0.565;
+    while(true){if(rng()<0.04)x+=R(0.03,0.09);const w=R(0.022,0.055);if(x+w>0.565)break;const h=R(0.17,0.29),d=R(0.13,0.21);
+      sample.push({m:place(f,x+w/2,yb+h/2,0.18-d/2,w,h,d).clone(),face:fi,zc:base.clone().offsetHSL(R(-0.02,0.02),R(-0.12,0.04),R(-0.13,0.12)),real:REAL[Math.floor(rng()*REAL.length)]});x+=w+0.002;}};
+  if(!f.real){for(let t=0;t<SHELF.tiers;t++)fill(t);return;}
+  // 사진 서가: 1단 비움, 2단 책등, 3·4단 페이스아웃(F2·F1), 5·6단 미판독, 앞 평대에 TB
+  fill(4);fill(5);
+  const T=f.real.tiers;
+  const sp=T.SP||[]; {const yb=boardY[1]+0.0125, w=Math.min(0.05,1.13/Math.max(sp.length,1)-0.003);let x=-0.565;
+    sp.forEach((b,k)=>{const h=0.2+(hash(b.t)%80)/1000,d=0.17;reads.push({m:place(f,x+w/2,yb+h/2,0.18-d/2,w,h,d).clone(),face:fi,tier:'SP',idx:k,book:b});x+=w+0.003;});}
+  [['F2',2],['F1',3]].forEach(([tk,t])=>{const lst=T[tk]||[],slot=1.13/Math.max(lst.length,4),yb=boardY[t]+0.0125;
+    lst.forEach((b,k)=>{const w=Math.min(0.17,slot-0.04),h=0.24;reads.push({m:place(f,-0.565+slot*(k+0.5),yb+h/2+0.01,0.07,w,h,0.06,-0.12).clone(),face:fi,tier:tk,idx:k,book:b});});});
+  {const lst=T.TB||[],slot=1.1/Math.max(lst.length,4);
+    lst.forEach((b,k)=>{const n=1+hash(b.t)%3,ht=0.025*n;reads.push({m:place(f,-0.55+slot*(k+0.5),0.84+ht/2,0.62,Math.min(0.15,slot-0.02),ht,0.21).clone(),face:fi,tier:'TB',idx:k,book:b});});}
+});
+// 북터널(축: x, 벽 1.3m + 반원 아치 r=1.8m)
+(function(){
+  const cz=-0.91,Rr=1.8,wallH=1.3,x0=-11.3,x1=-4.4,L=2*wallH+Math.PI*Rr;
+  const at=s=>s<wallH?[-Rr,s,-1,0]:s<wallH+Math.PI*Rr?(a=>[Rr*Math.cos(a),wallH+Rr*Math.sin(a),Math.cos(a),Math.sin(a)])(Math.PI-(s-wallH)/Rr):[Rr,wallH-(s-wallH-Math.PI*Rr),1,0];
+  const yAx=new THREE.Vector3(1,0,0),n=new THREE.Vector3(),xAx=new THREE.Vector3(),M=new THREE.Matrix4(),S=new THREE.Matrix4();
+  for(let x=x0+0.13;x<x1-0.1;x+=0.26){let s=0.01;
+    while(s<L-0.02){const w=R(0.028,0.05),h=R(0.19,0.245),dd=R(0.13,0.19);const[pu,py,nu,ny]=at(s+w/2);
+      n.set(0,ny,nu);xAx.crossVectors(yAx,n);M.makeBasis(xAx,yAx,n);S.makeScale(w,h,dd);M.multiply(S);M.setPosition(x,py+ny*dd/2,cz+pu+nu*dd/2);
+      sample.push({m:M.clone(),face:-1,zc:null,real:REAL[Math.floor(rng()*REAL.length)]});s+=w+0.003;}}
+})();
+const bookMesh=new THREE.InstancedMesh(boxGeo,mats.plain.clone(),sample.length);
+sample.forEach((b,i)=>bookMesh.setMatrixAt(i,b.m));
+const readMesh=new THREE.InstancedMesh(boxGeo,mats.plain.clone(),Math.max(reads.length,1));
+reads.forEach((b,i)=>readMesh.setMatrixAt(i,b.m));
+scene.add(bookMesh,readMesh);
+const nReadH=reads.filter(r=>r.book.c==='H').length;
+
+// ---------- 시설 ----------
+const facPick=[];
+FAC.forEach(fc=>{const[x0,x1,z0,z1]=fc.rect;
+  if(fc.staff) box((x0+x1)/2,1.3,(z0+z1)/2,x1-x0,2.6,z1-z0,mats.staff);
+  const m=box((x0+x1)/2,1.25,(z0+z1)/2,x1-x0,2.5,z1-z0,mats.pick);m.userData.fac=fc;facPick.push(m);});
+// 계산대
+box(-14.6,0.5,6.2,8.2,1.0,0.7,mats.dark); box(-14.6,0.5,8.8,8.2,1.0,0.6,mats.woodTable); box(-14.6,1.0,9.15,8.2,2.0,0.15,mats.rack);
+// 카페·와인
+box(-4.9,0.5,9.2,7.6,1.0,0.7,mats.dark);
+for(let x=-8.6;x<-1.4;x+=1.25){box(x+0.6,1.0,9.55,1.2,2.0,0.35,mats.rack);for(let k=0;k<5;k++)box(x+0.6,0.25+k*0.38,9.36,1.0,0.12,0.06,mats.wine);}
+[-7.6,-5.2,-2.8].forEach(x=>[4.2,6.6].forEach(z=>{box(x,0.74,z,0.9,0.04,0.9,mats.table);box(x,0.36,z,0.08,0.72,0.08,mats.dark);box(x-0.65,0.23,z,0.42,0.45,0.42,mats.chair);box(x+0.65,0.23,z,0.42,0.45,0.42,mats.chair);}));
+// 테라스: 낮은 평대 + 유리 칸막이, 동서 측면 하단에 출입 개구
+(function(){const[x0,x1,z0,z1]=[-0.5,10.4,1.26,9.55],h=0.9,t=0.6;
+  const seg=(x,z,w,d)=>{box(x,h/2,z,w,h,d,mats.woodTable);box(x,h+0.35,z,w,0.7,Math.min(d,0.04)||0.04,mats.glass);};
+  seg((x0+x1)/2,z0+t/2,x1-x0,t); seg((x0+x1)/2,z1-t/2,x1-x0,t);
+  [x0+t/2,x1-t/2].forEach(x=>{const a=z0+t,b=5.8;seg(x,(a+b)/2,t,b-a);const c=7.6,d=z1-t;seg(x,(c+d)/2,t,d-c);});
+  [1.8,4.4,7.0].forEach(x=>[3.4,5.6,7.6].forEach(z=>{box(x,0.74,z,1.2,0.04,0.8,mats.table);box(x,0.36,z,0.08,0.72,0.08,mats.dark);box(x,0.23,z-0.6,0.42,0.45,0.42,mats.chair);box(x,0.23,z+0.6,0.42,0.45,0.42,mats.chair);}));})();
+// 라운지
+[[2.2,-5.2],[6.2,-5.2]].forEach(([x,z])=>{box(x,0.74,z,3.0,0.05,1.1,mats.table);box(x,0.36,z,0.1,0.72,0.6,mats.dark);for(let k=-1;k<=1;k++){box(x+k*0.9,0.23,z-0.85,0.45,0.45,0.45,mats.chair);box(x+k*0.9,0.23,z+0.85,0.45,0.45,0.45,mats.chair);}});
+box(4.2,0.4,-7.1,7,0.8,0.7,mats.green);
+// 팝업 평대
+[[-9.6,-6.2],[-6.4,-6.2],[-9.6,-4.2],[-6.4,-4.2]].forEach(([x,z])=>{box(x,0.42,z,2.2,0.84,1.2,mats.woodTable);
+  for(let k=0;k<6;k++)box(x-0.7+(k%3)*0.7,0.86,z-0.25+Math.floor(k/3)*0.5,0.45,0.04+(k%2)*0.03,0.32,new THREE.MeshLambertMaterial({color:REAL[(k*5+Math.round(x))&15]}));});
+// 부스 5실
+for(let i=0;i<5;i++){const x=1.4+i*1.72;box(x,1.3,13.45,0.06,2.6,2.5,mats.staff);box(x+0.86,1.3,12.22,1.66,2.6,0.04,mats.glass);box(x+0.86,0.37,13.8,1.1,0.74,0.6,mats.table);}
+box(10.0,1.3,13.45,0.06,2.6,2.5,mats.staff);
+// 쪽잠존
+[11.2,12.9,14.6,16.3].forEach(x=>box(x,0.55,13.6,1.1,1.1,1.8,mats.pod));
+
+// ---------- 라벨 ----------
+const labels=[];
+function makeLabel(text,bg,fg,pos,small){
+  const c=document.createElement('canvas'),g=c.getContext('2d'),fs=52,font=`600 ${fs}px "IBM Plex Sans KR", sans-serif`;
+  g.font=font;const tw=g.measureText(text).width;c.width=Math.ceil(tw+60);c.height=Math.ceil(fs*1.75);g.font=font;
+  g.fillStyle=bg;const r=20;g.beginPath();g.moveTo(r,0);g.arcTo(c.width,0,c.width,c.height,r);g.arcTo(c.width,c.height,0,c.height,r);g.arcTo(0,c.height,0,0,r);g.arcTo(0,0,c.width,0,r);g.fill();
+  g.fillStyle=fg;g.textBaseline='middle';g.fillText(text,30,c.height/2+1);
+  const tex=new THREE.CanvasTexture(c);tex.minFilter=THREE.LinearFilter;
+  const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,depthTest:false,sizeAttenuation:false}));
+  const hgt=small?0.024:0.03;sp.scale.set(hgt*c.width/c.height,hgt,1);sp.position.copy(pos);sp.renderOrder=10;scene.add(sp);labels.push(sp);}
+function buildLabels(){
+  const dark='rgba(32,38,36,0.88)',lite='#f3f5f2';
+  ZONES.forEach(zn=>{const[x0,x1,z0,z1]=zn.rect;makeLabel(zn.name+' · '+zn.ko,zn.color,'#ffffff',new THREE.Vector3((x0+x1)/2,3.1,(z0+z1)/2));});
+  FAC.forEach(fc=>{if(fc.id==='staff1')return;const[x0,x1,z0,z1]=fc.rect;makeLabel(fc.ko,dark,lite,new THREE.Vector3((x0+x1)/2,fc.id==='tunnel'?3.8:2.9,(z0+z1)/2),fc.staff);});
+  makeLabel('출입구 · 여의도역 방면',dark,lite,new THREE.Vector3(-21.5,0.6,-0.9),true);
+  makeLabel('비상구',dark,lite,new THREE.Vector3(20.8,0.6,-0.7),true);
+  makeLabel('공용복도',dark,lite,new THREE.Vector3(-3.35,0.6,-11.5),true);
+  makeLabel('38.6 m (도면 환산)','rgba(32,38,36,0.75)',lite,new THREE.Vector3(0,0.3,18.6),true);
+  makeLabel('29.6 m (도면 환산)','rgba(32,38,36,0.75)',lite,new THREE.Vector3(22.6,0.3,0),true);
+}
+(document.fonts&&document.fonts.ready?Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,1500))]):Promise.resolve()).then(buildLabels);
+
+// ---------- 색상 ----------
+let colorMode='read', selFace=-1, hiZone=null, hiBook=-1;
+function paintBooks(){
+  const acc=new THREE.Color(tok.accent),warn=new THREE.Color(tok.warn);
+  sample.forEach((b,i)=>bookMesh.setColorAt(i,colorMode==='read'?GREY:colorMode==='zone'&&b.zc?b.zc:b.real));
+  reads.forEach((r,i)=>{let c;
+    if(i===hiBook) c=new THREE.Color('#ff3b6b');
+    else if(colorMode==='read') c=r.book.c==='H'?acc:warn;
+    else if(colorMode==='zone') c=new THREE.Color(faces[r.face].zone.color).offsetHSL(0,0,((hash(r.book.t)%30)-15)/100);
+    else c=REAL[hash(r.book.t)%REAL.length];
+    readMesh.setColorAt(i,c);});
+  bookMesh.instanceColor.needsUpdate=true; if(readMesh.instanceColor) readMesh.instanceColor.needsUpdate=true;}
+function paintWood(){const base=new THREE.Color(tok.wood),acc=new THREE.Color(tok.accent),tbl=new THREE.Color('#c9a878');
+  faces.forEach((f,i)=>{const c=i===selFace?acc:(hiZone===f.zone.id?base.clone().lerp(new THREE.Color(f.zone.color),0.6):base);
+    for(let k=0;k<WOODN;k++)woodMesh.setColorAt(f.w0+k,c); woodMesh.setColorAt(f.w0+WOODN,i===selFace?acc:tbl);});
+  woodMesh.instanceColor.needsUpdate=true;}
+function applyTheme(){readTok();scene.background=new THREE.Color(tok.scene);mats.floor.color.set(tok.floor);mats.corridor.color.set(tok.corridor);
+  mats.wall.color.set(tok.wall);mats.staff.color.set(tok.staff);dimMat.color.set(tok.muted);paintWood();paintBooks();}
+applyTheme();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',applyTheme);
+new MutationObserver(applyTheme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+// ---------- 카메라 ----------
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let fly=null;
+function flyTo(pos,tgt){if(reduce){camera.position.copy(pos);controls.target.copy(tgt);return;}
+  fly={p0:camera.position.clone(),t0:controls.target.clone(),p1:pos,t1:tgt,s:performance.now(),dur:1100};}
+const V=(x,y,z)=>new THREE.Vector3(x,y,z);
+const VIEWS={'v-iso':[V(24,32,36),V(0,0,0)],'v-top':[V(0,62,0.01),V(0,0,0)],'v-tunnel':[V(-21,1.6,-0.9),V(-4,1.6,-0.9)],
+  'v-daily':[V(15.9,1.8,3.85),V(18.4,1.2,3.85)],'v-insp':[V(3.5,1.8,-11.6),V(3.5,1.2,-14.7)]};
+function setPressed(ids,id){ids.forEach(k=>$('#'+k).setAttribute('aria-pressed',k===id?'true':'false'));}
+const clearView=()=>setPressed(Object.keys(VIEWS),'');
+Object.keys(VIEWS).forEach(id=>$('#'+id).addEventListener('click',()=>{setPressed(Object.keys(VIEWS),id);flyTo(VIEWS[id][0].clone(),VIEWS[id][1].clone());}));
+const front=f=>V(Math.sin(f.rot),0,Math.cos(f.rot));
+function flyToFace(f){const n=front(f),side=V(n.z,0,-n.x);flyTo(V(f.x,1.8,f.z).addScaledVector(n,2.8).addScaledVector(side,0.7),V(f.x,1.1,f.z));}
+function flyToRect(r){const cx=(r[0]+r[1])/2,cz=(r[2]+r[3])/2,s=Math.max(r[1]-r[0],r[3]-r[2]);flyTo(V(cx+s*0.7,s*1.1+3,cz+s*0.9),V(cx,0.5,cz));}
+
+// ---------- 도구 ----------
+const CM={'c-read':'read','c-zone':'zone','c-real':'real'};
+Object.keys(CM).forEach(id=>$('#'+id).addEventListener('click',()=>{setPressed(Object.keys(CM),id);colorMode=CM[id];paintBooks();renderLegend();}));
+$('#t-label').addEventListener('click',e=>{const on=e.currentTarget.getAttribute('aria-pressed')!=='true';e.currentTarget.setAttribute('aria-pressed',on);labels.forEach(l=>l.visible=on);});
+function renderLegend(){const L=$('#legend');
+  if(colorMode==='read')L.innerHTML=`<span class="k"><i class="dot" style="background:var(--accent)"></i>판독 확실 ${nReadH}권</span><span class="k"><i class="dot" style="background:var(--warn)"></i>판독 추정 ${reads.length-nReadH}권</span><span class="k"><i class="dot" style="background:#9aa09c"></i>미판독 자리(샘플)</span>`;
+  else if(colorMode==='zone')L.innerHTML=ZONES.map(z=>`<span class="k"><i class="dot" style="background:${z.color}"></i>${z.name}</span>`).join('')+'<span class="mut">북터널은 실물색</span>';
+  else L.innerHTML='<span class="mut">실물 느낌 색상(임의). 표지색은 아직 반영하지 않았습니다</span>';}
+renderLegend();
+
+// ---------- 패널 ----------
+const panel=$('#panel');
+const realFaces=faces.map((f,i)=>({f,i})).filter(o=>o.f.real);
+function overview(){
+  const tot=reads.length;
+  panel.innerHTML=`<h2>매장 개요</h2>
+  <dl><dt>위치</dt><dd>TP타워 지하 2층 · 여의도역 방면 공용복도 연결</dd>
+  <dt>면적</dt><dd>기사 약 320평 · 도면 환산 약 1,036㎡(313평)</dd>
+  <dt>외곽 치수</dt><dd>38.6 × 29.6 m (피난안내도 비율 환산)</dd>
+  <dt>서가</dt><dd>${faces.length}면 (사진 판독 ${realFaces.length}면)</dd>
+  <dt>판독 도서</dt><dd>${fmt(tot)}권 · 확실 ${nReadH} · 추정 ${tot-nReadH}</dd></dl>
+  <h3>사진 판독 서가</h3><ul class="zl">${realFaces.map(({f,i})=>{const n=Object.values(f.real.tiers).reduce((a,l)=>a+l.length,0);
+    return `<li><button data-face="${i}"><i class="dot" style="background:${f.zone.color}"></i><span><span class="id">${f.id}</span> ${esc(f.real.cat)}</span><span class="n">${n}권 · 사진 ${f.real.photo}</span></button></li>`;}).join('')}</ul>
+  <h3>존</h3><ul class="zl">${ZONES.map(z=>`<li><button data-zone="${z.id}"><i class="dot" style="background:${z.color}"></i><span>${z.name}</span><span class="n">${esc(z.ko)} · ${faces.filter(f=>f.zone===z).length}면</span></button></li>`).join('')}</ul>
+  <h3>반영한 것과 가정한 것</h3><ul class="plain">
+  <li>외곽선, 존 경계, 공용복도, 기둥, 출입구는 피난안내도를 따릅니다.</li>
+  <li>사진 서가 10면의 위치는 분류에 맞춰 존 안에 놓은 추정입니다. 서가 번호를 알려주시면 옮깁니다.</li>
+  <li>존 안 서가 개수·배열과 좌석, 시설 집기는 가정입니다.</li>
+  <li>출판연도·출판사는 알라딘 API 매칭 후 채워집니다.</li></ul>`;
+  panel.querySelectorAll('[data-zone]').forEach(b=>b.addEventListener('click',()=>selectZone(b.dataset.zone)));
+  panel.querySelectorAll('[data-face]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.face;showFace(i);clearView();flyToFace(faces[i]);}));
+}
+function showFace(i,bookIdx){
+  const f=faces[i];selFace=i;hiZone=null;hiBook=bookIdx==null?-1:bookIdx;paintWood();paintBooks();
+  const head=`<div class="eyebrow"><i class="dot" style="background:${f.zone.color}"></i>${f.zone.name} · ${esc(f.zone.ko)}</div>
+  <p class="sid">${f.id}</p><div class="eyebrow">${f.wall?'벽면 서가':'양면 서가'}${f.real?` · ${esc(f.real.cat)} · 사진 ${f.real.photo}`:''}</div>
+  <div class="row"><button class="btn primary" id="go">이 서가로 이동</button><button class="btn ghost" id="close">개요로</button></div>`;
+  if(!f.real){panel.innerHTML=head+`<p class="note">아직 사진이 없는 서가입니다. 책은 자리만 표시한 샘플이며 실제 재고가 아닙니다. 이 서가를 찍어 주시면 판독해 채웁니다.</p>`;}
+  else{const hb=hiBook>=0?reads[hiBook]:null;
+    panel.innerHTML=head+Object.entries(DATA.tierNames).map(([k,name])=>{const lst=f.real.tiers[k]||[];if(!lst.length)return'';
+      return `<h3>${name} · ${lst.length}권</h3><ul class="books">${lst.map((b,j)=>`<li class="${hb&&hb.tier===k&&hb.idx===j?'hl':''}"><span class="no">${j+1}</span><span class="t">${esc(b.t)}${b.c==='M'?'<span class="tag">추정</span>':''}${b.a?`<br><span class="y">${esc(b.a)} · ${esc(b.p)}</span>`:''}</span><span class="y">${b.y||'연도 대기'}</span></li>`).join('')}</ul>`;}).join('')
+      +`<p class="note">'추정'은 책등이 일부만 보여 제목을 추론한 책입니다. 출판연도는 알라딘 API 매칭 후 표시됩니다. 판독하지 못한 책등은 목록에서 뺐습니다.</p>`;}
+  $('#go').addEventListener('click',()=>{clearView();flyToFace(f);});
+  $('#close').addEventListener('click',reset);
+  const hl=panel.querySelector('li.hl'); if(hl) hl.scrollIntoView({block:'center'});
+}
+function showFac(fc){selFace=-1;hiZone=null;hiBook=-1;paintWood();paintBooks();
+  panel.innerHTML=`<div class="eyebrow">시설 · 도면 표기 ${esc(fc.name)}</div><h2>${esc(fc.ko)}</h2><p style="font-size:13.5px;line-height:1.6;margin:0">${esc(fc.desc)}</p>
+  <div class="row"><button class="btn primary" id="go">이 위치로 이동</button><button class="btn ghost" id="close">개요로</button></div>`;
+  $('#go').addEventListener('click',()=>{clearView();flyToRect(fc.rect);});$('#close').addEventListener('click',reset);}
+function selectZone(id){const z=ZONES.find(z=>z.id===id);selFace=-1;hiZone=id;hiBook=-1;paintWood();paintBooks();clearView();flyToRect(z.rect);}
+function reset(){selFace=-1;hiZone=null;hiBook=-1;paintWood();paintBooks();overview();}
+overview();
+$('#meta').textContent=`TP타워 B2 · 도면 환산 약 1,036㎡ · 서가 ${faces.length}면 · 판독 도서 ${fmt(reads.length)}권`;
+
+// ---------- 검색 ----------
+const q=$('#q'),res=$('#results');
+const norm=s=>s.toLowerCase().replace(/[\s·,.:!?'"()\-]/g,'');
+function search(s){s=s.trim();if(!s)return[];const out=[],up=s.toUpperCase().replace(/\s/g,''),ns=norm(s);
+  const m=up.match(/^([ISWD])-?0*(\d{1,2})$/);
+  if(m){const id=m[1]+'-'+m[2].padStart(2,'0');const i=faces.findIndex(f=>f.id===id);if(i>=0)out.push({label:id,sub:faces[i].real?faces[i].real.cat:faces[i].zone.name,go:()=>{showFace(i);clearView();flyToFace(faces[i]);}});}
+  if(ns.length>=2) reads.forEach((r,i)=>{if(out.length<8&&norm(r.book.t).includes(ns))out.push({label:r.book.t,sub:faces[r.face].id+' · '+DATA.tierNames[r.tier],go:()=>{showFace(r.face,i);clearView();flyToFace(faces[r.face]);}});});
+  ZONES.forEach(z=>{if(norm(z.name+z.ko).includes(ns))out.push({label:z.name,sub:z.ko,go:()=>{overview();selectZone(z.id);}});});
+  FAC.forEach(fc=>{if(!fc.staff&&norm(fc.name+fc.ko).includes(ns))out.push({label:fc.ko,sub:'시설',go:()=>{showFac(fc);clearView();flyToRect(fc.rect);}});});
+  return out.slice(0,8);}
+let cur=[];
+q.addEventListener('input',()=>{cur=search(q.value);if(!q.value.trim()){res.hidden=true;return;}
+  res.innerHTML=cur.length?cur.map((r,i)=>`<li><button data-i="${i}">${esc(r.label)}<span>${esc(r.sub)}</span></button></li>`).join(''):'<li style="padding:6px 8px;font-size:12.5px;color:var(--muted)">결과 없음. 예: 니체, D-02, 카페</li>';
+  res.hidden=false;res.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{cur[+b.dataset.i].go();res.hidden=true;q.blur();}));});
+q.addEventListener('keydown',e=>{if(e.key==='Enter'&&cur[0]){cur[0].go();res.hidden=true;q.blur();}if(e.key==='Escape'){res.hidden=true;q.blur();}});
+document.addEventListener('pointerdown',e=>{if(!e.target.closest('.search'))res.hidden=true;});
+
+// ---------- 포인터 ----------
+const ray=new THREE.Raycaster(),ptr=new THREE.Vector2(),tip=$('#tip');let down=null;
+function hit(e){const r=renderer.domElement.getBoundingClientRect();ptr.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);
+  ray.setFromCamera(ptr,camera);const h=ray.intersectObjects([readMesh,pickMesh,...facPick],false)[0];if(!h)return null;
+  if(h.object===readMesh)return{book:h.instanceId};if(h.object===pickMesh)return{face:h.instanceId};return{fac:h.object.userData.fac};}
+renderer.domElement.addEventListener('pointerdown',e=>{down=[e.clientX,e.clientY];});
+renderer.domElement.addEventListener('pointerup',e=>{if(!down)return;const mv=Math.hypot(e.clientX-down[0],e.clientY-down[1]);down=null;if(mv>5)return;
+  const h=hit(e);if(!h)return;if(h.book!=null)showFace(reads[h.book].face,h.book);else if(h.face!=null)showFace(h.face);else showFac(h.fac);});
+renderer.domElement.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||e.buttons){tip.hidden=true;return;}
+  const h=hit(e);renderer.domElement.style.cursor=h?'pointer':'';if(!h){tip.hidden=true;return;}
+  const r=stage.getBoundingClientRect();
+  tip.textContent=h.book!=null?reads[h.book].book.t+(reads[h.book].book.c==='M'?' (추정)':''):h.face!=null?faces[h.face].id+' · '+(faces[h.face].real?faces[h.face].real.cat:faces[h.face].zone.name):h.fac.ko;
+  tip.style.left=(e.clientX-r.left)+'px';tip.style.top=(e.clientY-r.top)+'px';tip.hidden=false;});
+renderer.domElement.addEventListener('pointerleave',()=>tip.hidden=true);
+
+// ---------- 걷기 ----------
+const keys=new Set();
+addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('input'))return;const k=e.key.toLowerCase();if(['w','a','s','d','shift'].includes(k))keys.add(k);});
+addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));addEventListener('blur',()=>keys.clear());
+const fw=new THREE.Vector3(),rt=new THREE.Vector3(),mvv=new THREE.Vector3();
+function walk(dt){if(!keys.size)return;fw.subVectors(controls.target,camera.position);fw.y=0;if(fw.lengthSq()<1e-6)return;fw.normalize();rt.set(-fw.z,0,fw.x);mvv.set(0,0,0);
+  if(keys.has('w'))mvv.add(fw);if(keys.has('s'))mvv.sub(fw);if(keys.has('d'))mvv.add(rt);if(keys.has('a'))mvv.sub(rt);if(!mvv.lengthSq())return;
+  mvv.normalize().multiplyScalar((keys.has('shift')?9:3.5)*dt);camera.position.add(mvv);controls.target.add(mvv);clearView();}
+
+// ---------- 루프 ----------
+function resize(){const w=stage.clientWidth,h=stage.clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+new ResizeObserver(resize).observe(stage);resize();
+const clock=new THREE.Clock(),ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+controls.addEventListener('start',()=>{fly=null;});
+function tick(){const dt=Math.min(clock.getDelta(),0.05);
+  if(fly){const t=Math.min(1,(performance.now()-fly.s)/fly.dur),k=ease(t);camera.position.lerpVectors(fly.p0,fly.p1,k);controls.target.lerpVectors(fly.t0,fly.t1,k);if(t>=1)fly=null;}
+  else walk(dt);
+  controls.update();renderer.render(scene,camera);requestAnimationFrame(tick);}
+$('#loading').remove();tick();
+})();
+</script>
+
+</body>
+</html>

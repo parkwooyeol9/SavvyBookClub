@@ -36,6 +36,7 @@ const links = [
   { href: "/nobel", label: "노벨" },
   { href: "/trends", label: "트렌드" },
   { href: "/#yeoidoMyongDang", label: "여의도" },
+  { href: "/arcnbook", label: "아크앤북" },
   { href: "/about", label: "소개" },
 ];
 
