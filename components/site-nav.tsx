@@ -30,14 +30,11 @@ function NavLink({
 
 const links = [
   { href: "/", label: "홈" },
-  { href: "/#store-charts", label: "차트" },
-  { href: "/map", label: "지식 지도" },
   { href: "/reviews", label: "서평" },
-  { href: "/nobel", label: "노벨" },
+  { href: "/nobel", label: "노벨상" },
   { href: "/trends", label: "트렌드" },
   { href: "/#yeoidoMyongDang", label: "여의도" },
   { href: "/arcnbook", label: "아크앤북" },
-  { href: "/about", label: "소개" },
 ];
 
 export function SiteNav() {
