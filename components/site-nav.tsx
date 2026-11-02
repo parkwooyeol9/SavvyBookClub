@@ -35,6 +35,7 @@ const links = [
   { href: "/trends", label: "트렌드" },
   { href: "/#yeoidoMyongDang", label: "여의도" },
   { href: "/arcnbook", label: "아크앤북" },
+  { href: "/brighton", label: "브라이튼도서관" },
 ];
 
 export function SiteNav() {

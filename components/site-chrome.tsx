@@ -51,6 +51,11 @@ export function SiteFooter() {
           여의도 아크앤북을 3D로 옮긴 서점 지도.
         </p>
         <p className="site-footer__note">
+          <Link href="/brighton">브라이튼도서관</Link>
+          {" · "}
+          여의도브라이튼도서관 소장 도서를 서가째 옮긴 3D 지도.
+        </p>
+        <p className="site-footer__note">
           경제·경영 서평 원문:{" "}
           <a
             href="https://brunch.co.kr/@econbook"

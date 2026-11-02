@@ -3733,3 +3733,64 @@ img {
     display: none;
   }
 }
+
+/* 브라이튼도서관: 소장 도서 목록(아크앤북 표 스타일을 공유하고 정렬·쪽 넘김만 추가) */
+.brighton-cat__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.brighton-cat__select {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.brighton-cat__num {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.brighton-cat__call {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.84rem;
+  white-space: nowrap;
+}
+
+.brighton-cat__pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.brighton-cat__pager .arcnbook-page__note {
+  margin: 0;
+}
+
+.brighton-cat__pages {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.arcnbook-inv__chip:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .arcnbook-inv__table.brighton-cat__table th:nth-child(3),
+  .arcnbook-inv__table.brighton-cat__table td:nth-child(3) {
+    display: none;
+  }
+}
